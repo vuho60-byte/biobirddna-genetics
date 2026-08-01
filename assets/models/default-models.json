@@ -1,0 +1,66 @@
+{
+  "model_set_id": "CBIM-ONE-LOCUS-DEFAULT",
+  "version": "0.1.0",
+  "status": "research_only",
+  "models": [
+    {
+      "model_id": "M1_AR",
+      "mode": "autosomal_recessive",
+      "normal_allele": "N",
+      "variant_allele": "m",
+      "normal_label": "normal",
+      "target_label": "target_colour",
+      "penetrance": 1.0,
+      "observation_error": 0.01
+    },
+    {
+      "model_id": "M2_AD",
+      "mode": "autosomal_dominant",
+      "normal_allele": "N",
+      "variant_allele": "m",
+      "normal_label": "normal",
+      "target_label": "target_colour",
+      "penetrance": 1.0,
+      "observation_error": 0.01
+    },
+    {
+      "model_id": "M3_INC",
+      "mode": "incomplete_dominant",
+      "normal_allele": "N",
+      "variant_allele": "m",
+      "normal_label": "normal",
+      "intermediate_label": "intermediate",
+      "target_label": "target_colour",
+      "penetrance": 1.0,
+      "observation_error": 0.01
+    },
+    {
+      "model_id": "M4_ZR",
+      "mode": "z_linked_recessive",
+      "normal_allele": "N",
+      "variant_allele": "m",
+      "normal_label": "normal",
+      "target_label": "target_colour",
+      "penetrance": 1.0,
+      "observation_error": 0.01
+    },
+    {
+      "model_id": "M5_ZD",
+      "mode": "z_linked_dominant",
+      "normal_allele": "N",
+      "variant_allele": "m",
+      "normal_label": "normal",
+      "target_label": "target_colour",
+      "penetrance": 1.0,
+      "observation_error": 0.01
+    },
+    {
+      "model_id": "M0_NONGENETIC",
+      "mode": "non_genetic",
+      "normal_label": "normal",
+      "target_label": "target_colour",
+      "baseline_target_probability": 0.05,
+      "observation_error": 0.01
+    }
+  ]
+}

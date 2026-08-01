@@ -1,0 +1,324 @@
+{
+  "ok": true,
+  "operation": "infer",
+  "engine_version": "0.2.0",
+  "result": {
+    "ranking": [
+      {
+        "model_id": "M4_ZR",
+        "mode": "z_linked_recessive",
+        "log_evidence": -1.5441920551366466,
+        "observation_mode": "sex_specific",
+        "observed_counts": {
+          "male:normal": 5,
+          "male:target_colour": 0,
+          "female:normal": 0,
+          "female:target_colour": 6
+        },
+        "configurations": [
+          {
+            "male_genotype": "m/m",
+            "female_genotype": "N/W",
+            "prior": 1.0,
+            "log_likelihood": -1.5441920551366466,
+            "log_joint": -1.5441920551366466,
+            "predicted_probabilities": {
+              "female:normal": 0.0025,
+              "female:target_colour": 0.4975,
+              "male:normal": 0.4975,
+              "male:target_colour": 0.0025
+            },
+            "posterior_within_model": 1.0
+          }
+        ],
+        "best_parent_configuration": {
+          "male_genotype": "m/m",
+          "female_genotype": "N/W",
+          "prior": 1.0,
+          "log_likelihood": -1.5441920551366466,
+          "log_joint": -1.5441920551366466,
+          "predicted_probabilities": {
+            "female:normal": 0.0025,
+            "female:target_colour": 0.4975,
+            "male:normal": 0.4975,
+            "male:target_colour": 0.0025
+          },
+          "posterior_within_model": 1.0
+        },
+        "prior": 0.16666666666666666,
+        "posterior": 0.9992266374024793
+      },
+      {
+        "model_id": "M2_AD",
+        "mode": "autosomal_dominant",
+        "log_evidence": -9.806820255586619,
+        "observation_mode": "sex_specific",
+        "observed_counts": {
+          "male:normal": 5,
+          "male:target_colour": 0,
+          "female:normal": 0,
+          "female:target_colour": 6
+        },
+        "configurations": [
+          {
+            "male_genotype": "N/m",
+            "female_genotype": "N/N",
+            "prior": 0.5,
+            "log_likelihood": -9.113673081237057,
+            "log_joint": -9.806820261797002,
+            "predicted_probabilities": {
+              "female:normal": 0.25,
+              "female:target_colour": 0.25,
+              "male:normal": 0.25,
+              "male:target_colour": 0.25
+            },
+            "posterior_within_model": 0.9999999937896167
+          },
+          {
+            "male_genotype": "m/m",
+            "female_genotype": "N/N",
+            "prior": 0.5,
+            "log_likelihood": -28.010716178759107,
+            "log_joint": -28.70386335931905,
+            "predicted_probabilities": {
+              "female:normal": 0.0025,
+              "female:target_colour": 0.4975,
+              "male:normal": 0.0025,
+              "male:target_colour": 0.4975
+            },
+            "posterior_within_model": 6.210384021311244e-09
+          }
+        ],
+        "best_parent_configuration": {
+          "male_genotype": "N/m",
+          "female_genotype": "N/N",
+          "prior": 0.5,
+          "log_likelihood": -9.113673081237057,
+          "log_joint": -9.806820261797002,
+          "predicted_probabilities": {
+            "female:normal": 0.25,
+            "female:target_colour": 0.25,
+            "male:normal": 0.25,
+            "male:target_colour": 0.25
+          },
+          "posterior_within_model": 0.9999999937896167
+        },
+        "prior": 0.16666666666666666,
+        "posterior": 0.00025778056395649835
+      },
+      {
+        "model_id": "M5_ZD",
+        "mode": "z_linked_dominant",
+        "log_evidence": -9.806820255586619,
+        "observation_mode": "sex_specific",
+        "observed_counts": {
+          "male:normal": 5,
+          "male:target_colour": 0,
+          "female:normal": 0,
+          "female:target_colour": 6
+        },
+        "configurations": [
+          {
+            "male_genotype": "N/m",
+            "female_genotype": "N/W",
+            "prior": 0.5,
+            "log_likelihood": -9.113673081237057,
+            "log_joint": -9.806820261797002,
+            "predicted_probabilities": {
+              "female:normal": 0.25,
+              "female:target_colour": 0.25,
+              "male:normal": 0.25,
+              "male:target_colour": 0.25
+            },
+            "posterior_within_model": 0.9999999937896167
+          },
+          {
+            "male_genotype": "m/m",
+            "female_genotype": "N/W",
+            "prior": 0.5,
+            "log_likelihood": -28.010716178759107,
+            "log_joint": -28.70386335931905,
+            "predicted_probabilities": {
+              "female:normal": 0.0025,
+              "female:target_colour": 0.4975,
+              "male:normal": 0.0025,
+              "male:target_colour": 0.4975
+            },
+            "posterior_within_model": 6.210384021311244e-09
+          }
+        ],
+        "best_parent_configuration": {
+          "male_genotype": "N/m",
+          "female_genotype": "N/W",
+          "prior": 0.5,
+          "log_likelihood": -9.113673081237057,
+          "log_joint": -9.806820261797002,
+          "predicted_probabilities": {
+            "female:normal": 0.25,
+            "female:target_colour": 0.25,
+            "male:normal": 0.25,
+            "male:target_colour": 0.25
+          },
+          "posterior_within_model": 0.9999999937896167
+        },
+        "prior": 0.16666666666666666,
+        "posterior": 0.00025778056395649835
+      },
+      {
+        "model_id": "M1_AR",
+        "mode": "autosomal_recessive",
+        "log_evidence": -9.806820261765795,
+        "observation_mode": "sex_specific",
+        "observed_counts": {
+          "male:normal": 5,
+          "male:target_colour": 0,
+          "female:normal": 0,
+          "female:target_colour": 6
+        },
+        "configurations": [
+          {
+            "male_genotype": "m/m",
+            "female_genotype": "N/m",
+            "prior": 0.5,
+            "log_likelihood": -9.113673081237057,
+            "log_joint": -9.806820261797002,
+            "predicted_probabilities": {
+              "female:normal": 0.25,
+              "female:target_colour": 0.25,
+              "male:normal": 0.25,
+              "male:target_colour": 0.25
+            },
+            "posterior_within_model": 0.999999999968793
+          },
+          {
+            "male_genotype": "m/m",
+            "female_genotype": "N/N",
+            "prior": 0.5,
+            "log_likelihood": -33.3040210034836,
+            "log_joint": -33.997168184043545,
+            "predicted_probabilities": {
+              "female:normal": 0.4975,
+              "female:target_colour": 0.0025,
+              "male:normal": 0.4975,
+              "male:target_colour": 0.0025
+            },
+            "posterior_within_model": 3.120796009892603e-11
+          }
+        ],
+        "best_parent_configuration": {
+          "male_genotype": "m/m",
+          "female_genotype": "N/m",
+          "prior": 0.5,
+          "log_likelihood": -9.113673081237057,
+          "log_joint": -9.806820261797002,
+          "predicted_probabilities": {
+            "female:normal": 0.25,
+            "female:target_colour": 0.25,
+            "male:normal": 0.25,
+            "male:target_colour": 0.25
+          },
+          "posterior_within_model": 0.999999999968793
+        },
+        "prior": 0.16666666666666666,
+        "posterior": 0.00025778056236362685
+      },
+      {
+        "model_id": "M0_NONGENETIC",
+        "mode": "non_genetic",
+        "log_evidence": -19.226588513373418,
+        "observation_mode": "sex_specific",
+        "observed_counts": {
+          "male:normal": 5,
+          "male:target_colour": 0,
+          "female:normal": 0,
+          "female:target_colour": 6
+        },
+        "configurations": [
+          {
+            "male_genotype": "NA",
+            "female_genotype": "NA",
+            "prior": 1.0,
+            "posterior_within_model": 1.0,
+            "log_likelihood": -19.226588513373418,
+            "predicted_probabilities": {
+              "female:normal": 0.47275,
+              "female:target_colour": 0.02725,
+              "male:normal": 0.47275,
+              "male:target_colour": 0.02725
+            }
+          }
+        ],
+        "best_parent_configuration": {
+          "male_genotype": "NA",
+          "female_genotype": "NA",
+          "prior": 1.0,
+          "posterior_within_model": 1.0,
+          "log_likelihood": -19.226588513373418,
+          "predicted_probabilities": {
+            "female:normal": 0.47275,
+            "female:target_colour": 0.02725,
+            "male:normal": 0.47275,
+            "male:target_colour": 0.02725
+          }
+        },
+        "prior": 0.16666666666666666,
+        "posterior": 2.0907244316207744e-08
+      },
+      {
+        "model_id": "M3_INC",
+        "mode": "incomplete_dominant",
+        "log_evidence": -64.23066131629587,
+        "observation_mode": "sex_specific",
+        "observed_counts": {
+          "male:normal": 5,
+          "male:target_colour": 0,
+          "female:normal": 0,
+          "female:target_colour": 6
+        },
+        "configurations": [
+          {
+            "male_genotype": "m/m",
+            "female_genotype": "N/N",
+            "prior": 1.0,
+            "log_likelihood": -64.23066131629587,
+            "log_joint": -64.23066131629587,
+            "predicted_probabilities": {
+              "female:intermediate": 0.49666666666666665,
+              "female:normal": 0.0016666666666666668,
+              "female:target_colour": 0.0016666666666666668,
+              "male:intermediate": 0.49666666666666665,
+              "male:normal": 0.0016666666666666668,
+              "male:target_colour": 0.0016666666666666668
+            },
+            "posterior_within_model": 1.0
+          }
+        ],
+        "best_parent_configuration": {
+          "male_genotype": "m/m",
+          "female_genotype": "N/N",
+          "prior": 1.0,
+          "log_likelihood": -64.23066131629587,
+          "log_joint": -64.23066131629587,
+          "predicted_probabilities": {
+            "female:intermediate": 0.49666666666666665,
+            "female:normal": 0.0016666666666666668,
+            "female:target_colour": 0.0016666666666666668,
+            "male:intermediate": 0.49666666666666665,
+            "male:normal": 0.0016666666666666668,
+            "male:target_colour": 0.0016666666666666668
+          },
+          "posterior_within_model": 1.0
+        },
+        "prior": 0.16666666666666666,
+        "posterior": 5.960412445079349e-28
+      }
+    ],
+    "best_model": "M4_ZR",
+    "best_model_posterior": 0.9992266374024793,
+    "limits": {
+      "claim": "candidate_inheritance_model_only",
+      "gene_status": "not_assessed",
+      "minimum_language": "phu_hop_hon_voi_mo_hinh"
+    }
+  }
+}

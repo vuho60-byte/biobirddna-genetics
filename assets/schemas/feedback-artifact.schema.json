@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biobirddna.local/schemas/feedback-artifact.schema.json",
+  "title": "BioBirdDNA immutable review-only feedback artifact",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "feedback_id",
+    "source",
+    "run",
+    "evidence",
+    "signals",
+    "proposal"
+  ],
+  "properties": {
+    "schema_version": {"const": "biobirddna_feedback_v1"},
+    "feedback_id": {"$ref": "#/$defs/sha256"},
+    "source": {
+      "type": "object",
+      "required": [
+        "package",
+        "package_version",
+        "package_integrity_sha256"
+      ],
+      "properties": {
+        "package": {"const": "@biobirddna/genetics"},
+        "package_version": {"const": "0.2.0"},
+        "package_integrity_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "run": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "operation",
+        "input_sha256",
+        "output_sha256",
+        "engine_version",
+        "schema_version"
+      ],
+      "properties": {
+        "run_id": {"type": "string", "minLength": 1},
+        "operation": {"type": "string", "minLength": 1},
+        "input_sha256": {"$ref": "#/$defs/sha256"},
+        "output_sha256": {"$ref": "#/$defs/sha256"},
+        "engine_version": {"const": "0.2.0"},
+        "schema_version": {"const": "1.0.0"}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "evidence_grade",
+        "missing_data",
+        "decision_support_only",
+        "human_review_status",
+        "limits"
+      ],
+      "properties": {
+        "evidence_grade": {
+          "enum": ["G0", "G1", "G2", "G3", "G4", "G5", "G6", "not_assessed"]
+        },
+        "missing_data": {"type": "array"},
+        "decision_support_only": {"const": true},
+        "human_review_status": {"const": "pending"},
+        "limits": {
+          "type": "object",
+          "required": ["decision_support_only", "gene_status"],
+          "properties": {
+            "decision_support_only": {"const": true},
+            "gene_status": {"const": "not_assessed"}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "severity", "rationale"],
+        "properties": {
+          "code": {"type": "string", "minLength": 1},
+          "severity": {"enum": ["info", "warning", "error"]},
+          "rationale": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "proposal": {
+      "type": "object",
+      "required": ["status", "auto_apply", "target_files"],
+      "properties": {
+        "status": {"const": "pending_human_review"},
+        "auto_apply": {"const": false},
+        "target_files": {
+          "type": "array",
+          "maxItems": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

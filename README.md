@@ -1,84 +1,84 @@
 # BioBirdDNA Genetics Skill v0.2.0
 
-Bá»™ khung skill vÃ  code máº«u cho dá»± Ã¡n **Biologicalbird Community / BioBirdDNA**, táº­p trung vÃ o:
+Bộ khung skill và code mẫu cho dự án **Biologicalbird Community / BioBirdDNA**, tập trung vào:
 
-- mÃ´ phá»ng cÃ´ng thá»©c ghÃ©p mÃ u lÃ´ng theo mÃ´ hÃ¬nh di truyá»n;
-- suy luáº­n mÃ´ hÃ¬nh di truyá»n á»©ng viÃªn tá»« pháº£ há»‡ vÃ  toÃ n bá»™ Ä‘á»i con;
-- xá»­ lÃ½ kiá»ƒu gene cha máº¹ chÆ°a cháº¯c cháº¯n báº±ng phÃ¢n bá»‘ xÃ¡c suáº¥t;
-- chuáº©n hÃ³a pairing, clutch, má»i trá»©ng/con vÃ  timeline phenotype mÃ  khÃ´ng Ä‘á»“ng nháº¥t missing vá»›i zero;
-- Ä‘o recovery, uncertainty, calibration theo design vÃ  absolute fit trÃªn dá»¯ liá»‡u synthetic;
-- tÃ­nh quan há»‡ vÃ  há»‡ sá»‘ cáº­n huyáº¿t Ä‘á»i con;
-- xáº¿p háº¡ng cáº·p ghÃ©p theo má»¥c tiÃªu nghiÃªn cá»©u, khÃ´ng chá»‰ theo mÃ u;
-- sÃ ng lá»c kiá»ƒu hÃ¬nh sáº¯c tá»‘ T02 báº±ng rule-based code;
-- giá»¯ ranh giá»›i rÃµ giá»¯a áº£nh, phenotype, mÃ´ hÃ¬nh di truyá»n vÃ  gene xÃ¡c nháº­n.
+- mô phỏng công thức ghép màu lông theo mô hình di truyền;
+- suy luận mô hình di truyền ứng viên từ phả hệ và toàn bộ đời con;
+- xử lý kiểu gene cha mẹ chưa chắc chắn bằng phân bố xác suất;
+- chuẩn hóa pairing, clutch, mọi trứng/con và timeline phenotype mà không đồng nhất missing với zero;
+- đo recovery, uncertainty, calibration theo design và absolute fit trên dữ liệu synthetic;
+- tính quan hệ và hệ số cận huyết đời con;
+- xếp hạng cặp ghép theo mục tiêu nghiên cứu, không chỉ theo màu;
+- sàng lọc kiểu hình sắc tố T02 bằng rule-based code;
+- giữ ranh giới rõ giữa ảnh, phenotype, mô hình di truyền và gene xác nhận.
 
-## ThÃ nh pháº§n chÃ­nh
+## Thành phần chính
 
 ```text
 BioBirdDNA_Genetics_Skill_v0.2.0/
-â”œâ”€â”€ SKILL.md
-â”œâ”€â”€ agents/openai.yaml
-â”œâ”€â”€ references/
-â”œâ”€â”€ planning/
-â”œâ”€â”€ knowledge/T02_knowledge_base_v1.0.json
-â”œâ”€â”€ assets/schemas/
-â”œâ”€â”€ assets/templates/
-â”œâ”€â”€ examples/input/
-â”œâ”€â”€ examples/output/
-â”œâ”€â”€ scripts/
-â”œâ”€â”€ src/biobirddna_genetics/
-â”œâ”€â”€ npm/
-â”œâ”€â”€ standalone/
-â””â”€â”€ tests/
+├── SKILL.md
+├── agents/openai.yaml
+├── references/
+├── planning/
+├── knowledge/T02_knowledge_base_v1.0.json
+├── assets/schemas/
+├── assets/templates/
+├── examples/input/
+├── examples/output/
+├── scripts/
+├── src/biobirddna_genetics/
+├── npm/
+├── standalone/
+└── tests/
 ```
 
-## TÃ i liá»‡u kiáº¿n trÃºc cho model/coder
+## Tài liệu kiến trúc cho model/coder
 
-- `BioBirdDNA_Genetics_Skill_Blueprint_v0.1.0.md`: báº£n há»£p nháº¥t gáº§n 10.000 tá»« gá»“m skill contract, kiáº¿n trÃºc lá»›p, data contract, cÃ´ng thá»©c, API/database draft, roadmap vÃ  handoff.
-- `planning/MODEL_CODER_HANDOFF.md`: prompt, read order vÃ  quy táº¯c patch dÃ nh cho coding model tiáº¿p theo.
-- `planning/backlog.json`: backlog cÃ³ phase, priority, acceptance criteria vÃ  dependency.
-- `planning/adr/`: cÃ¡c quyáº¿t Ä‘á»‹nh kiáº¿n trÃºc khÃ´ng Ä‘Æ°á»£c thay Ä‘á»•i Ã¢m tháº§m.
+- `BioBirdDNA_Genetics_Skill_Blueprint_v0.1.0.md`: bản hợp nhất gần 10.000 từ gồm skill contract, kiến trúc lớp, data contract, công thức, API/database draft, roadmap và handoff.
+- `planning/MODEL_CODER_HANDOFF.md`: prompt, read order và quy tắc patch dành cho coding model tiếp theo.
+- `planning/backlog.json`: backlog có phase, priority, acceptance criteria và dependency.
+- `planning/adr/`: các quyết định kiến trúc không được thay đổi âm thầm.
 
-## Bá»‘n lá»±a chá»n code
+## Bốn lựa chọn code
 
-### Báº£n modular
+### Bản modular
 
-DÃ¹ng Ä‘á»ƒ phÃ¡t triá»ƒn thÃ nh skill production:
+Dùng để phát triển thành skill production:
 
 ```text
 src/biobirddna_genetics/
 ```
 
-CÃ¡c module Ä‘Ã£ cÃ³:
+Các module đã có:
 
-- `cross.py`: Punnett engine cho genotype cháº¯c cháº¯n hoáº·c posterior;
-- `inference.py`: likelihood/Bayes thÄƒm dÃ² giá»¯a nhiá»u mÃ´ hÃ¬nh;
-- `pedigree.py`: ma tráº­n quan há»‡ vÃ  cáº­n huyáº¿t;
-- `optimizer.py`: xáº¿p háº¡ng cáº·p vÃ  expected information gain;
-- `pigment.py`: xáº¿p háº¡ng phenotype T02, khÃ´ng xÃ¡c nháº­n gene;
-- `breeding_records.py`: chuáº©n hÃ³a há»“ sÆ¡ sinh sáº£n theo giai Ä‘oáº¡n vÃ  Ä‘á»‘i soÃ¡t sá»‘ lÆ°á»£ng;
-- `simulation.py`: harness recovery/calibration synthetic cÃ³ seed vÃ  cá»•ng misspecification;
-- `evidence.py`: cháº·n claim vÆ°á»£t evidence;
-- `service.py`, `cli.py`: orchestration vÃ  CLI.
+- `cross.py`: Punnett engine cho genotype chắc chắn hoặc posterior;
+- `inference.py`: likelihood/Bayes thăm dò giữa nhiều mô hình;
+- `pedigree.py`: ma trận quan hệ và cận huyết;
+- `optimizer.py`: xếp hạng cặp và expected information gain;
+- `pigment.py`: xếp hạng phenotype T02, không xác nhận gene;
+- `breeding_records.py`: chuẩn hóa hồ sơ sinh sản theo giai đoạn và đối soát số lượng;
+- `simulation.py`: harness recovery/calibration synthetic có seed và cổng misspecification;
+- `evidence.py`: chặn claim vượt evidence;
+- `service.py`, `cli.py`: orchestration và CLI.
 
-### Báº£n má»™t file
+### Bản một file
 
 ```text
 standalone/biobirddna_genetics_standalone.py
 ```
 
-Báº£n nÃ y lÃ  snapshot tiá»‡n dá»¥ng cho `cross`, `infer` vÃ  `pigment` báº±ng Python
-standard library. Python modular má»›i lÃ  implementation chuáº©n cho Ä‘á»§ sÃ¡u operation
+Bản này là snapshot tiện dụng cho `cross`, `infer` và `pigment` bằng Python
+standard library. Python modular mới là implementation chuẩn cho đủ sáu operation
 v0.2.0.
 
-### Báº£n Node.js má»™t file
+### Bản Node.js một file
 
 ```text
 standalone/biobirddna_genetics_node.mjs
 ```
 
-Báº£n Node.js má»™t file váº«n lÃ  cross simulator tá»‘i giáº£n. Package ESM trong `npm/`
-khÃ´ng thay tháº¿ file standalone nÃ y.
+Bản Node.js một file vẫn là cross simulator tối giản. Package ESM trong `npm/`
+không thay thế file standalone này.
 
 ### Package Node ESM
 
@@ -86,32 +86,32 @@ khÃ´ng thay tháº¿ file standalone nÃ y.
 npm/
 ```
 
-Package khÃ´ng cÃ³ runtime dependency vÃ  triá»ƒn khai Ä‘á»§ sÃ¡u operation theo cÃ¹ng
-contract v0.2.0 vá»›i Python modular. NÃ³ cÃ²n cÃ³ feedback adapter review-only; test
-packed-install xÃ¡c minh cáº£ hai CLI hoáº¡t Ä‘á»™ng ngoÃ i cÃ¢y source. Simulation dÃ¹ng
-cÃ¹ng seed/PRNG vÃ  cÃ³ exact cross-runtime parity; inference khÃ³a count quan sÃ¡t á»Ÿ
-`1_000_000` Ä‘á»ƒ giá»¯ work budget vÃ  numerical parity.
+Package không có runtime dependency và triển khai đủ sáu operation theo cùng
+contract v0.2.0 với Python modular. Nó còn có feedback adapter review-only; test
+packed-install xác minh cả hai CLI hoạt động ngoài cây source. Simulation dùng
+cùng seed/PRNG và có exact cross-runtime parity; inference khóa count quan sát ở
+`1_000_000` để giữ work budget và numerical parity.
 
-## YÃªu cáº§u
+## Yêu cầu
 
-- Python 3.11 trá»Ÿ lÃªn.
-- Node.js 20 trá»Ÿ lÃªn cho package npm/Node tÃ¹y chá»n.
-- KhÃ´ng báº¯t buá»™c thÆ° viá»‡n ngoÃ i.
+- Python 3.11 trở lên.
+- Node.js 20 trở lên cho package npm/Node tùy chọn.
+- Không bắt buộc thư viện ngoài.
 
-## CÃ i package tÃ¹y chá»n
+## Cài package tùy chọn
 
-KhÃ´ng cáº§n cÃ i Ä‘á»ƒ cháº¡y cÃ¡c script. Khi muá»‘n dÃ¹ng entry point package:
+Không cần cài để chạy các script. Khi muốn dùng entry point package:
 
 ```bash
 python -m pip install --no-build-isolation -e .
 biobirddna-genetics cross --input examples/input/cross_autosomal_recessive.json --pretty
 ```
 
-`--no-build-isolation` há»¯u Ã­ch trong mÃ´i trÆ°á»ng offline Ä‘Ã£ cÃ³ sáºµn setuptools.
+`--no-build-isolation` hữu ích trong môi trường offline đã có sẵn setuptools.
 
 ## Package npm/Node public release candidate
 
-YÃªu cáº§u Node.js 20 trá»Ÿ lÃªn:
+Yêu cầu Node.js 20 trở lên:
 
 ```bash
 cd npm
@@ -119,10 +119,10 @@ npm test
 npm pack --dry-run
 ```
 
-Package lÃ  `@biobirddna/genetics`, `UNLICENSED`, khÃ´ng cÃ³ runtime dependency vÃ 
-cÃ³ metadata cho public registry scope. ÄÃ¢y chá»‰ lÃ  release candidate Ä‘Ã£ Ä‘Æ°á»£c kiá»ƒm
-tarball: khÃ´ng cÃ³ npm login/publish, GitHub push hoáº·c xÃ¡c nháº­n registry trong cÃ¢y
-skill nÃ y. Chá»‰ sau hÃ nh Ä‘á»™ng external Ä‘Æ°á»£c owner á»§y quyá»n má»›i xÃ¡c minh báº±ng
+Package là `@biobirddna/genetics`, `UNLICENSED`, không có runtime dependency và
+có metadata cho public registry scope. Đây chỉ là release candidate đã được kiểm
+tarball: không có npm login/publish, GitHub push hoặc xác nhận registry trong cây
+skill này. Chỉ sau hành động external được owner ủy quyền mới xác minh bằng
 `npm view` package/version/integrity. Hai CLI:
 
 ```text
@@ -130,7 +130,7 @@ biobirddna-genetics
 biobirddna-feedback
 ```
 
-Sau khi táº¡o tarball Ä‘Ã£ kiá»ƒm chá»©ng, cÃ³ thá»ƒ cÃ i local:
+Sau khi tạo tarball đã kiểm chứng, có thể cài local:
 
 ```bash
 npm install --global ./biobirddna-genetics-0.2.0.tgz
@@ -139,33 +139,33 @@ biobirddna-feedback --input ./review-envelope.json \
   --expected-integrity <sha256> --output ./feedback.json
 ```
 
-CLI feedback chá»‰ táº¡o artifact review/proposal báº¥t biáº¿n cho quy trÃ¬nh AutoResearch.
-NÃ³ khÃ´ng gá»i experiment promotion, khÃ´ng tá»± approve/apply vÃ  khÃ´ng dÃ¹ng health
-gate 3.0 cá»§a Page lÃ m Ä‘iá»ƒm BioBirdDNA. Input lÃ  normalized production-review
-wrapper, khÃ´ng pháº£i raw operation result. Mutation intent, claim gene/variant
-Ä‘Æ°á»£c xÃ¡c nháº­n dÆ°á»›i G5 vÃ  AutoResearch health-score trÃ¡ hÃ¬nh Ä‘á»u fail closed; xem
+CLI feedback chỉ tạo artifact review/proposal bất biến cho quy trình AutoResearch.
+Nó không gọi experiment promotion, không tự approve/apply và không dùng health
+gate 3.0 của Page làm điểm BioBirdDNA. Input là normalized production-review
+wrapper, không phải raw operation result. Mutation intent, claim gene/variant
+được xác nhận dưới G5 và AutoResearch health-score trá hình đều fail closed; xem
 `references/autoresearch-feedback.md`.
 
-## OAuth MCP vÃ  plugin ChatGPT/Codex cÃ¡ nhÃ¢n
+## OAuth MCP và plugin ChatGPT/Codex cá nhân
 
-GEN-015 thÃªm adapter cloud stateless trong dedicated Supabase project. Endpoint
-chá»‰ expose Ä‘Ãºng sÃ¡u compute tool vÃ  má»™t feedback tool, táº¥t cáº£ read-only. OAuth
-2.1 kiá»ƒm Ä‘Ãºng MCP audience vÃ  allowed user trÆ°á»›c dispatch; adapter khÃ´ng táº¡o
-table, bucket, queue, model-run persistence hoáº·c quyá»n welfare override.
+GEN-015 thêm adapter cloud stateless trong dedicated Supabase project. Endpoint
+chỉ expose đúng sáu compute tool và một feedback tool, tất cả read-only. OAuth
+2.1 kiểm đúng MCP audience và allowed user trước dispatch; adapter không tạo
+table, bucket, queue, model-run persistence hoặc quyền welfare override.
 
-ChatGPT Web dÃ¹ng private custom MCP App Ä‘Ã£ káº¿t ná»‘i OAuth. Universal plugin cá»¥c bá»™
-cho ChatGPT desktop Work mode/Codex chá»‰ tham chiáº¿u Ä‘Ãºng registered app ID vÃ  bundle
-skill Ä‘Ã£ kiá»ƒm checksum. Token, password, app ID tháº­t vÃ  personal marketplace tree
-khÃ´ng thuá»™c release source. Public authenticated review váº«n lÃ  cá»•ng external cá»§a
-GEN-016, khÃ´ng pháº£i tráº¡ng thÃ¡i Ä‘Ã£ hoÃ n táº¥t.
+ChatGPT Web dùng private custom MCP App đã kết nối OAuth. Universal plugin cục bộ
+cho ChatGPT desktop Work mode/Codex chỉ tham chiếu đúng registered app ID và bundle
+skill đã kiểm checksum. Token, password, app ID thật và personal marketplace tree
+không thuộc release source. Public authenticated review vẫn là cổng external của
+GEN-016, không phải trạng thái đã hoàn tất.
 
-Node updater/watcher cháº¡y full source/cloud validation, phÃ¢n loáº¡i sensitive diff,
-yÃªu cáº§u security pin Ä‘Ã£ duyá»‡t, deploy immutable snapshot, verify live vÃ  rollback
-náº¿u tháº¥t báº¡i. Watcher khÃ´ng gá»i hoáº·c mutate AutoResearch.
+Node updater/watcher chạy full source/cloud validation, phân loại sensitive diff,
+yêu cầu security pin đã duyệt, deploy immutable snapshot, verify live và rollback
+nếu thất bại. Watcher không gọi hoặc mutate AutoResearch.
 
-## Kiá»ƒm chá»©ng vÃ  cÃ i skill global
+## Kiểm chứng và cài skill global
 
-Cháº¡y gate Ä‘áº§y Ä‘á»§ trÃªn Ä‘Ãºng cÃ¢y file chuáº©n bá»‹ cÃ i:
+Chạy gate đầy đủ trên đúng cây file chuẩn bị cài:
 
 ```bash
 python -B scripts/validate_package.py
@@ -173,28 +173,28 @@ python -B scripts/verify_examples.py
 python -B scripts/verify_package.py
 ```
 
-TrÃªn Windows, cÃ i theo cÆ¡ cháº¿ staging, kiá»ƒm checksum rá»“i má»›i atomic rename:
+Trên Windows, cài theo cơ chế staging, kiểm checksum rồi mới atomic rename:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install_skill.ps1 `
   -DestinationRoot "$env:USERPROFILE\.codex\skills"
 ```
 
-TrÃªn Linux/macOS:
+Trên Linux/macOS:
 
 ```bash
 ./scripts/install_skill.sh "${CODEX_HOME:-$HOME/.codex}/skills"
 ```
 
-Installer giá»¯ install lock, tá»« chá»‘i ghi Ä‘Ã¨/Ä‘ua race vá»›i target Ä‘Ã£ tá»“n táº¡i,
-kiá»ƒm checksum trÆ°á»›c vÃ  sau final rename, vÃ  khÃ´ng Ä‘Æ°a `__pycache__`, `.pyc`
-hoáº·c `.pyo` vÃ o báº£n cÃ i. TrÃªn Windows cÃ³ locale khÃ´ng máº·c Ä‘á»‹nh UTF-8, cháº¡y
-validator metadata cá»§a Codex báº±ng `python -X utf8 .../quick_validate.py <skill-root>`.
-Shell installer fail-loud náº¿u Linux/filesystem khÃ´ng há»— trá»£
-`renameat2(RENAME_NOREPLACE)` hoáº·c macOS volume khÃ´ng há»— trá»£
-`renamex_np(RENAME_EXCL)`; khÃ´ng fallback sang rename cÃ³ thá»ƒ ghi Ä‘Ã¨.
+Installer giữ install lock, từ chối ghi đè/đua race với target đã tồn tại,
+kiểm checksum trước và sau final rename, và không đưa `__pycache__`, `.pyc`
+hoặc `.pyo` vào bản cài. Trên Windows có locale không mặc định UTF-8, chạy
+validator metadata của Codex bằng `python -X utf8 .../quick_validate.py <skill-root>`.
+Shell installer fail-loud nếu Linux/filesystem không hỗ trợ
+`renameat2(RENAME_NOREPLACE)` hoặc macOS volume không hỗ trợ
+`renamex_np(RENAME_EXCL)`; không fallback sang rename có thể ghi đè.
 
-## Cháº¡y nhanh
+## Chạy nhanh
 
 ### Windows
 
@@ -210,7 +210,7 @@ run_demo.bat
 ./run_demo.sh
 ```
 
-### Cháº¡y tá»«ng chá»©c nÄƒng
+### Chạy từng chức năng
 
 ```bash
 python -B scripts/biobirddna_cli.py cross \
@@ -238,39 +238,39 @@ python -B scripts/biobirddna_cli.py simulate-recovery \
   --output examples/output/simulate_recovery.json
 ```
 
-## VÃ­ dá»¥ cÃ´ng thá»©c
+## Ví dụ công thức
 
-### Láº·n trÃªn NST thÆ°á»ng
-
-```text
-N/m Ã— m/m
-```
-
-Ká»³ vá»ng mÃ´ hÃ¬nh:
+### Lặn trên NST thường
 
 ```text
-50% N/m â€” phenotype bÃ¬nh thÆ°á»ng nhÆ°ng cÃ³ thá»ƒ mang allele
-50% m/m â€” phenotype má»¥c tiÃªu náº¿u penetrance = 1
+N/m × m/m
 ```
 
-### Láº·n liÃªn káº¿t Z á»Ÿ chim
+Kỳ vọng mô hình:
 
 ```text
-Trá»‘ng m/m Ã— mÃ¡i N/W
+50% N/m — phenotype bình thường nhưng có thể mang allele
+50% m/m — phenotype mục tiêu nếu penetrance = 1
 ```
 
-Ká»³ vá»ng mÃ´ hÃ¬nh:
+### Lặn liên kết Z ở chim
 
 ```text
-50% con trá»‘ng N/m â€” phenotype bÃ¬nh thÆ°á»ng, mang allele
-50% con mÃ¡i m/W â€” phenotype má»¥c tiÃªu
+Trống m/m × mái N/W
 ```
 
-ÄÃ¢y chá»‰ lÃ  káº¿t quáº£ cá»§a **mÃ´ hÃ¬nh kÃ½ hiá»‡u**. `N` vÃ  `m` khÃ´ng pháº£i tÃªn gene chÃ o mÃ o Ä‘Ã£ xÃ¡c nháº­n.
+Kỳ vọng mô hình:
 
-## Kiáº¿n trÃºc Ä‘á»c theo thá»© tá»±
+```text
+50% con trống N/m — phenotype bình thường, mang allele
+50% con mái m/W — phenotype mục tiêu
+```
 
-Cho model/coder má»›i:
+Đây chỉ là kết quả của **mô hình ký hiệu**. `N` và `m` không phải tên gene chào mào đã xác nhận.
+
+## Kiến trúc đọc theo thứ tự
+
+Cho model/coder mới:
 
 1. `SKILL.md`
 2. `references/scientific-boundaries.md`
@@ -282,43 +282,42 @@ Cho model/coder má»›i:
 8. code trong `src/`
 9. test trong `tests/`
 
-## Pháº¡m vi v0.2.0
+## Phạm vi v0.2.0
 
-ÄÃ£ cháº¡y Ä‘Æ°á»£c:
+Đã chạy được:
 
-- má»™t locus, hai allele;
+- một locus, hai allele;
 - autosomal recessive/dominant/incomplete dominant;
 - avian Z-linked recessive/dominant;
-- penetrance Ä‘Æ¡n giáº£n;
-- lá»—i cháº¥m phenotype Ä‘Æ¡n giáº£n;
-- posterior kiá»ƒu gene cha máº¹;
-- model comparison thÄƒm dÃ²;
+- penetrance đơn giản;
+- lỗi chấm phenotype đơn giản;
+- posterior kiểu gene cha mẹ;
+- model comparison thăm dò;
 - pedigree relationship matrix;
-- mate ranking Ä‘a má»¥c tiÃªu;
+- mate ranking đa mục tiêu;
 - rule-based phenotype screen.
 
-ChÆ°a production-ready cho:
+Chưa production-ready cho:
 
 - hai locus/epistasis;
 - polygenic trait;
 - survival model theo genotype;
 - missing-not-at-random;
-- genomic relationship matrix tá»« SNP;
-- image segmentation/calibration trá»±c tiáº¿p;
+- genomic relationship matrix từ SNP;
+- image segmentation/calibration trực tiếp;
 - spectrophotometry/Raman/HPLC/LC-MS;
-- database vÃ  API multi-user;
+- database và API multi-user;
 - clinical or invasive sampling workflow.
 
-CÃ¡c pháº§n nÃ y Ä‘Ã£ cÃ³ backlog vÃ  interface má»Ÿ rá»™ng trong `references/implementation-roadmap.md`.
+Các phần này đã có backlog và interface mở rộng trong `references/implementation-roadmap.md`.
 
-## NguyÃªn táº¯c khoa há»c cá»‘t lÃµi
+## Nguyên tắc khoa học cốt lõi
 
 ```text
-áº¢nh â†’ mÃ´ táº£ kiá»ƒu hÃ¬nh
-Pháº£ há»‡ + Ä‘á»i con â†’ mÃ´ hÃ¬nh di truyá»n á»©ng viÃªn
-DNA Ä‘á»“ng phÃ¢n ly â†’ locus/biáº¿n thá»ƒ Ä‘Æ°á»£c há»— trá»£
-TÃ¡i láº­p/chá»©c nÄƒng â†’ cÆ¡ cháº¿ xÃ¡c nháº­n máº¡nh
+Ảnh → mô tả kiểu hình
+Phả hệ + đời con → mô hình di truyền ứng viên
+DNA đồng phân ly → locus/biến thể được hỗ trợ
+Tái lập/chức năng → cơ chế xác nhận mạnh
 ```
 
-Skill khÃ´ng cho phÃ©p nháº£y tháº³ng tá»« áº£nh sang gene.
-
+Skill không cho phép nhảy thẳng từ ảnh sang gene.

@@ -1,0 +1,73 @@
+name: Native installer smoke
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - "npm/**"
+      - "PACKAGE_CHECKSUMS.json"
+      - "SHA256SUMS.txt"
+      - ".github/workflows/native-installers.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-installer-smoke:
+    name: ${{ matrix.runner }} / Node ${{ matrix.node }}
+    runs-on: ${{ matrix.runner }}
+    env:
+      BIOBIRDDNA_RUNNER_IMAGE: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            node: 20
+            installer: scripts/install_skill.sh
+          - runner: ubuntu-latest
+            node: 22
+            installer: scripts/install_skill.sh
+          - runner: ubuntu-latest
+            node: 24
+            installer: scripts/install_skill.sh
+          - runner: macos-latest
+            node: 20
+            installer: scripts/install_skill.sh
+          - runner: macos-latest
+            node: 22
+            installer: scripts/install_skill.sh
+          - runner: macos-latest
+            node: 24
+            installer: scripts/install_skill.sh
+          - runner: windows-latest
+            node: 20
+            installer: scripts/install_skill.ps1
+          - runner: windows-latest
+            node: 22
+            installer: scripts/install_skill.ps1
+          - runner: windows-latest
+            node: 24
+            installer: scripts/install_skill.ps1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          check-latest: true
+      - name: Run isolated native installer smoke
+        run: node scripts/native-installer-smoke.mjs --installer "${{ matrix.installer }}" --evidence "${{ runner.temp }}/biobirddna-native-installer-evidence.json" --tarball "${{ runner.temp }}/biobirddna-genetics-0.2.0.tgz"
+      - name: Upload bounded native evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-installer-${{ matrix.runner }}-node-${{ matrix.node }}
+          path: |
+            ${{ runner.temp }}/biobirddna-native-installer-evidence.json
+            ${{ runner.temp }}/biobirddna-genetics-0.2.0.tgz
+          if-no-files-found: error
+          retention-days: 7

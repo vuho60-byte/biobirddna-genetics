@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "operation": "cross",
+  "engine_version": "0.2.0",
+  "result": {
+    "model_id": "M4_ZR",
+    "mode": "z_linked_recessive",
+    "male_genotype": "m/m",
+    "female_genotype": "N/W",
+    "genotype_probabilities": {
+      "female:m/W": 0.5,
+      "male:N/m": 0.5
+    },
+    "phenotype_probabilities": {
+      "female:normal": 0.0,
+      "female:target_colour": 0.5,
+      "male:normal": 0.5
+    },
+    "limits": {
+      "gene_status": "model_assumption_only",
+      "inheritance_status": "simulation_not_confirmation"
+    }
+  }
+}

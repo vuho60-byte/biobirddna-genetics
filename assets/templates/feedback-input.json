@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "CM-RUN-FEEDBACK-000001",
+  "operation": "simulate-recovery",
+  "engine_version": "0.2.0",
+  "input_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "output_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "package": {
+    "name": "@biobirddna/genetics",
+    "version": "0.2.0",
+    "integrity_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "result": {
+    "output": {
+      "ok": true,
+      "operation": "simulate-recovery",
+      "engine_version": "0.2.0"
+    },
+    "evidence": {
+      "evidence_grade": "G0",
+      "source": "synthetic_simulation_only"
+    },
+    "limits": {
+      "decision_support_only": true,
+      "gene_status": "not_assessed",
+      "synthetic_only": true,
+      "posterior_scope": "relative_to_candidate_model_set"
+    },
+    "missing_data": []
+  },
+  "human_review_status": "pending"
+}

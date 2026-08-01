@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biobirddna.local/schemas/feedback-input.schema.json",
+  "title": "BioBirdDNA production envelope accepted by biobirddna-feedback",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "operation",
+    "engine_version",
+    "input_sha256",
+    "output_sha256",
+    "package",
+    "result",
+    "human_review_status"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "run_id": {"type": "string", "minLength": 1},
+    "operation": {
+      "enum": [
+        "cross",
+        "infer",
+        "pigment",
+        "rank-mates",
+        "normalize-records",
+        "simulate-recovery"
+      ]
+    },
+    "engine_version": {"const": "0.2.0"},
+    "input_sha256": {"$ref": "#/$defs/sha256"},
+    "output_sha256": {"$ref": "#/$defs/sha256"},
+    "package": {
+      "type": "object",
+      "required": ["name", "version", "integrity_sha256"],
+      "properties": {
+        "name": {"const": "@biobirddna/genetics"},
+        "version": {"const": "0.2.0"},
+        "integrity_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "required": ["evidence", "limits"],
+      "properties": {
+        "output": {
+          "description": "Optional raw public-operation output retained only as provenance.",
+          "type": "object"
+        },
+        "evidence": {"type": "object"},
+        "limits": {
+          "type": "object",
+          "required": ["decision_support_only", "gene_status"],
+          "properties": {
+            "decision_support_only": {"const": true},
+            "gene_status": {"const": "not_assessed"}
+          },
+          "additionalProperties": true
+        },
+        "missing_data": {"type": "array"}
+      },
+      "additionalProperties": true
+    },
+    "human_review_status": {"const": "pending"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "target_label": "target_colour",
+  "male_parent_phenotype": "target_colour",
+  "female_parent_phenotype": "normal",
+  "offspring": [
+    {"sex": "male", "phenotype": "normal", "count": 5},
+    {"sex": "male", "phenotype": "target_colour", "count": 0},
+    {"sex": "female", "phenotype": "normal", "count": 0},
+    {"sex": "female", "phenotype": "target_colour", "count": 6}
+  ],
+  "model_priors": {
+    "M1_AR": 1,
+    "M2_AD": 1,
+    "M3_INC": 1,
+    "M4_ZR": 1,
+    "M5_ZD": 1,
+    "M0_NONGENETIC": 1
+  }
+}

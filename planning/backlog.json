@@ -1,0 +1,390 @@
+{
+  "project": "BioBirdDNA Genetics Skill",
+  "version": "0.2.0",
+  "completed_issues": [
+    "GEN-001",
+    "GEN-010",
+    "GEN-011",
+    "GEN-013",
+    "GEN-014",
+    "GEN-015"
+  ],
+  "rules": {
+    "read_first": [
+      "SKILL.md",
+      "references/scientific-boundaries.md",
+      "references/architecture.md",
+      "references/data-contracts.md",
+      "references/algorithms.md"
+    ],
+    "global_definition_of_done": [
+      "all_existing_tests_pass",
+      "new_behavior_has_tests",
+      "no_evidence_boundary_regression",
+      "schemas_and_docs_updated_when_contract_changes",
+      "validate_package_passes"
+    ]
+  },
+  "issues": [
+    {
+      "id": "GEN-001",
+      "title": "Lock golden outputs and probability invariants",
+      "priority": "P0",
+      "depends_on": [],
+      "scope": [
+        "generate golden JSON outputs for all examples",
+        "assert every distribution sums to one",
+        "add deterministic ordering checks"
+      ],
+      "acceptance_criteria": [
+        "five example outputs committed",
+        "tests fail if probability total drifts beyond tolerance",
+        "same input produces byte-stable JSON apart from run metadata"
+      ]
+    },
+    {
+      "id": "GEN-002",
+      "title": "Replace internal genotype strings with immutable domain objects",
+      "priority": "P1",
+      "depends_on": ["GEN-001"],
+      "scope": [
+        "Genotype value object",
+        "Allele value object",
+        "backward-compatible JSON parser"
+      ],
+      "acceptance_criteria": [
+        "public JSON remains compatible",
+        "invalid ZW/ZZ states cannot be constructed",
+        "property tests cover allele-order invariance"
+      ]
+    },
+    {
+      "id": "GEN-003",
+      "title": "Add genotype- and sex-specific penetrance",
+      "priority": "P1",
+      "depends_on": ["GEN-002"],
+      "scope": [
+        "penetrance map by genotype and sex",
+        "schema update",
+        "report assumptions"
+      ],
+      "acceptance_criteria": [
+        "legacy scalar penetrance still works",
+        "sex-specific examples pass",
+        "penetrance cannot be used to label a gene confirmed"
+      ]
+    },
+    {
+      "id": "GEN-010",
+      "title": "Create normalized breeding-record schema",
+      "priority": "P0",
+      "depends_on": ["GEN-001"],
+      "scope": [
+        "pairing",
+        "clutch",
+        "egg/fertility/hatch/survival stages",
+        "offspring phenotype timeline",
+        "sex method and confidence"
+      ],
+      "acceptance_criteria": [
+        "all offspring including normal and losses can be represented",
+        "missing is distinct from observed zero",
+        "reciprocal crosses remain distinguishable"
+      ]
+    },
+    {
+      "id": "GEN-011",
+      "title": "Build synthetic simulation-recovery harness",
+      "priority": "P0",
+      "depends_on": ["GEN-010"],
+      "scope": [
+        "simulate broods from known models",
+        "run inference",
+        "measure recovery and calibration"
+      ],
+      "acceptance_criteria": [
+        "known AR and ZR models recovered across repeated simulations",
+        "small-sample uncertainty is visible",
+        "misspecified model set triggers warning"
+      ]
+    },
+    {
+      "id": "GEN-012",
+      "title": "Model genotype-specific survival and observation stages",
+      "priority": "P1",
+      "depends_on": ["GEN-010", "GEN-011"],
+      "scope": [
+        "conception to fertile egg",
+        "hatch",
+        "survival to first molt",
+        "phenotype classification stage"
+      ],
+      "acceptance_criteria": [
+        "segregation and survival parameters are separate",
+        "report identifies stage used",
+        "no silent treatment of dead/missing offspring"
+      ]
+    },
+    {
+      "id": "GEN-013",
+      "title": "Package the public operations as dependency-free Node ESM",
+      "priority": "P0",
+      "depends_on": ["GEN-010", "GEN-011"],
+      "scope": [
+        "pure Node implementation for all six public operations",
+        "ESM API and CLI",
+        "packed-install smoke tests"
+      ],
+      "acceptance_criteria": [
+        "Node API preserves scientific and fail-closed boundaries",
+        "local tarball runs without Python or a writable skill tree",
+        "package has no runtime dependency and is not registry-published"
+      ]
+    },
+    {
+      "id": "GEN-014",
+      "title": "Create immutable review-only AutoResearch feedback artifacts",
+      "priority": "P0",
+      "depends_on": ["GEN-013"],
+      "scope": [
+        "normalized production-review envelope",
+        "provenance and package-integrity checks",
+        "deterministic feedback artifact"
+      ],
+      "acceptance_criteria": [
+        "artifact is pending human review with auto_apply false",
+        "adapter cannot call or mutate AutoResearch",
+        "health gate 3.0 is never reused as a BioBirdDNA score",
+        "mutation intent and unsupported molecular claims fail closed"
+      ]
+    },
+    {
+      "id": "GEN-015",
+      "title": "Add authenticated stateless MCP cloud adapter",
+      "priority": "P0",
+      "depends_on": [
+        "GEN-013",
+        "GEN-014"
+      ],
+      "scope": [
+        "seven fixed OAuth-protected MCP tools",
+        "exact Edge parity for the dependency-free Node core",
+        "review-only trusted feedback transformation",
+        "fail-closed local-to-Supabase updater and guarded watcher",
+        "private ChatGPT and universal-plugin installation"
+      ],
+      "acceptance_criteria": [
+        "OAuth and allowed-user checks run before tool execution",
+        "six compute tools call only fixed dispatch operations",
+        "feedback integrity is server-owned and remains pending human review",
+        "all golden outputs and scientific boundaries pass in Edge runtime",
+        "changed deployment and unchanged no-op are demonstrated",
+        "no table storage queue model-run persistence or AutoResearch mutation is added"
+      ]
+    },
+    {
+      "id": "GEN-016",
+      "title": "Establish a registry-safe public npm release candidate",
+      "priority": "P0",
+      "depends_on": ["GEN-015"],
+      "scope": [
+        "public scoped npm package metadata and packed-install verification",
+        "sanitized public source repository candidate",
+        "native installer execution evidence",
+        "public authenticated ChatGPT review preparation",
+        "secure OAuth updater renewal evidence"
+      ],
+      "acceptance_criteria": [
+        "the exact tested @biobirddna/genetics tarball is eligible for public registry publication without credentials or private operator state",
+        "Ubuntu and macOS native installers are executed and their evidence is retained before publication",
+        "public authenticated ChatGPT review is completed without changing the seven-tool stateless and read-only boundary",
+        "the secure updater renewal flow proves no plaintext credentials and no automatic sensitive-byte approval",
+        "registry publication and external verification are recorded only after their real external actions complete"
+      ]
+    },
+    {
+      "id": "GEN-020",
+      "title": "Define inheritance plugin protocol and registry",
+      "priority": "P1",
+      "depends_on": ["GEN-002"],
+      "scope": [
+        "plugin interface",
+        "model registry",
+        "versioned snapshots",
+        "validation hooks"
+      ],
+      "acceptance_criteria": [
+        "existing one-locus models run as plugins",
+        "unknown plugin version is rejected",
+        "model snapshot appears in report"
+      ]
+    },
+    {
+      "id": "GEN-021",
+      "title": "Add two-locus independent-assortment and epistasis plugin",
+      "priority": "P1",
+      "depends_on": ["GEN-020"],
+      "scope": [
+        "two loci",
+        "phenotype rule table",
+        "independent assortment"
+      ],
+      "acceptance_criteria": [
+        "synthetic epistasis ratios reproduced",
+        "invalid phenotype table rejected",
+        "state-space complexity guard exists"
+      ]
+    },
+    {
+      "id": "GEN-022",
+      "title": "Add linked loci and recombination fraction",
+      "priority": "P2",
+      "depends_on": ["GEN-021"],
+      "scope": [
+        "haplotypes",
+        "phase",
+        "recombination fraction"
+      ],
+      "acceptance_criteria": [
+        "r is restricted to 0..0.5",
+        "phase uncertainty can be marginalized",
+        "unlinked r=0.5 matches independent result"
+      ]
+    },
+    {
+      "id": "GEN-030",
+      "title": "Extend pedigree governance and founder uncertainty",
+      "priority": "P1",
+      "depends_on": ["GEN-001"],
+      "scope": [
+        "half siblings",
+        "cousins",
+        "founder relatedness unknown flag",
+        "mean kinship",
+        "founder contribution"
+      ],
+      "acceptance_criteria": [
+        "relationship labels tested",
+        "unknown founders never presented as proven unrelated",
+        "hard relation blocks preserved"
+      ]
+    },
+    {
+      "id": "GEN-031",
+      "title": "Add genomic relationship matrix adapter",
+      "priority": "P2",
+      "depends_on": ["GEN-030"],
+      "scope": [
+        "SNP matrix import contract",
+        "QC",
+        "pedigree/genomic comparison"
+      ],
+      "acceptance_criteria": [
+        "sample IDs match individuals",
+        "missingness and relatedness QC reported",
+        "genomic matrix does not overwrite pedigree source"
+      ]
+    },
+    {
+      "id": "GEN-040",
+      "title": "Separate research-pairing and production-pairing objectives",
+      "priority": "P0",
+      "depends_on": ["GEN-011", "GEN-030"],
+      "scope": [
+        "research EIG objective",
+        "target phenotype objective",
+        "distinct reports and labels"
+      ],
+      "acceptance_criteria": [
+        "research pair can differ from target pair",
+        "both pass hard constraints",
+        "UI/output never calls ranking an automatic order"
+      ]
+    },
+    {
+      "id": "GEN-041",
+      "title": "Add Pareto frontier and weight sensitivity",
+      "priority": "P1",
+      "depends_on": ["GEN-040"],
+      "scope": [
+        "Pareto non-dominated set",
+        "sensitivity to weights",
+        "explainable trade-offs"
+      ],
+      "acceptance_criteria": [
+        "scalar score remains optional",
+        "blocked pairs excluded from Pareto eligible set",
+        "report shows why each pair is non-dominated"
+      ]
+    },
+    {
+      "id": "GEN-050",
+      "title": "Add PostgreSQL/Supabase persistence adapter",
+      "priority": "P2",
+      "depends_on": ["GEN-010", "GEN-020", "GEN-030"],
+      "scope": [
+        "migrations",
+        "immutable model runs",
+        "audit events",
+        "idempotency"
+      ],
+      "acceptance_criteria": [
+        "core has no database import",
+        "same idempotency key and input returns same run",
+        "contract tests pass"
+      ]
+    },
+    {
+      "id": "GEN-051",
+      "title": "Add API adapter and role/consent gates",
+      "priority": "P2",
+      "depends_on": ["GEN-050"],
+      "scope": [
+        "REST API",
+        "RBAC",
+        "consent scope",
+        "welfare lock"
+      ],
+      "acceptance_criteria": [
+        "unauthorized training/publication access blocked",
+        "welfare flag requires authorized override",
+        "API error taxonomy matches docs"
+      ]
+    },
+    {
+      "id": "GEN-060",
+      "title": "Build calibrated image feature adapter",
+      "priority": "P2",
+      "depends_on": ["GEN-001"],
+      "scope": [
+        "image QA",
+        "calibration",
+        "body-region features",
+        "OOD/UNK"
+      ],
+      "acceptance_criteria": [
+        "split by individual/session",
+        "gene_status remains not_assessed",
+        "Q0/Q1 abstain",
+        "external-device validation included"
+      ]
+    },
+    {
+      "id": "GEN-070",
+      "title": "Add molecular cosegregation evidence module",
+      "priority": "P3",
+      "depends_on": ["GEN-050", "GEN-031"],
+      "scope": [
+        "sample chain of custody",
+        "variant genotype",
+        "family cosegregation",
+        "G5 guard"
+      ],
+      "acceptance_criteria": [
+        "G5 impossible without sample lineage and QC",
+        "variant association and causal claim remain distinct",
+        "independent replication required for G6"
+      ]
+    }
+  ]
+}

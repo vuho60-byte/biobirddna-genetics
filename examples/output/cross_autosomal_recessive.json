@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "operation": "cross",
+  "engine_version": "0.2.0",
+  "result": {
+    "model_id": "M1_AR",
+    "mode": "autosomal_recessive",
+    "male_genotype": "N/m",
+    "female_genotype": "m/m",
+    "genotype_probabilities": {
+      "female:N/m": 0.25,
+      "female:m/m": 0.25,
+      "male:N/m": 0.25,
+      "male:m/m": 0.25
+    },
+    "phenotype_probabilities": {
+      "female:normal": 0.25,
+      "female:target_colour": 0.25,
+      "male:normal": 0.25,
+      "male:target_colour": 0.25
+    },
+    "limits": {
+      "gene_status": "model_assumption_only",
+      "inheritance_status": "simulation_not_confirmation"
+    }
+  }
+}

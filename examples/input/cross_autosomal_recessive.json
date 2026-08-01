@@ -1,0 +1,14 @@
+{
+  "model": {
+    "model_id": "M1_AR",
+    "mode": "autosomal_recessive",
+    "normal_allele": "N",
+    "variant_allele": "m",
+    "normal_label": "normal",
+    "target_label": "target_colour",
+    "penetrance": 1.0,
+    "observation_error": 0.01
+  },
+  "male_genotype": "N/m",
+  "female_genotype": "m/m"
+}

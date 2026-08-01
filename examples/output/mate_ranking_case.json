@@ -1,0 +1,51 @@
+{
+  "ok": true,
+  "operation": "rank-mates",
+  "engine_version": "0.2.0",
+  "result": {
+    "pair_ranking": [
+      {
+        "male_id": "M-001",
+        "female_id": "F-002",
+        "eligible": true,
+        "block_reasons": [],
+        "score": -0.22678128733159922,
+        "target_probability": 0.156,
+        "expected_information_gain_bits": 0.02952709364861117,
+        "offspring_inbreeding": 0.0,
+        "health_risk": 0.05,
+        "genotype_uncertainty": 0.8285074056262203
+      },
+      {
+        "male_id": "M-001",
+        "female_id": "F-001",
+        "eligible": false,
+        "block_reasons": [
+          "full_sibling_pair",
+          "offspring_inbreeding_above_configured_limit"
+        ],
+        "score": -0.47565908860229733,
+        "target_probability": 0.38,
+        "expected_information_gain_bits": 0.0018444434033020318,
+        "offspring_inbreeding": 0.25,
+        "health_risk": 0.05,
+        "genotype_uncertainty": 0.39283660831234724
+      }
+    ],
+    "configuration": {
+      "max_offspring_inbreeding": 0.0625,
+      "weights": {
+        "target": 1.0,
+        "information": 0.8,
+        "inbreeding": 2.5,
+        "health": 1.5,
+        "uncertainty": 0.4
+      }
+    },
+    "limits": {
+      "purpose": "decision_support_not_automatic_breeding_order",
+      "health_and_welfare_review_required": true,
+      "gene_status": "model_based"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "pedigree": [
+    {"individual_id": "SIRE-A", "sex": "male"},
+    {"individual_id": "DAM-A", "sex": "female"},
+    {"individual_id": "M-001", "sex": "male", "sire_id": "SIRE-A", "dam_id": "DAM-A"},
+    {"individual_id": "F-001", "sex": "female", "sire_id": "SIRE-A", "dam_id": "DAM-A"},
+    {"individual_id": "F-002", "sex": "female"}
+  ],
+  "males": [
+    {
+      "individual_id": "M-001",
+      "sex": "male",
+      "phenotype_label": "normal",
+      "health_risk": 0.05,
+      "genotype_posteriors": {
+        "M1_AR": {"N/N": 0.2, "N/m": 0.8},
+        "M4_ZR": {"N/N": 0.3, "N/m": 0.7}
+      }
+    }
+  ],
+  "females": [
+    {
+      "individual_id": "F-001",
+      "sex": "female",
+      "phenotype_label": "target_colour",
+      "health_risk": 0.05,
+      "genotype_posteriors": {
+        "M1_AR": {"m/m": 1.0},
+        "M4_ZR": {"m/W": 1.0}
+      }
+    },
+    {
+      "individual_id": "F-002",
+      "sex": "female",
+      "phenotype_label": "normal",
+      "health_risk": 0.03,
+      "genotype_posteriors": {
+        "M1_AR": {"N/N": 0.4, "N/m": 0.6},
+        "M4_ZR": {"N/W": 0.8, "m/W": 0.2}
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "weight": 0.6,
+      "model": {
+        "model_id": "M1_AR",
+        "mode": "autosomal_recessive",
+        "normal_allele": "N",
+        "variant_allele": "m",
+        "normal_label": "normal",
+        "target_label": "target_colour"
+      }
+    },
+    {
+      "weight": 0.4,
+      "model": {
+        "model_id": "M4_ZR",
+        "mode": "z_linked_recessive",
+        "normal_allele": "N",
+        "variant_allele": "m",
+        "normal_label": "normal",
+        "target_label": "target_colour"
+      }
+    }
+  ],
+  "weights": {
+    "target": 1.0,
+    "information": 0.8,
+    "inbreeding": 2.5,
+    "health": 1.5,
+    "uncertainty": 0.4
+  },
+  "max_offspring_inbreeding": 0.0625,
+  "block_direct_ancestor_and_full_sibling": true
+}

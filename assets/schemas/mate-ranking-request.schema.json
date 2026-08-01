@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biobirddna.local/schemas/mate-ranking-request.schema.json",
+  "title": "BioBirdDNA mate ranking request",
+  "type": "object",
+  "required": ["pedigree", "males", "females", "hypotheses"],
+  "properties": {
+    "pedigree": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["individual_id"],
+        "properties": {
+          "individual_id": {"type": "string"},
+          "sex": {"enum": ["male", "female", "unknown"]},
+          "sire_id": {"type": ["string", "null"]},
+          "dam_id": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "males": {"type": "array", "items": {"$ref": "#/$defs/profile"}},
+    "females": {"type": "array", "items": {"$ref": "#/$defs/profile"}},
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["model", "weight"],
+        "properties": {
+          "model": {"$ref": "inheritance-model.schema.json"},
+          "weight": {"type": "number", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "max_offspring_inbreeding": {"type": "number", "minimum": 0, "maximum": 1},
+    "block_direct_ancestor_and_full_sibling": {"type": "boolean"},
+    "weights": {
+      "type": "object",
+      "properties": {
+        "target": {"type": "number", "minimum": 0},
+        "information": {"type": "number", "minimum": 0},
+        "inbreeding": {"type": "number", "minimum": 0},
+        "health": {"type": "number", "minimum": 0},
+        "uncertainty": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "required": ["individual_id", "sex", "genotype_posteriors"],
+      "properties": {
+        "individual_id": {"type": "string"},
+        "sex": {"enum": ["male", "female"]},
+        "phenotype_label": {"type": "string"},
+        "health_risk": {"type": "number", "minimum": 0, "maximum": 1},
+        "fertility_risk": {"type": "number", "minimum": 0, "maximum": 1},
+        "welfare_blocked": {"type": "boolean"},
+        "notes": {"type": "array", "items": {"type": "string"}},
+        "genotype_posteriors": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {"type": "number", "minimum": 0}
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

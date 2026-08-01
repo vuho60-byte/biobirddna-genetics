@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: BioBirdDNA Genetics API Draft
+  version: 0.1.0
+  description: >-
+    Future adapter contract. All outputs are research decision support and require
+    human review. Image phenotype endpoints must never confirm a gene.
+paths:
+  /v1/cross/simulate:
+    post:
+      operationId: simulateCross
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Deterministic cross result
+  /v1/inheritance/infer:
+    post:
+      operationId: inferInheritanceModels
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Candidate-model ranking
+        "422":
+          description: Biologically inconsistent input
+  /v1/mates/rank:
+    post:
+      operationId: rankMates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Eligible and blocked pair ranking
+        "423":
+          description: Consent or welfare lock
+  /v1/phenotype/rank:
+    post:
+      operationId: rankPhenotypeHypotheses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: T02 phenotype hypotheses only
+  /v1/runs/{run_id}:
+    get:
+      operationId: getRun
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Immutable run snapshot

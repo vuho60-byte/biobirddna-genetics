@@ -1,0 +1,15 @@
+{
+  "white_area_ratio": 0.0,
+  "brown_shift_score": 0.0,
+  "grey_shift_score": 0.0,
+  "dark_expansion_score": 0.0,
+  "red_patch_change_score": 0.0,
+  "pattern_retained": null,
+  "iris_red_confirmed": false,
+  "flash_red_eye_risk": false,
+  "progressive_across_molts": false,
+  "present_in_first_plumage": null,
+  "localized_after_injury": false,
+  "bilateral_symmetry": null,
+  "image_quality": "Q0"
+}

@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biobirddna.local/schemas/breeding-record.schema.json",
+  "title": "BioBirdDNA normalized breeding-record bundle",
+  "type": "object",
+  "required": ["schema_version", "case_id", "pairings", "clutches", "offspring"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "pairings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/pairing"}
+    },
+    "clutches": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/clutch"}
+    },
+    "offspring": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/offspring"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "pairing": {
+      "type": "object",
+      "required": [
+        "pairing_id",
+        "male_parent_id",
+        "female_parent_id",
+        "male_parent_phenotype",
+        "female_parent_phenotype",
+        "male_parent_sex_method",
+        "male_parent_sex_confidence",
+        "female_parent_sex_method",
+        "female_parent_sex_confidence"
+      ],
+      "properties": {
+        "pairing_id": {"type": "string", "minLength": 1},
+        "male_parent_id": {"type": "string", "minLength": 1},
+        "female_parent_id": {"type": "string", "minLength": 1},
+        "male_parent_phenotype": {"type": "string", "minLength": 1},
+        "female_parent_phenotype": {"type": "string", "minLength": 1},
+        "male_parent_sex_method": {
+          "enum": ["dna", "reproductive", "veterinary", "visual", "reported"]
+        },
+        "male_parent_sex_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "female_parent_sex_method": {
+          "enum": ["dna", "reproductive", "veterinary", "visual", "reported"]
+        },
+        "female_parent_sex_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "reciprocal_group_id": {
+          "type": ["string", "null"],
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "stage_count": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["status", "coverage", "count"],
+          "properties": {
+            "status": {"const": "observed"},
+            "coverage": {"enum": ["complete", "partial"]},
+            "count": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["status", "coverage"],
+          "properties": {
+            "status": {"const": "missing"},
+            "coverage": {"const": "unknown"},
+            "count": {"type": "null"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "clutch": {
+      "type": "object",
+      "required": [
+        "clutch_id",
+        "pairing_id",
+        "offspring_records_coverage",
+        "stage_counts"
+      ],
+      "properties": {
+        "clutch_id": {"type": "string", "minLength": 1},
+        "pairing_id": {"type": "string", "minLength": 1},
+        "offspring_records_coverage": {
+          "enum": ["complete", "partial", "unknown"]
+        },
+        "stage_counts": {
+          "type": "object",
+          "required": [
+            "eggs_laid",
+            "fertile_eggs",
+            "hatched",
+            "survived_to_first_molt"
+          ],
+          "properties": {
+            "eggs_laid": {"$ref": "#/$defs/stage_count"},
+            "fertile_eggs": {"$ref": "#/$defs/stage_count"},
+            "hatched": {"$ref": "#/$defs/stage_count"},
+            "survived_to_first_molt": {"$ref": "#/$defs/stage_count"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "phenotype_observation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "observation_id",
+            "sequence_index",
+            "stage",
+            "status",
+            "phenotype"
+          ],
+          "properties": {
+            "observation_id": {"type": "string", "minLength": 1},
+            "sequence_index": {"type": "integer", "minimum": 0},
+            "stage": {"type": "string", "minLength": 1},
+            "status": {"const": "observed"},
+            "phenotype": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "observation_id",
+            "sequence_index",
+            "stage",
+            "status"
+          ],
+          "properties": {
+            "observation_id": {"type": "string", "minLength": 1},
+            "sequence_index": {"type": "integer", "minimum": 0},
+            "stage": {"type": "string", "minLength": 1},
+            "status": {"const": "missing"},
+            "phenotype": {"type": "null"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "offspring": {
+      "type": "object",
+      "required": [
+        "offspring_record_id",
+        "clutch_id",
+        "outcome",
+        "fertility_status",
+        "hatch_status",
+        "survival_status",
+        "sex",
+        "sex_method",
+        "sex_confidence",
+        "phenotype_timeline"
+      ],
+      "properties": {
+        "offspring_record_id": {"type": "string", "minLength": 1},
+        "individual_id": {"type": ["string", "null"], "minLength": 1},
+        "clutch_id": {"type": "string", "minLength": 1},
+        "outcome": {
+          "enum": [
+            "alive",
+            "unfertilized",
+            "embryo_death",
+            "unhatched",
+            "hatch_failure",
+            "post_hatch_death",
+            "lost_to_followup",
+            "unknown"
+          ]
+        },
+        "fertility_status": {
+          "enum": ["fertile", "unfertilized", "unknown"]
+        },
+        "hatch_status": {
+          "enum": ["hatched", "not_hatched", "not_applicable", "unknown"]
+        },
+        "survival_status": {
+          "enum": [
+            "survived",
+            "died_before_first_molt",
+            "not_applicable",
+            "unknown"
+          ]
+        },
+        "sex": {"enum": ["male", "female", "unknown"]},
+        "sex_method": {
+          "enum": [
+            "dna",
+            "reproductive",
+            "veterinary",
+            "visual",
+            "reported",
+            "unknown"
+          ]
+        },
+        "sex_confidence": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "phenotype_timeline": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/phenotype_observation"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"sex": {"enum": ["male", "female"]}},
+            "required": ["sex"]
+          },
+          "then": {
+            "properties": {
+              "sex_method": {"not": {"const": "unknown"}},
+              "sex_confidence": {"type": "number"}
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

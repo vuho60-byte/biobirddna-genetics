@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "base_seed": 20260730,
+  "goodness_of_fit_replicates": 100,
+  "misspecification_alpha": 0.05,
+  "experiments": [
+    {
+      "experiment_id": "SIM-AR-TEMPLATE",
+      "generating_model": {
+        "model_id": "M1_AR",
+        "mode": "autosomal_recessive",
+        "target_label": "target_colour"
+      },
+      "male_genotype": "N/m",
+      "female_genotype": "N/m",
+      "male_parent_phenotype": "normal",
+      "female_parent_phenotype": "normal",
+      "brood_sizes": [8, 64],
+      "replicates": 100,
+      "candidate_model_ids": [
+        "M1_AR",
+        "M2_AD",
+        "M3_INC",
+        "M4_ZR",
+        "M5_ZD",
+        "M0_NONGENETIC"
+      ]
+    }
+  ]
+}

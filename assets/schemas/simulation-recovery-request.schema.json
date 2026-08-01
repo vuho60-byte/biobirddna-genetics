@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biobirddna.local/schemas/simulation-recovery-request.schema.json",
+  "title": "BioBirdDNA synthetic simulation-recovery request",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "base_seed",
+    "goodness_of_fit_replicates",
+    "misspecification_alpha",
+    "experiments"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "base_seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "goodness_of_fit_replicates": {
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 10000,
+      "description": "Must also satisfy B + 1 > 1 / misspecification_alpha."
+    },
+    "misspecification_alpha": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 0.25
+    },
+    "experiments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/experiment"}
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "model": {
+      "type": "object",
+      "required": ["model_id", "mode"],
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "mode": {
+          "enum": [
+            "autosomal_recessive",
+            "autosomal_dominant",
+            "incomplete_dominant",
+            "z_linked_recessive",
+            "z_linked_dominant",
+            "non_genetic"
+          ]
+        },
+        "normal_allele": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "variant_allele": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "normal_label": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "target_label": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "intermediate_label": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "penetrance": {"type": "number", "minimum": 0, "maximum": 1},
+        "observation_error": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "female_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "baseline_target_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "description": {
+          "type": "string",
+          "pattern": "^(?:\\S(?:.*\\S)?)?$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "experiment": {
+      "type": "object",
+      "required": [
+        "experiment_id",
+        "generating_model",
+        "male_genotype",
+        "female_genotype",
+        "male_parent_phenotype",
+        "female_parent_phenotype",
+        "brood_sizes",
+        "replicates",
+        "candidate_model_ids"
+      ],
+      "properties": {
+        "experiment_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "generating_model": {"$ref": "#/$defs/model"},
+        "male_genotype": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "female_genotype": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "male_parent_phenotype": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "female_parent_phenotype": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:.*\\S)?$"
+        },
+        "brood_sizes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000
+          }
+        },
+        "replicates": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "candidate_model_ids": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "M1_AR",
+              "M2_AD",
+              "M3_INC",
+              "M4_ZR",
+              "M5_ZD",
+              "M0_NONGENETIC"
+            ]
+          },
+          "contains": {"const": "M0_NONGENETIC"},
+          "minContains": 1,
+          "maxContains": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

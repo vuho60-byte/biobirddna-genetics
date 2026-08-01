@@ -1,0 +1,13 @@
+{
+  "model": {
+    "model_id": "M4_ZR",
+    "mode": "z_linked_recessive",
+    "normal_allele": "N",
+    "variant_allele": "m",
+    "normal_label": "normal",
+    "target_label": "target_colour",
+    "penetrance": 1.0
+  },
+  "male_genotype": "m/m",
+  "female_genotype": "N/W"
+}
