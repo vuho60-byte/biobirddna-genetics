@@ -48,7 +48,7 @@ try {
   }
   assert.equal(JSON.parse(await readFile(output, "utf8")).ok, true);
   const feedbackInput = join(consumer, "feedback input.json"), feedbackOutput = join(consumer, "feedback output.json"), feedbackBin = join(consumer, "node_modules", "@biobirddna", "genetics", "bin", "biobirddna-feedback.mjs"), integrity = "c".repeat(64);
-  await writeFile(feedbackInput, JSON.stringify({ schema_version: "1.0.0", run_id: "CM-RUN-PACK", operation: "cross", engine_version: "0.3.0", input_sha256: "a".repeat(64), output_sha256: "b".repeat(64), package: { name: "@biobirddna/genetics", version: "0.3.0", integrity_sha256: integrity }, result: { evidence: { evidence_grade: "G0" }, limits: { decision_support_only: true, gene_status: "not_assessed" } }, human_review_status: "pending" }));
+  await writeFile(feedbackInput, JSON.stringify({ schema_version: "1.0.0", run_id: "CM-RUN-PACK", operation: "cross", engine_version: "0.4.0", input_sha256: "a".repeat(64), output_sha256: "b".repeat(64), package: { name: "@biobirddna/genetics", version: "0.4.0", integrity_sha256: integrity }, result: { evidence: { evidence_grade: "G0" }, limits: { decision_support_only: true, gene_status: "not_assessed" } }, human_review_status: "pending" }));
   await execFileAsync(process.execPath, [feedbackBin, "--input", feedbackInput, "--expected-integrity", integrity, "--output", feedbackOutput], { cwd: consumer });
   assert.equal(JSON.parse(await readFile(feedbackOutput, "utf8")).schema_version, "biobirddna_feedback_v1");
   process.stdout.write("pack-install smoke passed\n");

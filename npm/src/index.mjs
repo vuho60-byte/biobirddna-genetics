@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { adaptBreedingRecordError, normalizeBreedingRecords } from "./breeding-records.mjs";
 export { createFeedbackArtifact } from "./feedback.mjs";
 
-export const ENGINE_VERSION = "0.3.0";
+export const ENGINE_VERSION = "0.4.0";
 const MODES = new Set(["autosomal_recessive", "autosomal_dominant", "incomplete_dominant", "z_linked_recessive", "z_linked_dominant", "non_genetic"]);
 const SEXES = new Set(["male", "female", "unknown"]);
 const STAGES = ["eggs_laid", "fertile_eggs", "hatched", "survived_to_first_molt"];

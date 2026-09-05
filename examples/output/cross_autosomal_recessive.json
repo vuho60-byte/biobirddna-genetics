@@ -1,7 +1,7 @@
 {
   "ok": true,
   "operation": "cross",
-  "engine_version": "0.3.0",
+  "engine_version": "0.4.0",
   "result": {
     "model_id": "M1_AR",
     "mode": "autosomal_recessive",

@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0.0",
+  "provenance": {
+    "source": "Synthetic example for software validation only",
+    "synthetic": true
+  },
+  "records": {
+    "schema_version": "1.0.0",
+    "case_id": "SYNTHETIC-BREEDER-001",
+    "pairings": [
+      {
+        "pairing_id": "CM-MAT-DEMO-010-A",
+        "male_parent_id": "CM-IND-A",
+        "female_parent_id": "CM-IND-B",
+        "male_parent_phenotype": "normal",
+        "female_parent_phenotype": "target_colour",
+        "male_parent_sex_method": "dna",
+        "male_parent_sex_confidence": 0.99,
+        "female_parent_sex_method": "dna",
+        "female_parent_sex_confidence": 0.99,
+        "reciprocal_group_id": null
+      },
+      {
+        "pairing_id": "CM-MAT-DEMO-010-B",
+        "male_parent_id": "CM-IND-A",
+        "female_parent_id": "CM-IND-C",
+        "male_parent_phenotype": "normal",
+        "female_parent_phenotype": "normal",
+        "male_parent_sex_method": "dna",
+        "male_parent_sex_confidence": 0.99,
+        "female_parent_sex_method": "dna",
+        "female_parent_sex_confidence": 0.99,
+        "reciprocal_group_id": null
+      }
+    ],
+    "clutches": [
+      {
+        "clutch_id": "CM-CLU-DEMO-010",
+        "pairing_id": "CM-MAT-DEMO-010-A",
+        "offspring_records_coverage": "complete",
+        "stage_counts": {
+          "eggs_laid": {
+            "status": "observed",
+            "coverage": "complete",
+            "count": 3
+          },
+          "fertile_eggs": {
+            "status": "observed",
+            "coverage": "complete",
+            "count": 2
+          },
+          "hatched": {
+            "status": "observed",
+            "coverage": "complete",
+            "count": 1
+          },
+          "survived_to_first_molt": {
+            "status": "missing",
+            "coverage": "unknown"
+          }
+        }
+      },
+      {
+        "clutch_id": "SYNTHETIC-EMPTY-CLUTCH",
+        "pairing_id": "CM-MAT-DEMO-010-B",
+        "offspring_records_coverage": "complete",
+        "stage_counts": {
+          "eggs_laid": {
+            "status": "observed",
+            "coverage": "complete",
+            "count": 0
+          },
+          "fertile_eggs": {
+            "status": "observed",
+            "coverage": "complete",
+            "count": 0
+          },
+          "hatched": {
+            "status": "observed",
+            "coverage": "complete",
+            "count": 0
+          },
+          "survived_to_first_molt": {
+            "status": "observed",
+            "coverage": "complete",
+            "count": 0
+          }
+        }
+      }
+    ],
+    "offspring": [
+      {
+        "offspring_record_id": "CM-OFF-DEMO-010-A",
+        "individual_id": "CM-IND-DEMO-010-A",
+        "clutch_id": "CM-CLU-DEMO-010",
+        "outcome": "lost_to_followup",
+        "fertility_status": "fertile",
+        "hatch_status": "hatched",
+        "survival_status": "unknown",
+        "sex": "unknown",
+        "sex_method": "unknown",
+        "sex_confidence": null,
+        "phenotype_timeline": [
+          {
+            "observation_id": "CM-PHENO-DEMO-010-A",
+            "sequence_index": 0,
+            "stage": "first_plumage",
+            "status": "observed",
+            "phenotype": "normal"
+          }
+        ]
+      },
+      {
+        "offspring_record_id": "CM-OFF-DEMO-010-B",
+        "individual_id": null,
+        "clutch_id": "CM-CLU-DEMO-010",
+        "outcome": "unfertilized",
+        "fertility_status": "unfertilized",
+        "hatch_status": "not_applicable",
+        "survival_status": "not_applicable",
+        "sex": "unknown",
+        "sex_method": "unknown",
+        "sex_confidence": null,
+        "phenotype_timeline": []
+      },
+      {
+        "offspring_record_id": "CM-OFF-DEMO-010-C",
+        "individual_id": null,
+        "clutch_id": "CM-CLU-DEMO-010",
+        "outcome": "embryo_death",
+        "fertility_status": "fertile",
+        "hatch_status": "not_hatched",
+        "survival_status": "not_applicable",
+        "sex": "unknown",
+        "sex_method": "unknown",
+        "sex_confidence": null,
+        "phenotype_timeline": []
+      }
+    ]
+  },
+  "pedigree": [
+    {
+      "individual_id": "S",
+      "sex": "male"
+    },
+    {
+      "individual_id": "D",
+      "sex": "female"
+    },
+    {
+      "individual_id": "CM-IND-A",
+      "sex": "male",
+      "sire_id": "S",
+      "dam_id": "D"
+    },
+    {
+      "individual_id": "CM-IND-B",
+      "sex": "female",
+      "sire_id": "S",
+      "dam_id": "D"
+    },
+    {
+      "individual_id": "CM-IND-C",
+      "sex": "female"
+    }
+  ],
+  "simulations": [
+    {
+      "pairing_id": "CM-MAT-DEMO-010-A",
+      "cross_request": {
+        "model": {
+          "model_id": "M1_AR",
+          "mode": "autosomal_recessive",
+          "normal_allele": "N",
+          "variant_allele": "m",
+          "normal_label": "normal",
+          "target_label": "target_colour",
+          "penetrance": 1.0,
+          "observation_error": 0.01
+        },
+        "male_genotype": "N/m",
+        "female_genotype": "m/m"
+      }
+    }
+  ]
+}

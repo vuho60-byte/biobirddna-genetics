@@ -27,7 +27,7 @@
         "simulate-recovery"
       ]
     },
-    "engine_version": {"const": "0.3.0"},
+    "engine_version": {"const": "0.4.0"},
     "input_sha256": {"$ref": "#/$defs/sha256"},
     "output_sha256": {"$ref": "#/$defs/sha256"},
     "package": {
@@ -35,7 +35,7 @@
       "required": ["name", "version", "integrity_sha256"],
       "properties": {
         "name": {"const": "@biobirddna/genetics"},
-        "version": {"const": "0.3.0"},
+        "version": {"const": "0.4.0"},
         "integrity_sha256": {"$ref": "#/$defs/sha256"}
       },
       "additionalProperties": false

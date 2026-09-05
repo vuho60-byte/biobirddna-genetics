@@ -324,7 +324,7 @@ class PackageIntegrityTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 1)
         summary = json.loads(completed.stdout)
         self.assertIn(
-            "npm/package.json: expected version '0.3.0', got '9.9.9'",
+            "npm/package.json: expected version '0.4.0', got '9.9.9'",
             summary["version_errors"],
         )
 

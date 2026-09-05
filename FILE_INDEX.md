@@ -80,3 +80,14 @@ embedded in the exact skill tree.
 ## Local distribution policy (2026-09-05)
 
 The npm package is private (`private: true`), UNLICENSED and not published. MANIFEST mirrors npm metadata; there is no public publishConfig. Only root `SYNC-NOTE.md` is a local untrusted receipt, excluded from release inventories. `verify_package.py` reports its bytes and SHA-256 separately; this digest is not authentication. Other unexpected files remain errors. Git metadata is excluded by the inventory builder.
+# v0.4.0 additions
+
+- `knowledge/sources/tracker-v3-20260905.json` — preserved actual tracker snapshot.
+- `knowledge/research-coverage-v3.json` — 27 source-bound topic entries.
+- `scripts/build_research_coverage.py` — deterministic mapping builder.
+- `scripts/breeder_report.py` — local JSON to Vietnamese Markdown CLI.
+- `src/biobirddna_genetics/breeder_report.py` — tested report function and renderer.
+- `assets/schemas/breeder-report.schema.json` — wrapper reusing existing schemas.
+- `references/huong-dan-nguoi-nuoi.md` — breeder guide and evidence limits.
+- `examples/input/breeder_report.json`, `examples/output/breeder_report.md` — synthetic input/golden.
+- `tests/test_research_coverage.py`, `tests/test_breeder_report.py` — new source and behavior coverage.

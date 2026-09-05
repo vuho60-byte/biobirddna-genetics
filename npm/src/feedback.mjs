@@ -1,7 +1,7 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 
 const PACKAGE_NAME = "@biobirddna/genetics";
-const PACKAGE_VERSION = "0.3.0";
+const PACKAGE_VERSION = "0.4.0";
 const MAX_INPUT_BYTES = 1024 * 1024;
 const TEXT_ENCODER = new TextEncoder();
 const OPERATIONS = new Set(["cross", "infer", "pigment", "rank-mates", "normalize-records", "simulate-recovery"]);

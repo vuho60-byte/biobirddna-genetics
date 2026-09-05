@@ -21,8 +21,8 @@ const assertFiniteTree = (value) => {
 };
 const hash = (character) => character.repeat(64);
 const feedbackEnvelope = () => ({
-  schema_version: "1.0.0", run_id: "CM-RUN-NODE-000001", operation: "cross", engine_version: "0.3.0", input_sha256: hash("a"), output_sha256: hash("b"),
-  package: { name: "@biobirddna/genetics", version: "0.3.0", integrity_sha256: hash("c") },
+  schema_version: "1.0.0", run_id: "CM-RUN-NODE-000001", operation: "cross", engine_version: "0.4.0", input_sha256: hash("a"), output_sha256: hash("b"),
+  package: { name: "@biobirddna/genetics", version: "0.4.0", integrity_sha256: hash("c") },
   result: { evidence: { evidence_grade: "G0" }, limits: { decision_support_only: true, gene_status: "not_assessed" }, missing_data: [] }, human_review_status: "pending"
 });
 
@@ -418,7 +418,7 @@ test("feedback adapter fails closed for schema, mutation, and unsupported claim 
   assert.throws(() => createFeedbackArtifact({ ...envelope, unknown: true }, hash("c")), /feedback_envelope_unknown_field:unknown/);
   assert.throws(() => createFeedbackArtifact({ ...envelope, result: { ...envelope.result, mutation_request: "apply" } }, hash("c")), /feedback_mutation_request_forbidden/);
   assert.throws(() => createFeedbackArtifact({ ...envelope, engine_version: "0.2.1" }, hash("c")), /feedback_engine_version_mismatch/);
-  assert.throws(() => createFeedbackArtifact({ ...envelope, engine_version: " 0.3.0 " }, hash("c")), /feedback_engine_version_mismatch/);
+  assert.throws(() => createFeedbackArtifact({ ...envelope, engine_version: " 0.4.0 " }, hash("c")), /feedback_engine_version_mismatch/);
   assert.throws(() => createFeedbackArtifact({ ...envelope, input_sha256: ` ${hash("a")}` }, hash("c")), /feedback_input_sha256_invalid/);
   assert.throws(() => createFeedbackArtifact({ ...envelope, result: { ...envelope.result, limits: { decision_support_only: true, gene_status: "assessed" } } }, hash("c")), /feedback_gene_status_not_assessed_required/);
   assert.throws(() => createFeedbackArtifact({ ...envelope, result: { ...envelope.result, action: "apply" } }, hash("c")), /feedback_mutation_request_forbidden/);

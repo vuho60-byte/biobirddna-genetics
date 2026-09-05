@@ -1,4 +1,28 @@
-# Test report — BioBirdDNA Genetics Skill v0.3.0
+# Test report — BioBirdDNA Genetics Skill v0.4.0
+
+## 2026-09-05 upgrade verification
+
+Untouched canonical baseline: Python 154/154, Node 73/73, seven core golden
+examples and npm pack dry run passed. Untouched Codex mirror reproduced three
+inventory/installer failures caused by root SYNC-NOTE.md (151/154 passed).
+
+After the three upgrades: Python 194/194, Node 73/73, seven existing core goldens
+plus one new Vietnamese Markdown golden passed. The 40 added Python tests are
+three metadata/receipt regressions, 28 tracker source/boundary tests and nine
+breeder-report behavior/CLI/golden tests. No existing tests were removed/skipped;
+release version assertions/fixtures moved to 0.4.0, numerical core outputs unchanged.
+
+Commands: `python -B scripts/validate_package.py`,
+`python -B -m unittest discover -s tests -p test_breeder_report.py`,
+`python -B scripts/rebuild_release_inventory.py`,
+`python -B scripts/verify_package.py`. The release builder deterministically
+regenerates SHA256SUMS.txt and PACKAGE_CHECKSUMS.json without Git/local receipt.
+
+External execution logs and final mirror/review results:
+`D:/Taichel 1/Claude project 1/ops/reports/biobirddna-skill-sync-20260905/04-UPGRADE-KETQUA.md`.
+Evidence proves software behavior and source mapping only, not genetics outcomes.
+
+## Historical v0.3.0 notes (superseded for private metadata and test counts)
 
 **Ngày kiểm tra:** 01/08/2026  
 **Runtime chính:** Python 3.14.3; package yêu cầu Python >=3.11.  

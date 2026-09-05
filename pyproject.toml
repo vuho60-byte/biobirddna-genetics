@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "biobirddna-genetics"
-version = "0.3.0"
+version = "0.4.0"
 description = "BioBirdDNA breeding-record normalization, deterministic genetics simulation, candidate-model recovery, pedigree control, and phenotype-only screening."
 readme = "README.md"
 requires-python = ">=3.11"

@@ -8,12 +8,12 @@ const feedbackEnvelope = () => ({
   schema_version: "1.0.0",
   run_id: "CM-RUN-NODE-HARDENING",
   operation: "cross",
-  engine_version: "0.3.0",
+  engine_version: "0.4.0",
   input_sha256: hash("a"),
   output_sha256: hash("b"),
   package: {
     name: "@biobirddna/genetics",
-    version: "0.3.0",
+    version: "0.4.0",
     integrity_sha256: hash("c")
   },
   result: {

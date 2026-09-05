@@ -1,7 +1,7 @@
 {
   "ok": true,
   "operation": "pigment",
-  "engine_version": "0.3.0",
+  "engine_version": "0.4.0",
   "result": {
     "primary_hypothesis": "MEL-PGR",
     "alternative_hypotheses": [

@@ -1,4 +1,14 @@
-# BioBirdDNA Genetics Skill v0.3.0
+# BioBirdDNA Genetics Skill v0.4.0
+
+Mới trong 0.4.0: metadata npm private nhất quán; biên nhận local SYNC-NOTE có
+SHA-256 riêng; khôi phục tracker v3 đủ 27 chủ đề có nguồn; luồng nhập JSON hồ sơ
+cặp ghép và báo cáo Markdown tiếng Việt. Xem
+[hướng dẫn người nuôi](references/huong-dan-nguoi-nuoi.md) và
+[báo cáo minh họa synthetic](examples/output/breeder_report.md).
+
+```text
+python -B scripts/breeder_report.py --input examples/input/breeder_report.json --output <absolute-report.md>
+```
 
 Bộ khung skill và code mẫu cho dự án **Biologicalbird Community / BioBirdDNA**, tập trung vào:
 
@@ -15,7 +25,7 @@ Bộ khung skill và code mẫu cho dự án **Biologicalbird Community / BioBir
 ## Thành phần chính
 
 ```text
-BioBirdDNA_Genetics_Skill_v0.3.0/
+BioBirdDNA_Genetics_Skill_v0.4.0/
 ├── SKILL.md
 ├── agents/openai.yaml
 ├── references/
@@ -69,7 +79,7 @@ standalone/biobirddna_genetics_standalone.py
 
 Bản này là snapshot tiện dụng cho `cross`, `infer` và `pigment` bằng Python
 standard library. Python modular mới là implementation chuẩn cho đủ sáu operation
-v0.3.0.
+v0.4.0.
 
 ### Bản Node.js một file
 
@@ -87,7 +97,7 @@ npm/
 ```
 
 Package không có runtime dependency và triển khai đủ sáu operation theo cùng
-contract v0.3.0 với Python modular. Nó còn có feedback adapter review-only; test
+contract v0.4.0 với Python modular. Nó còn có feedback adapter review-only; test
 packed-install xác minh cả hai CLI hoạt động ngoài cây source. Simulation dùng
 cùng seed/PRNG và có cross-runtime parity ở mức parsed-JSON với float tolerance
 (rel_tol `1e-9`, abs_tol `1e-12`); byte-exact chỉ được bảo đảm cho double-run
@@ -136,7 +146,7 @@ biobirddna-feedback
 Sau khi tạo tarball đã kiểm chứng, có thể cài local:
 
 ```bash
-npm install --global ./biobirddna-genetics-0.3.0.tgz
+npm install --global ./biobirddna-genetics-0.4.0.tgz
 biobirddna-genetics cross --input ./cross.json --output ./result.json
 biobirddna-feedback --input ./review-envelope.json \
   --expected-integrity <sha256> --output ./feedback.json
@@ -285,7 +295,7 @@ Cho model/coder mới:
 8. code trong `src/`
 9. test trong `tests/`
 
-## Phạm vi v0.3.0
+## Phạm vi v0.4.0
 
 Đã chạy được:
 

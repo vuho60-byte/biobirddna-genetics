@@ -133,7 +133,7 @@ class NpmParityTests(unittest.TestCase):
             )
         self.assertEqual(completed.returncode, 0, completed.stderr)
         envelope = json.loads(completed.stdout)
-        self.assertEqual(envelope["engine_version"], "0.3.0")
+        self.assertEqual(envelope["engine_version"], "0.4.0")
         self.assertEqual(envelope["operation"], operation)
         self.assertTrue(envelope["ok"])
         return envelope["result"]

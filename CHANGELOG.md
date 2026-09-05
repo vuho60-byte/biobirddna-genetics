@@ -110,3 +110,15 @@
 - Bổ sung blueprint hợp nhất, handoff cho coding model, backlog có acceptance criteria và bốn ADR kiến trúc.
 - Bổ sung draft PostgreSQL/Supabase schema và OpenAPI cho giai đoạn platform.
 - Bổ sung manifest, file index, test report và output demo đã chạy.
+# 0.4.0 — 2026-09-05
+
+1. Reconciled npm private distribution metadata with semantic verification;
+   only root SYNC-NOTE.md is an untrusted local receipt with a separately
+   reported SHA-256. Release inventories exclude this receipt and Git metadata.
+2. Restored the actual tracker v3 snapshot and mapped all 27 topics to source
+   rows, evidence gaps, partial software support and tests. No new scientific
+   finding or gene confirmation is inferred from tracker questions.
+3. Added a separate Python JSON-to-Vietnamese-Markdown breeder-report adapter,
+   schema, guide, synthetic example and golden tests. Existing normalization
+   and cross semantics are preserved; pedigree/welfare blocks remain visible,
+   missing data stays distinct from zero and evidence grade is not assigned.

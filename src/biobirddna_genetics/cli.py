@@ -179,7 +179,7 @@ def main(argv: list[str] | None = None) -> int:
     envelope = {
         "ok": True,
         "operation": args.operation,
-        "engine_version": "0.3.0",
+        "engine_version": "0.4.0",
         "result": result,
     }
     if args.output:

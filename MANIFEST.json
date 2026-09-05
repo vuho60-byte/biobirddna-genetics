@@ -1,7 +1,7 @@
 {
   "name": "biobirddna-genetics",
   "display_name": "BioBirdDNA Genetics",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "language": "vi",
   "runtime": "python>=3.11",
   "additional_runtimes": [
@@ -18,7 +18,8 @@
     "standalone_node": "standalone/biobirddna_genetics_node.mjs",
     "npm_package": "npm/package.json",
     "npm_cli": "npm/bin/biobirddna-genetics.mjs",
-    "npm_feedback": "npm/bin/biobirddna-feedback.mjs"
+    "npm_feedback": "npm/bin/biobirddna-feedback.mjs",
+    "breeder_report": "scripts/breeder_report.py"
   },
   "operations": [
     "cross",
@@ -55,5 +56,8 @@
   "architecture_blueprint": "BioBirdDNA_Genetics_Skill_Blueprint_v0.1.0.md",
   "planning_handoff": "planning/MODEL_CODER_HANDOFF.md",
   "database_draft": "references/postgres-schema-draft.sql",
-  "api_draft": "references/openapi-draft.yaml"
+  "api_draft": "references/openapi-draft.yaml",
+  "local_adapters": [
+    "breeder-report (Python JSON to Vietnamese Markdown; separate from core operations)"
+  ]
 }

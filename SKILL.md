@@ -42,6 +42,22 @@ Skill này là **bộ máy hỗ trợ quyết định nghiên cứu**, không ph
 
 ## Định tuyến yêu cầu
 
+### Báo cáo tiếng Việt từ hồ sơ cặp ghép (adapter local v0.4.0)
+
+Đọc `references/huong-dan-nguoi-nuoi.md`; nhập JSON theo
+`assets/schemas/breeder-report.schema.json` rồi chạy:
+
+```text
+python -B "<skill-root>/scripts/breeder_report.py" --input <absolute-request.json> --output <absolute-report.md>
+```
+
+Adapter giữ nguyên kết quả normalize-records/cross, kiểm phả hệ và cờ phúc lợi,
+xuất Markdown cho người nuôi. Không suy kiểu gene từ kiểu hình/số con; mô phỏng
+chỉ dùng giả định nhập riêng. Không phê duyệt ghép thật, không tự cấp evidence grade.
+Đây là CLI/function Python riêng; sáu core operation và bảy MCP tool giữ nguyên.
+Tracker v3 đủ 27 chủ đề: `knowledge/research-coverage-v3.json`; trạng thái nghiên
+cứu và coverage phần mềm được ghi riêng, chủ đề thiếu nguồn vẫn `evidence: missing`.
+
 ### 1. Mô phỏng phép ghép đã biết mô hình
 
 Dùng khi người dùng cung cấp mô hình và kiểu gene cha mẹ hoặc phân bố xác suất kiểu gene.
@@ -109,7 +125,7 @@ Thiết kế production phải tách hai mục tiêu:
 - `research_pairing`: cặp giúp phân biệt mô hình tốt nhất;
 - `target_pairing`: cặp tăng xác suất phenotype mục tiêu nhưng vẫn qua cổng phả hệ, sức khỏe và phúc lợi.
 
-Prototype v0.3.0 hiện trả một ranking có trọng số chung và chưa triển khai tách
+Prototype v0.4.0 hiện trả một ranking có trọng số chung và chưa triển khai tách
 hai objective này; đó là GEN-040 trong backlog. Vì vậy không được gắn nhãn
 ranking hiện tại là `research_pairing` hay `target_pairing`, và không dùng nó
 như phê duyệt ghép thật.
@@ -122,7 +138,7 @@ Một cặp bị block vẫn được giữ trong report với lý do; không x�
 
 ### 4. Sàng lọc kiểu hình sắc tố
 
-Dùng khi có feature đã đo từ ảnh/quan sát T02, không dùng trực tiếp file ảnh ở v0.3.0.
+Dùng khi có feature đã đo từ ảnh/quan sát T02, không dùng trực tiếp file ảnh ở v0.4.0.
 
 ```text
 python -B "<skill-root>/scripts/biobirddna_cli.py" pigment --input <absolute-pigment-json> --output <absolute-output-json>
@@ -167,7 +183,7 @@ Harness bắt buộc:
 - giữ đúng một `M0_NONGENETIC` và ít nhất một model đối chứng khác;
 - dùng genotype đúng `NA` cho generating model `non_genetic`;
 - dùng seed SHA-256 53-bit và LCG chung cho Python/Node, nằm trong JSON
-  safe-integer; cùng request v0.3.0 phải tạo cùng stream/output;
+  safe-integer; cùng request v0.4.0 phải tạo cùng stream/output;
 - giữ nguyên thứ tự `candidate_model_ids` trong output, nhưng tie set được sắp
   theo model ID thay vì dùng thứ tự input để phá tie;
 - báo unique top-1 và tie set tách biệt;
@@ -353,7 +369,7 @@ Không gọi `simulation_ready` là `gene_confirmed`.
 
 ```yaml
 operation: cross | infer | pigment | rank-mates | normalize-records | simulate-recovery
-engine_version: 0.3.0
+engine_version: 0.4.0
 case_id: optional
 pairing_id: optional
 observations: {}

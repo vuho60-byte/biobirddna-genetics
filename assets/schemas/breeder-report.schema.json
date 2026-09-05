@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local Vietnamese breeder report request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "records", "provenance"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "records": {"$ref": "breeding-record.schema.json"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "synthetic"],
+      "properties": {"source": {"type": "string", "minLength": 1}, "synthetic": {"type": "boolean"}}
+    },
+    "pedigree": {"$ref": "mate-ranking-request.schema.json#/properties/pedigree"},
+    "welfare_blocked_pairing_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "simulations": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["pairing_id", "cross_request"],
+        "properties": {"pairing_id": {"type": "string", "minLength": 1}, "cross_request": {"$ref": "cross-request.schema.json"}}
+      }
+    }
+  }
+}

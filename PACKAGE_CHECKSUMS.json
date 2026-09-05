@@ -1,10 +1,10 @@
 {
-  "package": "BioBirdDNA_Genetics_Skill_v0.3.0",
-  "version": "0.3.0",
+  "package": "BioBirdDNA_Genetics_Skill_v0.4.0",
+  "version": "0.4.0",
   "algorithm": "SHA-256",
   "self_excluded": "PACKAGE_CHECKSUMS.json",
-  "file_count": 134,
-  "total_bytes": 1426693,
+  "file_count": 141,
+  "total_bytes": 1476628,
   "files": [
     {
       "path": ".github/workflows/native-installers.yml",
@@ -23,43 +23,43 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 8532,
-      "sha256": "0d5cd7d49ca0651a71f21ee3a2b5cf6aa949146f67c9de729b6b60cbe7ce74eb"
+      "bytes": 9321,
+      "sha256": "3674738d1a243eec5c93868b593af4cd2fc5a657f0364f43ce651da36d18638d"
     },
     {
       "path": "FILE_INDEX.md",
-      "bytes": 3618,
-      "sha256": "7495d3addc0bc4874654ecaa626e0a1e29cae51d19daa2560b968943578b06b8"
+      "bytes": 4401,
+      "sha256": "62dbe0decf21068bfdbed03dd0255422ce1688e04449f7b3db53d29371ff6c4f"
     },
     {
       "path": "MANIFEST.json",
-      "bytes": 1978,
-      "sha256": "1e8874d97a14ae0019f2b30cbc213da87614ebffe31a18ab18e965d8d5f6abf3"
+      "bytes": 2086,
+      "sha256": "0fe3d52baebd19ebb504ea6f2689773c3093ec32268bad792d2c94c701a704b9"
     },
     {
       "path": "README.md",
-      "bytes": 11577,
-      "sha256": "784aa39fc1f29263e494415d1d61dc87fec939237e9212758934362960ebbe01"
+      "bytes": 12082,
+      "sha256": "6139c131d9907f6fb415ef36d4e26042604be2d1604495197270ef5be703e918"
     },
     {
       "path": "SHA256SUMS.txt",
-      "bytes": 13413,
-      "sha256": "fe12ff7e4265628f2d6a62711c3d97e3972b53394cb11c0f055b4fae50727ee1"
+      "bytes": 14132,
+      "sha256": "0614bfdf3e44ecae0fbc6622b3be7b8be5b763020b9d665f8bafc1e155c40af0"
     },
     {
       "path": "SKILL.md",
-      "bytes": 19169,
-      "sha256": "ab311d6e8a90d61c75f41c10c08b511df6c54eda6d28cd4db9f72d898341a0f9"
+      "bytes": 20097,
+      "sha256": "1ea56f11fabdda1d35fab4345d1a0ca9e3c07304e9506ea958be68378fec5f8f"
     },
     {
       "path": "TEST_REPORT.md",
-      "bytes": 9410,
-      "sha256": "435a376628d6e880f7ec7eafa9230517904c432aa024af28b10459df18f03264"
+      "bytes": 10723,
+      "sha256": "2a987102998b3e476942d6e977c91fa9287ddbdf0a2b3bea59934a887416e189"
     },
     {
       "path": "VERSION",
       "bytes": 6,
-      "sha256": "d915cc95d6ca8f47ae297713ed46d4e5c5d99ddd29fc3c61e263bdf305f2b5b0"
+      "sha256": "40b8eb4000a913a7791090535f291d3d369874162a89ef3c9e3d4e887a1b9e79"
     },
     {
       "path": "agents/openai.yaml",
@@ -70,6 +70,11 @@
       "path": "assets/models/default-models.json",
       "bytes": 1690,
       "sha256": "a92781deba262903e670d35512de4f0a55e0a43c69562766b8b639a40e2fa52e"
+    },
+    {
+      "path": "assets/schemas/breeder-report.schema.json",
+      "bytes": 1073,
+      "sha256": "8626b4f522124e219843cd9e7a6f4e2a4b9c3c563fa981d9b79d3e1cdc08d76b"
     },
     {
       "path": "assets/schemas/breeding-record.schema.json",
@@ -84,12 +89,12 @@
     {
       "path": "assets/schemas/feedback-artifact.schema.json",
       "bytes": 3191,
-      "sha256": "282da2dd6f0fcbf9f7ca3a93b3a970f9648da19a53d4fb66afecaf47abb87e18"
+      "sha256": "0a6e58047e34ab52d035a2b6c3731cb0cfc8218365b281f5a6d8a33329974297"
     },
     {
       "path": "assets/schemas/feedback-input.schema.json",
       "bytes": 2056,
-      "sha256": "b09768b403fcffab80dac2d2ee6133e452e162f533ddb3b6985c92cf7a95f224"
+      "sha256": "1f480c621298c5d93bd7f363ef1f5eea30d021996f5a1bf3340b1fc95e45ccac"
     },
     {
       "path": "assets/schemas/inference-request.schema.json",
@@ -152,6 +157,11 @@
       "sha256": "d6c59bf4357e218fca8147aeea6ae80fad684cb72c1dab9a99ebad0610c14127"
     },
     {
+      "path": "examples/input/breeder_report.json",
+      "bytes": 5227,
+      "sha256": "9180f9a2ce0195e344c0fa6cb5ae5935c052e2ecc4f6783579a215f42bbfd8ea"
+    },
+    {
       "path": "examples/input/cross_autosomal_recessive.json",
       "bytes": 308,
       "sha256": "9f14a03c0ac14c14d2ce1d322cdd92e7c56b520a48c951e0cc2a5bdd90f7e361"
@@ -187,39 +197,44 @@
       "sha256": "392feb359890e70e4e60e6c021a67ebcf92fecdbf2f609d90fa3591928a5504c"
     },
     {
+      "path": "examples/output/breeder_report.md",
+      "bytes": 9662,
+      "sha256": "27eb858504e20e8117fc95b71fa57d949f3c615033415b1406ca29bb3c8dbcd8"
+    },
+    {
       "path": "examples/output/cross_autosomal_recessive.json",
       "bytes": 678,
-      "sha256": "f9424437cdfc2f3dfaa76a2a2208779f584fbb7b269ba8985a6ba7cffebb17c6"
+      "sha256": "44e948cc84e47443169332f27656d70f5df57ca9cba18d5bd83d0641a9574b48"
     },
     {
       "path": "examples/output/cross_z_linked_recessive.json",
       "bytes": 588,
-      "sha256": "36884695e0b4db6b2390eecc509efd55dc1629e614dcac2d23b26e0ea2fbe43d"
+      "sha256": "242e16d13bac667ae88f4a939641564d1e122be6943d1c9f44a9f1ebc81dc27d"
     },
     {
       "path": "examples/output/infer_z_linked_case.json",
       "bytes": 10795,
-      "sha256": "2890c9813736296467c04f47aff0d8b318c8d6c1ea2480f8e596e7df19ba35c6"
+      "sha256": "849962c0180e6e446d6e60e07f5d40d195ab097efd0b1649ebe0786e92ccd12f"
     },
     {
       "path": "examples/output/mate_ranking_case.json",
       "bytes": 1436,
-      "sha256": "aebac92765bb6e763c2e5a1bfc3a42287c4f55c99178507e38864ab8edcb7126"
+      "sha256": "5e7b8e0e55afc47101be429ec952f44b80c93735bf7a852b9b0a780721801279"
     },
     {
       "path": "examples/output/normalize_breeding_records.json",
       "bytes": 4103,
-      "sha256": "5de8260a74b63f23778dc13e40749a55a869c8db7fb7a03b8b163bed71275a8e"
+      "sha256": "975929988e21db5e386c017ddaf26269e54696ea1e4e3cd19b7d871f4d04038d"
     },
     {
       "path": "examples/output/pigment_progressive_greying.json",
       "bytes": 1035,
-      "sha256": "ecf8d1aaaf92496896477be0cfdd65fa0c87e205a75cc072c5477114ec8ba6db"
+      "sha256": "9eae82fcfd468cc4a49ee4778d0c8bfc2ad003e565080c2610adf7a786d019bd"
     },
     {
       "path": "examples/output/simulate_recovery.json",
       "bytes": 43640,
-      "sha256": "66f4a34675a2e9e07cff07c6e44db53fa8e2e815227d76605c93fba43be1e3d8"
+      "sha256": "facf991208b17a72a42488afd67022568344028242e8030f8c8485da8735c6cb"
     },
     {
       "path": "knowledge/T02_knowledge_base_v1.0.json",
@@ -244,7 +259,7 @@
     {
       "path": "npm/README.md",
       "bytes": 2589,
-      "sha256": "01053acc8a4e7dc7079292441c179299bb5596627fac6befaabcdcd2a1367ce8"
+      "sha256": "ff09acb5f7a481eb1ef3d0c0377716467c5933932282b63f152a096d1c1e7c2b"
     },
     {
       "path": "npm/bin/biobirddna-feedback.mjs",
@@ -259,7 +274,7 @@
     {
       "path": "npm/package.json",
       "bytes": 626,
-      "sha256": "037dc4a36e0759b7a7708f7bdc13a711f0c452bf7ef6d4de6afac98bfe150db1"
+      "sha256": "8ac3554a49184b8846083cc98837c9dd79cb55106d14df4ec1f88287817a0e4d"
     },
     {
       "path": "npm/src/breeding-records.mjs",
@@ -269,12 +284,12 @@
     {
       "path": "npm/src/feedback.mjs",
       "bytes": 9905,
-      "sha256": "78359bacdcd106d0a35f483ba8cfdb48daa5c8e6683a1bf94325da59e458f4d8"
+      "sha256": "f8a9e848eff804755f1d538b2d2b50451c3fac9b148223753de61c9039fa0de8"
     },
     {
       "path": "npm/src/index.mjs",
       "bytes": 69390,
-      "sha256": "5c8af543cc4b802c505ec6c3ef644a6ef0df80afa942a0a89cd022f1bb70d6f9"
+      "sha256": "2114d62132a46bfe28445973466c483c9f40fd7f3fbb2545394fd454cb54545b"
     },
     {
       "path": "npm/test/breeding-records.test.mjs",
@@ -289,7 +304,7 @@
     {
       "path": "npm/test/feedback-hardening.test.mjs",
       "bytes": 3252,
-      "sha256": "0d197d0c388a8d45fa5fdb7dbb4f2c7d820e14b7b89d12eb30f481a989dee73c"
+      "sha256": "f4d9f31277f9b08cad70aa5535df3ad3da60c47eb012a3a4b4cc9fdfc601d651"
     },
     {
       "path": "npm/test/numeric-parity.test.mjs",
@@ -299,12 +314,12 @@
     {
       "path": "npm/test/pack-smoke.mjs",
       "bytes": 4175,
-      "sha256": "45e1783307fd824c2314886bb6885028a4f77356a9fe43107ea09f68669d9d50"
+      "sha256": "52bfa1e14fad5fb29b23bd7f8496a4a7e65ab50453c72b178c27ce5c90878501"
     },
     {
       "path": "npm/test/package.test.mjs",
       "bytes": 35547,
-      "sha256": "040da51387ef920cd4412531275ddb52da9e3a442c40ec5fb9f58797e152f60d"
+      "sha256": "452ae65d72a02c92f1ea2b8553135e081190c6164a0ae2ae2dc5eeda17db23fe"
     },
     {
       "path": "npm/test/prototype-pollution.test.mjs",
@@ -353,13 +368,13 @@
     },
     {
       "path": "planning/backlog.json",
-      "bytes": 13333,
-      "sha256": "7ccf655d122248ed77142d502a28a516eae3bd1ab55879f9b6de3c7bbb0d6cd6"
+      "bytes": 12892,
+      "sha256": "4b2ae2a2313786d28042a10b7d3405f7b334fbab7bdb54654459aef1978ebda8"
     },
     {
       "path": "pyproject.toml",
       "bytes": 601,
-      "sha256": "5018468f6f232860e341cde4470d4173bd7745608fe7e7cfcc9c9c98d8b367be"
+      "sha256": "725888f47c030a344a5abd76fb314a4def41482ca121e4697609d45e20b062e2"
     },
     {
       "path": "references/algorithms.md",
@@ -380,6 +395,11 @@
       "path": "references/data-contracts.md",
       "bytes": 19226,
       "sha256": "fccabc05b270e4ce746dd9a1b3b205c546d3071f0c2bd36a677c252b633ec475"
+    },
+    {
+      "path": "references/huong-dan-nguoi-nuoi.md",
+      "bytes": 4089,
+      "sha256": "6ba524c0dde41e80ded7f7d0bec909f704c7ec40ca44380df00852533bc6c648"
     },
     {
       "path": "references/implementation-roadmap.md",
@@ -442,6 +462,11 @@
       "sha256": "728968c4f068ed2f97eb4a81c85c3950417c4fef082a35e9dab09145f1d9292f"
     },
     {
+      "path": "scripts/breeder_report.py",
+      "bytes": 1496,
+      "sha256": "f0b778721615a942cb286130305e05b5e5172efdb2e0c97c2b1c893f18f822bd"
+    },
+    {
       "path": "scripts/build_research_coverage.py",
       "bytes": 5029,
       "sha256": "d9f962234642151b8fad57f4970de90e2ec3b18665394e5e28569740938f9f5f"
@@ -489,7 +514,12 @@
     {
       "path": "src/biobirddna_genetics/__init__.py",
       "bytes": 871,
-      "sha256": "5cba3dd153a938abe66ba439ef6d57630686e9e9e8bcf57f8973d12169614c10"
+      "sha256": "229efa04bba21f0705c9c536b91d242b21295d1938d1b8bb9dcd3cf762ac9967"
+    },
+    {
+      "path": "src/biobirddna_genetics/breeder_report.py",
+      "bytes": 14337,
+      "sha256": "4ab29079942db39223ef8108df9e5768e598d26f626d5f56524f088cb06ec18c"
     },
     {
       "path": "src/biobirddna_genetics/breeding_records.py",
@@ -499,7 +529,7 @@
     {
       "path": "src/biobirddna_genetics/cli.py",
       "bytes": 6253,
-      "sha256": "0f5079af03679174ec1013f351ddd67232f2aa98d1ddf02bbfb781131884b135"
+      "sha256": "f808ac2ee803750d95c5cabfd55f76f90bf932fe39e989d257a7c18f5e1085c1"
     },
     {
       "path": "src/biobirddna_genetics/cross.py",
@@ -583,13 +613,18 @@
     },
     {
       "path": "tasks/todo.md",
-      "bytes": 2414,
-      "sha256": "a747510a9605d4c0b62662cb7b7121d43aef41d0d64478d09ef1e6a3fdf0b21a"
+      "bytes": 3008,
+      "sha256": "02a603fd97d53d88d3f74601cb52061ff203e6d90374a284880ac7202ec1ef9d"
     },
     {
       "path": "tests/test_atomic_rename.py",
       "bytes": 2485,
       "sha256": "15d94876f54333c63591a7819b7d8cb4b0e3631f5097bccbf371ae8a2b816c85"
+    },
+    {
+      "path": "tests/test_breeder_report.py",
+      "bytes": 8753,
+      "sha256": "673a8c14e2b745a9453097134e157f877a2ec736c883426aae8697e857c895d4"
     },
     {
       "path": "tests/test_breeding_records.py",
@@ -634,7 +669,7 @@
     {
       "path": "tests/test_npm_parity.py",
       "bytes": 49897,
-      "sha256": "13d70115d5679ae966172fa49266252100046abb7f209e8b2ec03bb241e052a2"
+      "sha256": "b62661ce217ae81da805e68f9eed674169fe5729a0871a79e3bfe6854ad7804b"
     },
     {
       "path": "tests/test_optimizer.py",
@@ -644,7 +679,7 @@
     {
       "path": "tests/test_package_integrity.py",
       "bytes": 13637,
-      "sha256": "e91753f9e8c23727c65f63444961d8ed92963ee909dfe369bb9d5ee88b794044"
+      "sha256": "98742376efbd6f26a526209d6089b05b3fd55411b9149504d5a33f0da4a9c256"
     },
     {
       "path": "tests/test_pedigree.py",

@@ -2,11 +2,11 @@
 
 Dependency-free Node 20+ research primitives for evidence-bounded avian inheritance simulations. Outputs are decision support only: phenotype observations do not infer genes, posterior values are relative to candidate models, and no operation creates a breeding order.
 
-This v0.3.0 package is private and `UNLICENSED`. It is distributed locally;
+This v0.4.0 package is private and `UNLICENSED`. It is distributed locally;
 `private: true` prevents registry publication. No public publishConfig is set.
 
 ```sh
-npm install --global ./biobirddna-genetics-0.3.0.tgz
+npm install --global ./biobirddna-genetics-0.4.0.tgz
 ```
 
 Use the `biobirddna-genetics` bin with JSON input, or import `dispatch` from the package. Supported operations are `cross`, `infer`, `pigment`, `rank-mates`, `normalize-records`, and `simulate-recovery`.
@@ -17,7 +17,7 @@ requires `NA` parent genotypes for a non-genetic generator. Public results are
 strict JSON values; impossible log-evidence is `null`, never `Infinity`.
 Inference observations are capped at `1_000_000` per row. Model phenotype labels
 must be distinct; hypothesis and pairing weights must be finite and nonnegative.
-Python and Node share the v0.3.0 SHA-256 seed, 53-bit LCG, and UTF-8 sampling
+Python and Node share the v0.4.0 SHA-256 seed, 53-bit LCG, and UTF-8 sampling
 order, so the same simulation request produces the same output.
 
 Pigment screening is phenotype-only. `image_quality` Q0 or Q1 always hard

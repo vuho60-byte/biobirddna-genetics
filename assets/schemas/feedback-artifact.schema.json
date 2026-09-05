@@ -24,7 +24,7 @@
       ],
       "properties": {
         "package": {"const": "@biobirddna/genetics"},
-        "package_version": {"const": "0.3.0"},
+        "package_version": {"const": "0.4.0"},
         "package_integrity_sha256": {"$ref": "#/$defs/sha256"}
       },
       "additionalProperties": false
@@ -44,7 +44,7 @@
         "operation": {"type": "string", "minLength": 1},
         "input_sha256": {"$ref": "#/$defs/sha256"},
         "output_sha256": {"$ref": "#/$defs/sha256"},
-        "engine_version": {"const": "0.3.0"},
+        "engine_version": {"const": "0.4.0"},
         "schema_version": {"const": "1.0.0"}
       },
       "additionalProperties": false
