@@ -1,0 +1,11 @@
+{
+  "target_label": "target_colour",
+  "male_parent_phenotype": "normal",
+  "female_parent_phenotype": "normal",
+  "offspring": [
+    {"sex": "male", "phenotype": "normal", "count": 0},
+    {"sex": "male", "phenotype": "target_colour", "count": 0},
+    {"sex": "female", "phenotype": "normal", "count": 0},
+    {"sex": "female", "phenotype": "target_colour", "count": 0}
+  ]
+}

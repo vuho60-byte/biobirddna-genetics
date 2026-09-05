@@ -1,0 +1,6 @@
+interface:
+  display_name: "BioBirdDNA Genetics"
+  short_description: "Normalize breeding records and test avian inheritance models"
+  default_prompt: "Use $biobirddna-genetics for local-safe breeding-record normalization, cross simulation, candidate-model inference and synthetic recovery; preserve evidence limits, M0_NONGENETIC, pedigree and welfare blocks, and never infer genes or genotypes from images."
+policy:
+  allow_implicit_invocation: true

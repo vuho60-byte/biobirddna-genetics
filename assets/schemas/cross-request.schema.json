@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biobirddna.local/schemas/cross-request.schema.json",
+  "title": "BioBirdDNA cross request",
+  "type": "object",
+  "required": ["model"],
+  "properties": {
+    "model": {"$ref": "inheritance-model.schema.json"},
+    "male_genotype": {"type": "string"},
+    "female_genotype": {"type": "string"},
+    "male_genotypes": {
+      "type": "object",
+      "additionalProperties": {"type": "number", "minimum": 0}
+    },
+    "female_genotypes": {
+      "type": "object",
+      "additionalProperties": {"type": "number", "minimum": 0}
+    }
+  },
+  "oneOf": [
+    {"required": ["male_genotype", "female_genotype"]},
+    {"required": ["male_genotypes", "female_genotypes"]}
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "model": {
+            "type": "object",
+            "properties": {"mode": {"const": "non_genetic"}},
+            "required": ["mode"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "male_genotype": {"const": "NA"},
+          "female_genotype": {"const": "NA"},
+          "male_genotypes": {
+            "type": "object",
+            "properties": {
+              "NA": {"type": "number", "exclusiveMinimum": 0}
+            },
+            "required": ["NA"],
+            "additionalProperties": false
+          },
+          "female_genotypes": {
+            "type": "object",
+            "properties": {
+              "NA": {"type": "number", "exclusiveMinimum": 0}
+            },
+            "required": ["NA"],
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

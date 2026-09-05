@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "CM-CASE-000001",
+  "pairings": [
+    {
+      "pairing_id": "CM-MAT-000001",
+      "male_parent_id": "CM-IND-000001",
+      "female_parent_id": "CM-IND-000002",
+      "male_parent_phenotype": "normal",
+      "female_parent_phenotype": "target_colour",
+      "male_parent_sex_method": "dna",
+      "male_parent_sex_confidence": 0.99,
+      "female_parent_sex_method": "dna",
+      "female_parent_sex_confidence": 0.99,
+      "reciprocal_group_id": "CM-RECIP-000001"
+    }
+  ],
+  "clutches": [
+    {
+      "clutch_id": "CM-CLU-000001",
+      "pairing_id": "CM-MAT-000001",
+      "offspring_records_coverage": "complete",
+      "stage_counts": {
+        "eggs_laid": {
+          "status": "observed",
+          "coverage": "complete",
+          "count": 2
+        },
+        "fertile_eggs": {
+          "status": "observed",
+          "coverage": "complete",
+          "count": 2
+        },
+        "hatched": {
+          "status": "observed",
+          "coverage": "complete",
+          "count": 1
+        },
+        "survived_to_first_molt": {
+          "status": "missing",
+          "coverage": "unknown"
+        }
+      }
+    }
+  ],
+  "offspring": [
+    {
+      "offspring_record_id": "CM-OFF-000001",
+      "individual_id": "CM-IND-000003",
+      "clutch_id": "CM-CLU-000001",
+      "outcome": "alive",
+      "fertility_status": "fertile",
+      "hatch_status": "hatched",
+      "survival_status": "survived",
+      "sex": "male",
+      "sex_method": "dna",
+      "sex_confidence": 0.99,
+      "phenotype_timeline": [
+        {
+          "observation_id": "CM-PHENO-000001",
+          "sequence_index": 0,
+          "stage": "first_plumage",
+          "status": "observed",
+          "phenotype": "normal"
+        }
+      ]
+    },
+    {
+      "offspring_record_id": "CM-OFF-000002",
+      "individual_id": null,
+      "clutch_id": "CM-CLU-000001",
+      "outcome": "embryo_death",
+      "fertility_status": "fertile",
+      "hatch_status": "not_hatched",
+      "survival_status": "not_applicable",
+      "sex": "unknown",
+      "sex_method": "unknown",
+      "sex_confidence": null,
+      "phenotype_timeline": []
+    }
+  ]
+}

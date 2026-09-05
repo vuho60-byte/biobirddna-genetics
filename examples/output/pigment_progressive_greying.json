@@ -1,0 +1,43 @@
+{
+  "ok": true,
+  "operation": "pigment",
+  "engine_version": "0.3.0",
+  "result": {
+    "primary_hypothesis": "MEL-PGR",
+    "alternative_hypotheses": [
+      "MEL-LEU"
+    ],
+    "scores": {
+      "MEL-PGR": 0.7206498951781971,
+      "MEL-LEU": 0.27935010482180295,
+      "MEL-ALB": 0.0,
+      "MEL-INO": 0.0,
+      "MEL-BRN": 0.0,
+      "MEL-DIL": 0.0,
+      "MEL-MEL": 0.0,
+      "CAR-ALT": 0.0,
+      "LOC-ACQ": 0.0,
+      "IMG-ART": 0.0,
+      "BASE-NORM": 0.0,
+      "UNK": 0.0
+    },
+    "rationale": {
+      "MEL-PGR": [
+        "white_or_pale_area_progresses_across_molts",
+        "not_present_in_first_plumage"
+      ],
+      "MEL-LEU": [
+        "partial_white_plumage"
+      ]
+    },
+    "needs_recapture": false,
+    "limits": {
+      "measurement_domain": "visible_phenotype_only",
+      "biochemical_pigment_status": "unconfirmed",
+      "gene_status": "not_assessed",
+      "inheritance_status": "not_assessed",
+      "required_language": "kieu_hinh_goi_y",
+      "claim_language": "phenotype_hypothesis"
+    }
+  }
+}

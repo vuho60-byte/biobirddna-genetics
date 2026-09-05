@@ -1,0 +1,1198 @@
+{
+  "ok": true,
+  "operation": "simulate-recovery",
+  "engine_version": "0.3.0",
+  "result": {
+    "schema_version": "1.0.0",
+    "base_seed": 20260730,
+    "experiments": [
+      {
+        "experiment_id": "SIM-AR-DEMO",
+        "generating_model_id": "M1_AR",
+        "candidate_model_ids": [
+          "M1_AR",
+          "M2_AD",
+          "M3_INC",
+          "M4_ZR",
+          "M5_ZD",
+          "M0_NONGENETIC"
+        ],
+        "by_brood_size": [
+          {
+            "brood_size": 8,
+            "replicates": 8,
+            "small_sample_warning": true,
+            "warnings": [
+              "small_sample_high_uncertainty"
+            ],
+            "recovery": {
+              "true_model_in_candidate_set": true,
+              "top1_rate": 0.875,
+              "top_set_contains_true_rate": 0.875,
+              "tie_policy": "top1_rate_requires_unique_best_model",
+              "wilson_95": {
+                "low": 0.5291118177871464,
+                "high": 0.9775825085499433
+              },
+              "mean_true_model_posterior": 0.6446248342810015,
+              "multiclass_brier_mean": 0.27357114108488323
+            },
+            "uncertainty": {
+              "true_model_posterior_quantiles": {
+                "p05": 0.27624763840473265,
+                "p50": 0.6634115787813569,
+                "p95": 0.9442059198490209
+              },
+              "mean_model_entropy_bits": 1.128088255883974,
+              "top_two_log2_bayes_factor_quantiles": {
+                "p05": 0.13975386207785687,
+                "p50": 1.0435532252973767,
+                "p95": 4.599020308364715
+              }
+            },
+            "best_model_frequencies": {
+              "M1_AR": {
+                "top_set_count": 7,
+                "top_set_rate": 0.875,
+                "unique_top1_count": 7,
+                "unique_top1_rate": 0.875
+              },
+              "M2_AD": {
+                "top_set_count": 1,
+                "top_set_rate": 0.125,
+                "unique_top1_count": 0,
+                "unique_top1_rate": 0.0
+              },
+              "M3_INC": {
+                "top_set_count": 1,
+                "top_set_rate": 0.125,
+                "unique_top1_count": 0,
+                "unique_top1_rate": 0.0
+              },
+              "M5_ZD": {
+                "top_set_count": 1,
+                "top_set_rate": 0.125,
+                "unique_top1_count": 0,
+                "unique_top1_rate": 0.0
+              }
+            },
+            "best_model_set_frequencies": {
+              "M1_AR": {
+                "count": 7,
+                "rate": 0.875
+              },
+              "M2_AD|M3_INC|M5_ZD": {
+                "count": 1,
+                "rate": 0.125
+              }
+            },
+            "posterior_discrimination_bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.2,
+                "count": 1,
+                "mean_predicted": 0.15661811147363008,
+                "observed_top1_rate": 0.0
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.6,
+                "count": 2,
+                "mean_predicted": 0.5204226159328038,
+                "observed_top1_rate": 1.0
+              },
+              {
+                "lower": 0.6,
+                "upper": 0.8,
+                "count": 3,
+                "mean_predicted": 0.6997678886651314,
+                "observed_top1_rate": 1.0
+              },
+              {
+                "lower": 0.8,
+                "upper": 1.0,
+                "count": 2,
+                "mean_predicted": 0.93011583245669,
+                "observed_top1_rate": 1.0
+              }
+            ],
+            "goodness_of_fit": {
+              "method": "parametric_bootstrap_multinomial_deviance",
+              "bootstrap_replicates": 100,
+              "alpha": 0.05,
+              "candidates": [
+                {
+                  "model_id": "M1_AR",
+                  "deviance": 4.902474192996919,
+                  "bootstrap_p_value": 0.2079207920792079,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M2_AD",
+                  "deviance": 153.44459271029962,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M3_INC",
+                  "deviance": 153.44459271029962,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M4_ZR",
+                  "deviance": 57.10674559164688,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M5_ZD",
+                  "deviance": 153.44459271029962,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M0_NONGENETIC",
+                  "deviance": 52.62545330500208,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                }
+              ],
+              "all_candidates_below_alpha": false
+            },
+            "replicate_results": [
+              {
+                "replicate_index": 0,
+                "seed": 2737730208683178,
+                "observed_counts": {
+                  "female:normal": 3,
+                  "female:target_colour": 1,
+                  "male:normal": 3,
+                  "male:target_colour": 1
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.5424284720173989,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.41128434500098277,
+                  "M1_AR": 0.5424284720173989,
+                  "M2_AD": 0.004701738472841556,
+                  "M3_INC": 0.004701738472841556,
+                  "M4_ZR": 0.03218196756309335,
+                  "M5_ZD": 0.004701738472841556
+                },
+                "true_model_posterior": 0.5424284720173989,
+                "model_entropy_bits": 1.2744867607028234,
+                "top_two_log2_bayes_factor": 0.3992967487938793,
+                "multiclass_brier": 0.37962851373345274
+              },
+              {
+                "replicate_index": 1,
+                "seed": 8478384001589156,
+                "observed_counts": {
+                  "female:normal": 2,
+                  "female:target_colour": 1,
+                  "male:normal": 3,
+                  "male:target_colour": 2
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.8831488744822537,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.11500286977832211,
+                  "M1_AR": 0.8831488744822537,
+                  "M2_AD": 0.00011461380267556799,
+                  "M3_INC": 0.00011461380267556799,
+                  "M4_ZR": 0.0015044143313972247,
+                  "M5_ZD": 0.00011461380267556799
+                },
+                "true_model_posterior": 0.8831488744822537,
+                "model_entropy_bits": 0.5357694890606846,
+                "top_two_log2_bayes_factor": 2.9409867942798456,
+                "multiclass_brier": 0.026882148263465626
+              },
+              {
+                "replicate_index": 2,
+                "seed": 1882249718268830,
+                "observed_counts": {
+                  "female:normal": 4,
+                  "female:target_colour": 0,
+                  "male:normal": 4,
+                  "male:target_colour": 0
+                },
+                "best_model": null,
+                "best_models": [
+                  "M2_AD",
+                  "M3_INC",
+                  "M5_ZD"
+                ],
+                "top1_tied": true,
+                "best_model_posterior": 0.20225267755050896,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.12917740182795015,
+                  "M1_AR": 0.15661811147363008,
+                  "M2_AD": 0.20225267755050896,
+                  "M3_INC": 0.20225267755050896,
+                  "M4_ZR": 0.10744645404689306,
+                  "M5_ZD": 0.20225267755050896
+                },
+                "true_model_posterior": 0.15661811147363008,
+                "model_entropy_bits": 2.545148815778598,
+                "top_two_log2_bayes_factor": 0.0,
+                "multiclass_brier": 0.8622429882536276
+              },
+              {
+                "replicate_index": 3,
+                "seed": 8121463981616106,
+                "observed_counts": {
+                  "female:normal": 1,
+                  "female:target_colour": 1,
+                  "male:normal": 5,
+                  "male:target_colour": 1
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.4984167598482088,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.37791344147050565,
+                  "M1_AR": 0.4984167598482088,
+                  "M2_AD": 0.004320247509448934,
+                  "M3_INC": 0.004320247509448934,
+                  "M4_ZR": 0.1107090561529387,
+                  "M5_ZD": 0.004320247509448934
+                },
+                "true_model_posterior": 0.4984167598482088,
+                "model_entropy_bits": 1.484560226995041,
+                "top_two_log2_bayes_factor": 0.3992967487938767,
+                "multiclass_brier": 0.406716804775154
+              },
+              {
+                "replicate_index": 4,
+                "seed": 2912000628882204,
+                "observed_counts": {
+                  "female:normal": 2,
+                  "female:target_colour": 2,
+                  "male:normal": 3,
+                  "male:target_colour": 1
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.7724805084326803,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.10059173247506722,
+                  "M1_AR": 0.7724805084326803,
+                  "M2_AD": 0.00010025141980295286,
+                  "M3_INC": 0.00010025141980295286,
+                  "M4_ZR": 0.12662700483284348,
+                  "M5_ZD": 0.00010025141980295286
+                },
+                "true_model_posterior": 0.7724805084326803,
+                "model_entropy_bits": 1.0025106499717742,
+                "top_two_log2_bayes_factor": 2.6089134199622337,
+                "multiclass_brier": 0.07791824418936562
+              },
+              {
+                "replicate_index": 5,
+                "seed": 5638245393164490,
+                "observed_counts": {
+                  "female:normal": 3,
+                  "female:target_colour": 2,
+                  "male:normal": 1,
+                  "male:target_colour": 2
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9770827904311263,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.021713635864401015,
+                  "M1_AR": 0.9770827904311263,
+                  "M2_AD": 1.8865692394156153e-06,
+                  "M3_INC": 1.8865692394156153e-06,
+                  "M4_ZR": 0.001197913996754417,
+                  "M5_ZD": 1.8865692394156153e-06
+                },
+                "true_model_posterior": 0.9770827904311263,
+                "model_entropy_bits": 0.16438782920165593,
+                "top_two_log2_bayes_factor": 5.4918075851796475,
+                "multiclass_brier": 0.0009981154854965273
+              },
+              {
+                "replicate_index": 6,
+                "seed": 3802041877057341,
+                "observed_counts": {
+                  "female:normal": 1,
+                  "female:target_colour": 3,
+                  "male:normal": 3,
+                  "male:target_colour": 1
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.6634115787813569,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.014742944600968462,
+                  "M1_AR": 0.6634115787813569,
+                  "M2_AD": 1.280927153623094e-06,
+                  "M3_INC": 1.280927153623094e-06,
+                  "M4_ZR": 0.321841633836214,
+                  "M5_ZD": 1.280927153623094e-06
+                },
+                "true_model_posterior": 0.6634115787813569,
+                "model_entropy_bits": 1.0089211376806075,
+                "top_two_log2_bayes_factor": 1.0435532252973767,
+                "multiclass_brier": 0.21709115698925188
+              },
+              {
+                "replicate_index": 7,
+                "seed": 2821362225260992,
+                "observed_counts": {
+                  "female:normal": 1,
+                  "female:target_colour": 3,
+                  "male:normal": 3,
+                  "male:target_colour": 1
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.6634115787813569,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.014742944600968462,
+                  "M1_AR": 0.6634115787813569,
+                  "M2_AD": 1.280927153623094e-06,
+                  "M3_INC": 1.280927153623094e-06,
+                  "M4_ZR": 0.321841633836214,
+                  "M5_ZD": 1.280927153623094e-06
+                },
+                "true_model_posterior": 0.6634115787813569,
+                "model_entropy_bits": 1.0089211376806075,
+                "top_two_log2_bayes_factor": 1.0435532252973767,
+                "multiclass_brier": 0.21709115698925188
+              }
+            ]
+          },
+          {
+            "brood_size": 64,
+            "replicates": 8,
+            "small_sample_warning": false,
+            "warnings": [],
+            "recovery": {
+              "true_model_in_candidate_set": true,
+              "top1_rate": 1.0,
+              "top_set_contains_true_rate": 1.0,
+              "tie_policy": "top1_rate_requires_unique_best_model",
+              "wilson_95": {
+                "low": 0.6755924351161198,
+                "high": 1.0
+              },
+              "mean_true_model_posterior": 0.9996396748884271,
+              "multiclass_brier_mean": 9.970985698635613e-07
+            },
+            "uncertainty": {
+              "true_model_posterior_quantiles": {
+                "p05": 0.998588074311357,
+                "p50": 0.999992975046404,
+                "p95": 0.9999988012314756
+              },
+              "mean_model_entropy_bits": 0.0039757299567005615,
+              "top_two_log2_bayes_factor_quantiles": {
+                "p05": 9.466220465129997,
+                "p50": 17.119097860309573,
+                "p95": 19.67005699203611
+              }
+            },
+            "best_model_frequencies": {
+              "M1_AR": {
+                "top_set_count": 8,
+                "top_set_rate": 1.0,
+                "unique_top1_count": 8,
+                "unique_top1_rate": 1.0
+              }
+            },
+            "best_model_set_frequencies": {
+              "M1_AR": {
+                "count": 8,
+                "rate": 1.0
+              }
+            },
+            "posterior_discrimination_bins": [
+              {
+                "lower": 0.8,
+                "upper": 1.0,
+                "count": 8,
+                "mean_predicted": 0.9996396748884271,
+                "observed_top1_rate": 1.0
+              }
+            ],
+            "goodness_of_fit": {
+              "method": "parametric_bootstrap_multinomial_deviance",
+              "bootstrap_replicates": 100,
+              "alpha": 0.05,
+              "candidates": [
+                {
+                  "model_id": "M1_AR",
+                  "deviance": 1.8296788177117964,
+                  "bootstrap_p_value": 0.5445544554455446,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M2_AD",
+                  "deviance": 752.5365230659265,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M3_INC",
+                  "deviance": 752.5365230659265,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M4_ZR",
+                  "deviance": 435.9996007693991,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M5_ZD",
+                  "deviance": 752.5365230659265,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M0_NONGENETIC",
+                  "deviance": 199.7217382062448,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                }
+              ],
+              "all_candidates_below_alpha": false
+            },
+            "replicate_results": [
+              {
+                "replicate_index": 0,
+                "seed": 2634586024272487,
+                "observed_counts": {
+                  "female:normal": 22,
+                  "female:target_colour": 9,
+                  "male:normal": 26,
+                  "male:target_colour": 7
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9999929749105838,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 7.0248166641319715e-06,
+                  "M1_AR": 0.9999929749105838,
+                  "M2_AD": 2.0491101777393173e-21,
+                  "M3_INC": 2.0491101777393173e-21,
+                  "M4_ZR": 2.7275180527167836e-10,
+                  "M5_ZD": 2.0491101777393173e-21
+                },
+                "true_model_posterior": 0.9999929749105838,
+                "model_entropy_bits": 0.00013040228697021336,
+                "top_two_log2_bayes_factor": 17.119097860309584,
+                "multiclass_brier": 9.869993054453172e-11
+              },
+              {
+                "replicate_index": 1,
+                "seed": 2848904191807817,
+                "observed_counts": {
+                  "female:normal": 29,
+                  "female:target_colour": 3,
+                  "male:normal": 22,
+                  "male:target_colour": 10
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9985882099115952,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.0014117900884028172,
+                  "M1_AR": 0.9985882099115952,
+                  "M2_AD": 6.215335565505344e-16,
+                  "M3_INC": 6.215335565505344e-16,
+                  "M4_ZR": 3.114361931672978e-16,
+                  "M5_ZD": 6.215335565505344e-16
+                },
+                "true_model_posterior": 0.9985882099115952,
+                "model_entropy_bits": 0.015402537896088813,
+                "top_two_log2_bayes_factor": 9.466220465129991,
+                "multiclass_brier": 3.986302507430332e-06
+              },
+              {
+                "replicate_index": 2,
+                "seed": 8186770747907392,
+                "observed_counts": {
+                  "female:normal": 24,
+                  "female:target_colour": 10,
+                  "male:normal": 23,
+                  "male:target_colour": 7
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9999988011649609,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 1.1987325780092497e-06,
+                  "M1_AR": 0.9999988011649609,
+                  "M2_AD": 3.048348240318585e-23,
+                  "M3_INC": 3.048348240318585e-23,
+                  "M4_ZR": 1.0246150940809652e-10,
+                  "M5_ZD": 3.048348240318585e-23
+                },
+                "true_model_posterior": 0.9999988011649609,
+                "model_entropy_bits": 2.5312092633103507e-05,
+                "top_two_log2_bayes_factor": 19.67005699203611,
+                "multiclass_brier": 2.8741652551224627e-12
+              },
+              {
+                "replicate_index": 3,
+                "seed": 4403706528981875,
+                "observed_counts": {
+                  "female:normal": 30,
+                  "female:target_colour": 9,
+                  "male:normal": 18,
+                  "male:target_colour": 7
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9999929751822242,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 7.024816666040308e-06,
+                  "M1_AR": 0.9999929751822242,
+                  "M2_AD": 2.0491101782959385e-21,
+                  "M3_INC": 2.0491101782959385e-21,
+                  "M4_ZR": 1.1090293072664866e-12,
+                  "M5_ZD": 2.0491101782959385e-21
+                },
+                "true_model_posterior": 0.9999929751822242,
+                "model_entropy_bits": 0.00013039327336606473,
+                "top_two_log2_bayes_factor": 17.119097860309566,
+                "multiclass_brier": 9.869611397486636e-11
+              },
+              {
+                "replicate_index": 4,
+                "seed": 5765961102042853,
+                "observed_counts": {
+                  "female:normal": 24,
+                  "female:target_colour": 8,
+                  "male:normal": 27,
+                  "male:target_colour": 5
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9985880012958441,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 0.0014117897934647619,
+                  "M1_AR": 0.9985880012958441,
+                  "M2_AD": 6.215334267055209e-16,
+                  "M3_INC": 6.215334267055209e-16,
+                  "M4_ZR": 2.0891068907501845e-07,
+                  "M5_ZD": 6.215334267055209e-16
+                },
+                "true_model_posterior": 0.9985880012958441,
+                "model_entropy_bits": 0.015407471928401506,
+                "top_two_log2_bayes_factor": 9.466220465130007,
+                "multiclass_brier": 3.986890805112807e-06
+              },
+              {
+                "replicate_index": 5,
+                "seed": 6723614471357406,
+                "observed_counts": {
+                  "female:normal": 27,
+                  "female:target_colour": 9,
+                  "male:normal": 20,
+                  "male:target_colour": 8
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9999988012672912,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 1.1987325781319231e-06,
+                  "M1_AR": 0.9999988012672912,
+                  "M2_AD": 3.048348240630551e-23,
+                  "M3_INC": 3.048348240630551e-23,
+                  "M4_ZR": 1.3001741292835499e-13,
+                  "M5_ZD": 3.048348240630551e-23
+                },
+                "true_model_posterior": 0.9999988012672912,
+                "model_entropy_bits": 2.5308550466468925e-05,
+                "top_two_log2_bayes_factor": 19.670056992036102,
+                "multiclass_brier": 2.873919900932107e-12
+              },
+              {
+                "replicate_index": 6,
+                "seed": 7561547677998275,
+                "observed_counts": {
+                  "female:normal": 23,
+                  "female:target_colour": 10,
+                  "male:normal": 24,
+                  "male:target_colour": 7
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9999988010635239,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 1.1987325778876539e-06,
+                  "M1_AR": 0.9999988010635239,
+                  "M2_AD": 3.0483482400093693e-23,
+                  "M3_INC": 3.0483482400093693e-23,
+                  "M4_ZR": 2.0389840370141318e-10,
+                  "M5_ZD": 3.0483482400093693e-23
+                },
+                "true_model_posterior": 0.9999988010635239,
+                "model_entropy_bits": 2.5315402651502832e-05,
+                "top_two_log2_bayes_factor": 19.67005699203611,
+                "multiclass_brier": 2.8744085085842397e-12
+              },
+              {
+                "replicate_index": 7,
+                "seed": 3897215373721767,
+                "observed_counts": {
+                  "female:normal": 26,
+                  "female:target_colour": 7,
+                  "male:normal": 23,
+                  "male:target_colour": 8
+                },
+                "best_model": "M1_AR",
+                "best_models": [
+                  "M1_AR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 0.9999588343113937,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 4.116568848850777e-05,
+                  "M1_AR": 0.9999588343113937,
+                  "M2_AD": 1.3773799120298387e-19,
+                  "M3_INC": 1.3773799120298387e-19,
+                  "M4_ZR": 1.1690794279349853e-13,
+                  "M5_ZD": 1.3773799120298387e-19
+                },
+                "true_model_posterior": 0.9999588343113937,
+                "model_entropy_bits": 0.0006590982230268184,
+                "top_two_log2_bayes_factor": 14.568138728583053,
+                "multiclass_brier": 3.3892278271676942e-09
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "experiment_id": "SIM-ZR-DEMO",
+        "generating_model_id": "M4_ZR",
+        "candidate_model_ids": [
+          "M1_AR",
+          "M2_AD",
+          "M3_INC",
+          "M4_ZR",
+          "M5_ZD",
+          "M0_NONGENETIC"
+        ],
+        "by_brood_size": [
+          {
+            "brood_size": 64,
+            "replicates": 8,
+            "small_sample_warning": false,
+            "warnings": [],
+            "recovery": {
+              "true_model_in_candidate_set": true,
+              "top1_rate": 1.0,
+              "top_set_contains_true_rate": 1.0,
+              "tie_policy": "top1_rate_requires_unique_best_model",
+              "wilson_95": {
+                "low": 0.6755924351161198,
+                "high": 1.0
+              },
+              "mean_true_model_posterior": 1.0,
+              "multiclass_brier_mean": 1.8884739609802825e-35
+            },
+            "uncertainty": {
+              "true_model_posterior_quantiles": {
+                "p05": 1.0,
+                "p50": 1.0,
+                "p95": 1.0
+              },
+              "mean_model_entropy_bits": 2.2114756532536297e-16,
+              "top_two_log2_bayes_factor_quantiles": {
+                "p05": 57.46770928274424,
+                "p50": 64.69171095694234,
+                "p95": 64.69171095694234
+              }
+            },
+            "best_model_frequencies": {
+              "M4_ZR": {
+                "top_set_count": 8,
+                "top_set_rate": 1.0,
+                "unique_top1_count": 8,
+                "unique_top1_rate": 1.0
+              }
+            },
+            "best_model_set_frequencies": {
+              "M4_ZR": {
+                "count": 8,
+                "rate": 1.0
+              }
+            },
+            "posterior_discrimination_bins": [
+              {
+                "lower": 0.8,
+                "upper": 1.0,
+                "count": 8,
+                "mean_predicted": 1.0,
+                "observed_top1_rate": 1.0
+              }
+            ],
+            "goodness_of_fit": {
+              "method": "parametric_bootstrap_multinomial_deviance",
+              "bootstrap_replicates": 100,
+              "alpha": 0.05,
+              "candidates": [
+                {
+                  "model_id": "M1_AR",
+                  "deviance": 686.4137874008201,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M2_AD",
+                  "deviance": 686.4137874008201,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M3_INC",
+                  "deviance": 5630.607054398377,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M4_ZR",
+                  "deviance": 0.07929497464590307,
+                  "bootstrap_p_value": 0.9702970297029703,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M5_ZD",
+                  "deviance": 686.4137874008201,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                },
+                {
+                  "model_id": "M0_NONGENETIC",
+                  "deviance": 1477.8951311055007,
+                  "bootstrap_p_value": 0.009900990099009901,
+                  "status": "evaluated"
+                }
+              ],
+              "all_candidates_below_alpha": false
+            },
+            "replicate_results": [
+              {
+                "replicate_index": 0,
+                "seed": 3896923732062842,
+                "observed_counts": {
+                  "female:normal": 0,
+                  "female:target_colour": 37,
+                  "male:normal": 27
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 4.8121175689809753e-48,
+                  "M1_AR": 3.356251762710903e-20,
+                  "M2_AD": 3.356251762710903e-20,
+                  "M3_INC": 6.712503525421728e-148,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 3.356251762710903e-20
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 6.51365006796066e-18,
+                "top_two_log2_bayes_factor": 64.69171095694234,
+                "multiclass_brier": 3.379327768410013e-39
+              },
+              {
+                "replicate_index": 1,
+                "seed": 2893758420735575,
+                "observed_counts": {
+                  "female:normal": 1,
+                  "female:target_colour": 33,
+                  "male:normal": 30
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 6.516847311802113e-41,
+                  "M1_AR": 5.017596385252824e-18,
+                  "M2_AD": 5.017596385252824e-18,
+                  "M3_INC": 6.299192595468525e-152,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 5.017596385252824e-18
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 8.65049311097573e-16,
+                "top_two_log2_bayes_factor": 57.46770928274424,
+                "multiclass_brier": 7.55288204559066e-35
+              },
+              {
+                "replicate_index": 2,
+                "seed": 5944962593762634,
+                "observed_counts": {
+                  "female:normal": 0,
+                  "female:target_colour": 27,
+                  "male:normal": 37
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 1.1884653887965623e-35,
+                  "M1_AR": 3.356251762710903e-20,
+                  "M2_AD": 3.356251762710903e-20,
+                  "M3_INC": 6.712503525421728e-148,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 3.356251762710903e-20
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 6.5136500679606605e-18,
+                "top_two_log2_bayes_factor": 64.69171095694234,
+                "multiclass_brier": 3.379327768410013e-39
+              },
+              {
+                "replicate_index": 3,
+                "seed": 2608631102902862,
+                "observed_counts": {
+                  "female:normal": 0,
+                  "female:target_colour": 27,
+                  "male:normal": 37
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 1.1884653887965623e-35,
+                  "M1_AR": 3.356251762710903e-20,
+                  "M2_AD": 3.356251762710903e-20,
+                  "M3_INC": 6.712503525421728e-148,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 3.356251762710903e-20
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 6.5136500679606605e-18,
+                "top_two_log2_bayes_factor": 64.69171095694234,
+                "multiclass_brier": 3.379327768410013e-39
+              },
+              {
+                "replicate_index": 4,
+                "seed": 1001123489513365,
+                "observed_counts": {
+                  "female:normal": 0,
+                  "female:target_colour": 31,
+                  "male:normal": 33
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 1.311977583847729e-40,
+                  "M1_AR": 3.356251762710903e-20,
+                  "M2_AD": 3.356251762710903e-20,
+                  "M3_INC": 6.712503525421728e-148,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 3.356251762710903e-20
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 6.51365006796066e-18,
+                "top_two_log2_bayes_factor": 64.69171095694234,
+                "multiclass_brier": 3.379327768410013e-39
+              },
+              {
+                "replicate_index": 5,
+                "seed": 8291959801853366,
+                "observed_counts": {
+                  "female:normal": 0,
+                  "female:target_colour": 28,
+                  "male:normal": 36
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 6.850487962920449e-37,
+                  "M1_AR": 3.356251762710903e-20,
+                  "M2_AD": 3.356251762710903e-20,
+                  "M3_INC": 6.712503525421728e-148,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 3.356251762710903e-20
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 6.51365006796066e-18,
+                "top_two_log2_bayes_factor": 64.69171095694234,
+                "multiclass_brier": 3.379327768410013e-39
+              },
+              {
+                "replicate_index": 6,
+                "seed": 4455326345074122,
+                "observed_counts": {
+                  "female:normal": 0,
+                  "female:target_colour": 30,
+                  "male:normal": 34
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 2.276100560601911e-39,
+                  "M1_AR": 3.356251762710903e-20,
+                  "M2_AD": 3.356251762710903e-20,
+                  "M3_INC": 6.712503525421728e-148,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 3.356251762710903e-20
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 6.51365006796066e-18,
+                "top_two_log2_bayes_factor": 64.69171095694234,
+                "multiclass_brier": 3.379327768410013e-39
+              },
+              {
+                "replicate_index": 7,
+                "seed": 8012729056387718,
+                "observed_counts": {
+                  "female:normal": 1,
+                  "female:target_colour": 40,
+                  "male:normal": 23
+                },
+                "best_model": "M4_ZR",
+                "best_models": [
+                  "M4_ZR"
+                ],
+                "top1_tied": false,
+                "best_model_posterior": 1.0,
+                "model_posteriors": {
+                  "M0_NONGENETIC": 1.3777877825923228e-49,
+                  "M1_AR": 5.0175963852527884e-18,
+                  "M2_AD": 5.0175963852527884e-18,
+                  "M3_INC": 6.2991925954681675e-152,
+                  "M4_ZR": 1.0,
+                  "M5_ZD": 5.0175963852527884e-18
+                },
+                "true_model_posterior": 1.0,
+                "model_entropy_bits": 8.650493110975669e-16,
+                "top_two_log2_bayes_factor": 57.467709282744245,
+                "multiclass_brier": 7.552882045590555e-35
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "calibration_by_design": [
+      {
+        "brood_size": 8,
+        "candidate_model_ids": [
+          "M1_AR",
+          "M2_AD",
+          "M3_INC",
+          "M4_ZR",
+          "M5_ZD",
+          "M0_NONGENETIC"
+        ],
+        "method": "empirical_reliability_under_declared_simulation_design",
+        "status": "not_estimable",
+        "reason": "requires_at_least_two_generating_models",
+        "design_model_frequencies": {
+          "M1_AR": 8
+        },
+        "models": [],
+        "limits": {
+          "design_dependent": true,
+          "not_external_field_calibration": true
+        }
+      },
+      {
+        "brood_size": 64,
+        "candidate_model_ids": [
+          "M1_AR",
+          "M2_AD",
+          "M3_INC",
+          "M4_ZR",
+          "M5_ZD",
+          "M0_NONGENETIC"
+        ],
+        "method": "empirical_reliability_under_declared_simulation_design",
+        "status": "estimated",
+        "reason": null,
+        "design_model_frequencies": {
+          "M1_AR": 8,
+          "M4_ZR": 8
+        },
+        "models": [
+          {
+            "model_id": "M1_AR",
+            "bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.2,
+                "count": 8,
+                "mean_posterior": 1.2795709845335334e-18,
+                "observed_true_model_rate": 0.0
+              },
+              {
+                "lower": 0.8,
+                "upper": 1.0,
+                "count": 8,
+                "mean_posterior": 0.9996396748884271,
+                "observed_true_model_rate": 1.0
+              }
+            ]
+          },
+          {
+            "model_id": "M2_AD",
+            "bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.2,
+                "count": 16,
+                "mean_posterior": 7.834034242464561e-17,
+                "observed_true_model_rate": 0.0
+              }
+            ]
+          },
+          {
+            "model_id": "M3_INC",
+            "bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.2,
+                "count": 16,
+                "mean_posterior": 7.770055693237884e-17,
+                "observed_true_model_rate": 0.0
+              }
+            ]
+          },
+          {
+            "model_id": "M4_ZR",
+            "bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.2,
+                "count": 8,
+                "mean_posterior": 2.6186394632437352e-08,
+                "observed_true_model_rate": 0.0
+              },
+              {
+                "lower": 0.8,
+                "upper": 1.0,
+                "count": 8,
+                "mean_posterior": 1.0,
+                "observed_true_model_rate": 1.0
+              }
+            ]
+          },
+          {
+            "model_id": "M5_ZD",
+            "bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.2,
+                "count": 16,
+                "mean_posterior": 7.834034242464561e-17,
+                "observed_true_model_rate": 0.0
+              }
+            ]
+          },
+          {
+            "model_id": "M0_NONGENETIC",
+            "bins": [
+              {
+                "lower": 0.0,
+                "upper": 0.2,
+                "count": 16,
+                "mean_posterior": 0.000180149462588768,
+                "observed_true_model_rate": 0.0
+              }
+            ]
+          }
+        ],
+        "limits": {
+          "design_dependent": true,
+          "not_external_field_calibration": true
+        }
+      }
+    ],
+    "evidence": {
+      "source": "synthetic_simulation_only",
+      "evidence_grade": "G0",
+      "gene_status": "not_assessed"
+    },
+    "limits": {
+      "synthetic_only": true,
+      "decision_support_only": true,
+      "posterior_scope": "relative_to_candidate_model_set",
+      "gene_status": "not_assessed",
+      "inheritance_status": "simulation_recovery_not_confirmation",
+      "genotype_specific_survival": "not_modeled",
+      "claim_language": "simulate_cross"
+    }
+  }
+}

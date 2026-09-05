@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://biobirddna.local/schemas/pigment-request.schema.json",
+  "title": "BioBirdDNA visible pigment phenotype request",
+  "type": "object",
+  "properties": {
+    "white_area_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+    "brown_shift_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "grey_shift_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "dark_expansion_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "red_patch_change_score": {"type": "number", "minimum": 0, "maximum": 1},
+    "pattern_retained": {"type": ["boolean", "null"]},
+    "iris_red_confirmed": {"type": "boolean"},
+    "flash_red_eye_risk": {"type": "boolean"},
+    "progressive_across_molts": {"type": "boolean"},
+    "present_in_first_plumage": {"type": ["boolean", "null"]},
+    "localized_after_injury": {"type": "boolean"},
+    "bilateral_symmetry": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "image_quality": {"enum": ["Q0", "Q1", "Q2", "Q3", "Q4"]}
+  },
+  "additionalProperties": false
+}

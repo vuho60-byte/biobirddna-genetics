@@ -1,0 +1,15 @@
+{
+  "white_area_ratio": 0.18,
+  "brown_shift_score": 0.02,
+  "grey_shift_score": 0.03,
+  "dark_expansion_score": 0.0,
+  "red_patch_change_score": 0.0,
+  "pattern_retained": false,
+  "iris_red_confirmed": false,
+  "flash_red_eye_risk": false,
+  "progressive_across_molts": true,
+  "present_in_first_plumage": false,
+  "localized_after_injury": false,
+  "bilateral_symmetry": 0.35,
+  "image_quality": "Q3"
+}

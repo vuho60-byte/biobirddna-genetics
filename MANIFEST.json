@@ -1,0 +1,59 @@
+{
+  "name": "biobirddna-genetics",
+  "display_name": "BioBirdDNA Genetics",
+  "version": "0.3.0",
+  "language": "vi",
+  "runtime": "python>=3.11",
+  "additional_runtimes": [
+    "node>=20"
+  ],
+  "external_runtime_dependencies": [],
+  "entrypoints": {
+    "skill": "SKILL.md",
+    "interface": "agents/openai.yaml",
+    "cli": "scripts/biobirddna_cli.py",
+    "validator": "scripts/validate_package.py",
+    "release_inventory_builder": "scripts/rebuild_release_inventory.py",
+    "standalone_python": "standalone/biobirddna_genetics_standalone.py",
+    "standalone_node": "standalone/biobirddna_genetics_node.mjs",
+    "npm_package": "npm/package.json",
+    "npm_cli": "npm/bin/biobirddna-genetics.mjs",
+    "npm_feedback": "npm/bin/biobirddna-feedback.mjs"
+  },
+  "operations": [
+    "cross",
+    "infer",
+    "pigment",
+    "rank-mates",
+    "normalize-records",
+    "simulate-recovery"
+  ],
+  "scientific_status": "research_prototype",
+  "decision_status": "human_review_required",
+  "feedback_status": "proposal_only_pending_human_review",
+  "cloud_adapter": {
+    "issue": "GEN-015",
+    "transport": "oauth2_stateless_mcp",
+    "tool_count": 7,
+    "persistence": false,
+    "generic_dispatch": false,
+    "feedback_auto_apply": false
+  },
+  "npm_distribution": {
+    "name": "@biobirddna/genetics",
+    "private": false,
+    "license": "UNLICENSED",
+    "publish_config": {
+      "access": "public"
+    },
+    "repository": "https://github.com/vuho60-byte/biobirddna-genetics",
+    "registry_publish": "release_candidate_not_published"
+  },
+  "bundled_knowledge": [
+    "knowledge/T02_knowledge_base_v1.0.json"
+  ],
+  "architecture_blueprint": "BioBirdDNA_Genetics_Skill_Blueprint_v0.1.0.md",
+  "planning_handoff": "planning/MODEL_CODER_HANDOFF.md",
+  "database_draft": "references/postgres-schema-draft.sql",
+  "api_draft": "references/openapi-draft.yaml"
+}

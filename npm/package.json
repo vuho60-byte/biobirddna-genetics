@@ -1,0 +1,29 @@
+{
+  "name": "@biobirddna/genetics",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Dependency-free, evidence-bounded avian inheritance research primitives.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "bin": {
+    "biobirddna-genetics": "./bin/biobirddna-genetics.mjs",
+    "biobirddna-feedback": "./bin/biobirddna-feedback.mjs"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "pack:smoke": "node ./test/pack-smoke.mjs"
+  }
+}
