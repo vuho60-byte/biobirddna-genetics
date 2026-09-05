@@ -60,3 +60,11 @@
 - G3–G4: supported/strong model, no confirmed locus.
 - G5: locus/variant supported by cosegregation.
 - G6: independently replicated or functionally supported mechanism.
+# Research coverage restored (2026-09-05)
+
+See `knowledge/research-coverage-v3.json` for the recovered v3 tracker, with
+27 source-bound topics and separate software/research status. `Pending` and
+`Not Started` are preserved as observed in the source. A functioning synthetic
+primitive does not close the tracker exit gate or support a gene claim.
+Candidate strings are questions quoted from tracker cells, not newly endorsed
+models. No literature claim or evidence grade is assigned by the mapping.

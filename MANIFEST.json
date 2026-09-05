@@ -48,7 +48,9 @@
     "registry_publish": "private_not_published"
   },
   "bundled_knowledge": [
-    "knowledge/T02_knowledge_base_v1.0.json"
+    "knowledge/T02_knowledge_base_v1.0.json",
+    "knowledge/research-coverage-v3.json",
+    "knowledge/sources/tracker-v3-20260905.json"
   ],
   "architecture_blueprint": "BioBirdDNA_Genetics_Skill_Blueprint_v0.1.0.md",
   "planning_handoff": "planning/MODEL_CODER_HANDOFF.md",

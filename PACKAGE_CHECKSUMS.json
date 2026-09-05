@@ -3,8 +3,8 @@
   "version": "0.3.0",
   "algorithm": "SHA-256",
   "self_excluded": "PACKAGE_CHECKSUMS.json",
-  "file_count": 130,
-  "total_bytes": 1304463,
+  "file_count": 134,
+  "total_bytes": 1426693,
   "files": [
     {
       "path": ".github/workflows/native-installers.yml",
@@ -33,8 +33,8 @@
     },
     {
       "path": "MANIFEST.json",
-      "bytes": 1883,
-      "sha256": "521f45a04592b4adabcde590e0d2772ca0f3477449d95312559267bca2ce33ba"
+      "bytes": 1978,
+      "sha256": "1e8874d97a14ae0019f2b30cbc213da87614ebffe31a18ab18e965d8d5f6abf3"
     },
     {
       "path": "README.md",
@@ -43,8 +43,8 @@
     },
     {
       "path": "SHA256SUMS.txt",
-      "bytes": 12995,
-      "sha256": "e2e896b6ff6ab9d941510ceb7eb91d728b1faabb4781834ceacd2b4e229ad144"
+      "bytes": 13413,
+      "sha256": "fe12ff7e4265628f2d6a62711c3d97e3972b53394cb11c0f055b4fae50727ee1"
     },
     {
       "path": "SKILL.md",
@@ -227,6 +227,16 @@
       "sha256": "cf141ed451ac565187697196734a0d0f1dcefc71b196aaf8829a1b861911507f"
     },
     {
+      "path": "knowledge/research-coverage-v3.json",
+      "bytes": 63478,
+      "sha256": "03c21469107ee6931ff7601c90848424e99b0c5eb1197eef304e51d1049883f6"
+    },
+    {
+      "path": "knowledge/sources/tracker-v3-20260905.json",
+      "bytes": 48598,
+      "sha256": "596651bb8db1b820ec07d5113c87be79c33f8feddca0db869711fd70a7d2e5dd"
+    },
+    {
       "path": "npm/LICENSE",
       "bytes": 11,
       "sha256": "2243a28bde961bcfa5957c3d0ad9aae01b0bc042f0d3d289089825a71b08c45c"
@@ -343,8 +353,8 @@
     },
     {
       "path": "planning/backlog.json",
-      "bytes": 12311,
-      "sha256": "dfdc4580c0fe3f759500192ad3d497347ecdb522c260943aee8d2f801b58532b"
+      "bytes": 13333,
+      "sha256": "7ccf655d122248ed77142d502a28a516eae3bd1ab55879f9b6de3c7bbb0d6cd6"
     },
     {
       "path": "pyproject.toml",
@@ -378,8 +388,8 @@
     },
     {
       "path": "references/model-card.md",
-      "bytes": 2009,
-      "sha256": "d048ae59da80dd90caf6de365094803b26749bd087f409fe10041acac5bbdcb8"
+      "bytes": 2508,
+      "sha256": "adca462fa95999bfe048708280dd0fe707908c0e8a45bd5aef0c1aec01f6464b"
     },
     {
       "path": "references/openapi-draft.yaml",
@@ -398,8 +408,8 @@
     },
     {
       "path": "references/t02-integration.md",
-      "bytes": 2843,
-      "sha256": "997d52e46d1f29b040d03714a2ac66d0c7e5911f7343f5516f7394eebec17d30"
+      "bytes": 3502,
+      "sha256": "24a31eb10f988964f0186f2bd840b7129e6f6bdeadd8e7487dcca747009168aa"
     },
     {
       "path": "run_demo.bat",
@@ -430,6 +440,11 @@
       "path": "scripts/biobirddna_cli.py",
       "bytes": 355,
       "sha256": "728968c4f068ed2f97eb4a81c85c3950417c4fef082a35e9dab09145f1d9292f"
+    },
+    {
+      "path": "scripts/build_research_coverage.py",
+      "bytes": 5029,
+      "sha256": "d9f962234642151b8fad57f4970de90e2ec3b18665394e5e28569740938f9f5f"
     },
     {
       "path": "scripts/install_skill.ps1",
@@ -568,8 +583,8 @@
     },
     {
       "path": "tasks/todo.md",
-      "bytes": 2397,
-      "sha256": "9f59b8fef5c898696fb17c9d08da9073b660a8683a87341ae2f6fa3970589842"
+      "bytes": 2414,
+      "sha256": "a747510a9605d4c0b62662cb7b7121d43aef41d0d64478d09ef1e6a3fdf0b21a"
     },
     {
       "path": "tests/test_atomic_rename.py",
@@ -645,6 +660,11 @@
       "path": "tests/test_release_inventory_builder.py",
       "bytes": 2333,
       "sha256": "7d810337f19434d6ed2f6c65462d71dbb1251b53dbebc6d12e9d5adfe611ad07"
+    },
+    {
+      "path": "tests/test_research_coverage.py",
+      "bytes": 2415,
+      "sha256": "bb40703afd01751b0247a37afd7a0435b38b2409ea5242f7dd67e220bf9e132a"
     },
     {
       "path": "tests/test_simulation_recovery.py",

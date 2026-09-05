@@ -1,0 +1,1164 @@
+{
+  "schema_version": "1.0.0",
+  "tracker_version": "v3",
+  "retrieved_on": "2026-09-05",
+  "source": {
+    "path": "knowledge/sources/tracker-v3-20260905.json",
+    "sha256": "596651bb8db1b820ec07d5113c87be79c33f8feddca0db869711fd70a7d2e5dd",
+    "spreadsheet_id": "1Av2TyP3XvPp_BPsxr8HdJkGzMh-kpYIYFnZlOmDKv90",
+    "sheet": "Untitled",
+    "range": "A1:AL30",
+    "title": "Lộ trình nghiên cứu màu lông chào mào – Tracker v3 (27 topic) — BẢN ĐANG DÙNG"
+  },
+  "topics": [
+    {
+      "topic_id": "T01",
+      "title": "Người dùng đang cần quyết định điều gì?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 2,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T01_source_and_boundary"
+      ],
+      "exit_gate": "Chốt tối đa năm job-to-be-done và một câu CTA cho mỗi nhóm người dùng.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T02",
+      "title": "Từ điển kiểu hình dùng ngôn ngữ nào?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 3,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "local_ontology_only",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/pigment.py",
+        "knowledge/T02_knowledge_base_v1.0.json"
+      ],
+      "behavior_tests": [
+        "tests/test_pigment_and_evidence.py::test_progressive_white_pattern_prefers_pgr",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_exclude_zero_score_labels",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_keep_three_when_all_positive",
+        "tests/test_pigment_and_evidence.py::test_q0_and_q1_force_recapture_despite_strong_visible_features",
+        "tests/test_pigment_and_evidence.py::test_standalone_q0_and_q1_also_force_recapture",
+        "tests/test_pigment_and_evidence.py::test_gene_claim_requires_g5",
+        "tests/test_pigment_and_evidence.py::test_domain_object_rejects_invalid_boolean_and_quality_types"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T02_source_and_boundary"
+      ],
+      "exit_gate": "Từ điển phiên bản 1 có nhãn quan sát trung tính, alias dân gian và trạng thái chưa xác định.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T03",
+      "title": "Nguồn chim, consent và phúc lợi được kiểm soát thế nào?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 4,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T03_source_and_boundary"
+      ],
+      "exit_gate": "Consent, quy tắc tiếp nhận và stop-rule được chuyên gia pháp lý/thú y duyệt.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T04",
+      "title": "Ngưỡng dừng phúc lợi và cận huyết được khoá trước",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 5,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/pedigree.py"
+      ],
+      "behavior_tests": [
+        "tests/test_pedigree.py::test_full_sibling_relationship",
+        "tests/test_pedigree.py::test_unrelated_founder"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T04_source_and_boundary"
+      ],
+      "exit_gate": "Cố vấn thú y ký duyệt ngưỡng và có quyền dừng đơn phương; ngưỡng được khoá trước khi nhận cá thể đầu tiên.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T05",
+      "title": "Ai đã làm rồi? Khảo sát sổ giống các loài chim cảnh khác",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 6,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T05_source_and_boundary"
+      ],
+      "exit_gate": "Chốt được một schema tham chiếu cho T11 và T19 thay vì thiết kế từ đầu; nêu rõ điểm nào KHÔNG áp dụng được cho chào mào.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T06",
+      "title": "Bộ gene chào mào đã có sẵn tới đâu?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 7,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T06_source_and_boundary"
+      ],
+      "exit_gate": "Kết luận rõ nhánh gene (T22) là khả thi, khả thi có điều kiện hay chưa khả thi, kèm lý do kỹ thuật cụ thể.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T07",
+      "title": "Ai trả tiền và người đóng góp được gì?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 8,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T07_source_and_boundary"
+      ],
+      "exit_gate": "Chốt một mô hình đổi giá trị chính và một mô hình dự phòng, kèm mức phí giả định để T20 kiểm chứng bằng số thật.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T08",
+      "title": "Giới tính được xác minh và trình bày ra sao?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 9,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/breeding_records.py"
+      ],
+      "behavior_tests": [
+        "tests/test_breeding_records.py::test_normalizes_losses_and_normal_phenotype_without_mutating_input",
+        "tests/test_breeding_records.py::test_missing_stage_remains_distinct_from_observed_zero",
+        "tests/test_breeding_records.py::test_partial_stage_coverage_is_reported_as_incomplete",
+        "tests/test_breeding_records.py::test_preserves_unfertilized_and_hatch_failure_records",
+        "tests/test_breeding_records.py::test_requires_parent_sex_provenance",
+        "tests/test_breeding_records.py::test_complete_stage_counts_must_match_offspring_records",
+        "tests/test_breeding_records.py::test_requires_every_stage_key_explicitly",
+        "tests/test_breeding_records.py::test_sorts_phenotype_timeline_by_sequence_index",
+        "tests/test_breeding_records.py::test_reciprocal_crosses_keep_parent_direction",
+        "tests/test_breeding_records.py::test_rejects_duplicate_record_ids",
+        "tests/test_breeding_records.py::test_rejects_increasing_observed_stage_counts",
+        "tests/test_breeding_records.py::test_requires_method_and_confidence_for_known_sex",
+        "tests/test_breeding_records.py::test_rejects_empty_pairings_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_unknown_fields_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_outcome_that_contradicts_stage_path",
+        "tests/test_breeding_records.py::test_rejects_absent_schema_required_offspring_fields"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T08_source_and_boundary"
+      ],
+      "exit_gate": "100% nhãn giới tính dùng cho phân tích có nguồn; không ép kết quả chưa rõ thành trống/mái.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T09",
+      "title": "Xác minh HUYẾT THỐNG bằng DNA có khả thi không?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 10,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "Chưa rõ năng lực xác minh huyết thống cho Passeriformes tại VN.",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T09_source_and_boundary"
+      ],
+      "exit_gate": "Trả lời được một trong hai: (a) có đối tác + giá + quy trình mẫu; hoặc (b) chưa khả thi → T21 hạ xuống mức chỉ mô tả, không kết luận quy luật truyền, và ghi rõ giới hạn đó ra công khai.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T10",
+      "title": "Bộ ảnh đạt chuẩn và hiệu chuẩn màu",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 11,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T10_source_and_boundary"
+      ],
+      "exit_gate": "Ít nhất 85% bộ ảnh pilot đạt chuẩn VÀ sai lệch màu qua thẻ tham chiếu nằm trong ngưỡng đã khoá. Không đạt ngưỡng màu thì T15 phải hạ từ “đo độ nhạt” xuống “có/không”.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T11",
+      "title": "Nhận diện cá thể, phả hệ và chống gian lận",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 12,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/breeding_records.py"
+      ],
+      "behavior_tests": [
+        "tests/test_breeding_records.py::test_normalizes_losses_and_normal_phenotype_without_mutating_input",
+        "tests/test_breeding_records.py::test_missing_stage_remains_distinct_from_observed_zero",
+        "tests/test_breeding_records.py::test_partial_stage_coverage_is_reported_as_incomplete",
+        "tests/test_breeding_records.py::test_preserves_unfertilized_and_hatch_failure_records",
+        "tests/test_breeding_records.py::test_requires_parent_sex_provenance",
+        "tests/test_breeding_records.py::test_complete_stage_counts_must_match_offspring_records",
+        "tests/test_breeding_records.py::test_requires_every_stage_key_explicitly",
+        "tests/test_breeding_records.py::test_sorts_phenotype_timeline_by_sequence_index",
+        "tests/test_breeding_records.py::test_reciprocal_crosses_keep_parent_direction",
+        "tests/test_breeding_records.py::test_rejects_duplicate_record_ids",
+        "tests/test_breeding_records.py::test_rejects_increasing_observed_stage_counts",
+        "tests/test_breeding_records.py::test_requires_method_and_confidence_for_known_sex",
+        "tests/test_breeding_records.py::test_rejects_empty_pairings_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_unknown_fields_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_outcome_that_contradicts_stage_path",
+        "tests/test_breeding_records.py::test_rejects_absent_schema_required_offspring_fields"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T11_source_and_boundary"
+      ],
+      "exit_gate": "Tỷ lệ trùng/nhầm cá thể không quá 2%; mọi quan hệ có mức chắc chắn; phả hệ không có DNA huyết thống thì hiển thị vĩnh viễn ở mức “khai báo”.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T12",
+      "title": "Danh sách biến kiểm soát bắt buộc",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 13,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/breeding_records.py"
+      ],
+      "behavior_tests": [
+        "tests/test_breeding_records.py::test_normalizes_losses_and_normal_phenotype_without_mutating_input",
+        "tests/test_breeding_records.py::test_missing_stage_remains_distinct_from_observed_zero",
+        "tests/test_breeding_records.py::test_partial_stage_coverage_is_reported_as_incomplete",
+        "tests/test_breeding_records.py::test_preserves_unfertilized_and_hatch_failure_records",
+        "tests/test_breeding_records.py::test_requires_parent_sex_provenance",
+        "tests/test_breeding_records.py::test_complete_stage_counts_must_match_offspring_records",
+        "tests/test_breeding_records.py::test_requires_every_stage_key_explicitly",
+        "tests/test_breeding_records.py::test_sorts_phenotype_timeline_by_sequence_index",
+        "tests/test_breeding_records.py::test_reciprocal_crosses_keep_parent_direction",
+        "tests/test_breeding_records.py::test_rejects_duplicate_record_ids",
+        "tests/test_breeding_records.py::test_rejects_increasing_observed_stage_counts",
+        "tests/test_breeding_records.py::test_requires_method_and_confidence_for_known_sex",
+        "tests/test_breeding_records.py::test_rejects_empty_pairings_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_unknown_fields_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_outcome_that_contradicts_stage_path",
+        "tests/test_breeding_records.py::test_rejects_absent_schema_required_offspring_fields"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T12_source_and_boundary"
+      ],
+      "exit_gate": "Danh sách biến kiểm soát được khoá và đưa vào biểu mẫu; có stop-rule khi dữ liệu sức khoẻ không đủ.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T24",
+      "title": "Giọng hót: chuẩn hoá ghi âm song song với ảnh",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 14,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T24_source_and_boundary"
+      ],
+      "exit_gate": "Ít nhất 85% bản ghi pilot đạt chuẩn so sánh được; 100% bản ghi gắn đúng mã cá thể và trạng thái khi ghi. Chưa gắn được ngữ cảnh thì bản ghi không vào phân tích.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T26",
+      "title": "Luật phát ngôn theo mức bằng chứng",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 15,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T26_source_and_boundary"
+      ],
+      "exit_gate": "Luật phát ngôn được duyệt TRƯỚC bài tuyển đầu tiên của T17; mọi nội dung công khai đối chiếu được với bảng này và có đường rút lại khi bằng chứng đổi.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T27",
+      "title": "Đối tác học thuật quốc tế",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 16,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T27_source_and_boundary"
+      ],
+      "exit_gate": "Gửi ít nhất 5 thư ngỏ và có ít nhất 1 hồi đáp thực chất. Sau 8 tuần mà 0 hồi đáp thì xem lại cách chào hàng dữ liệu, đừng gửi thêm cùng một mẫu thư.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T13",
+      "title": "Nhóm theo dõi dọc qua kỳ thay lông",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 17,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/breeding_records.py"
+      ],
+      "behavior_tests": [
+        "tests/test_breeding_records.py::test_normalizes_losses_and_normal_phenotype_without_mutating_input",
+        "tests/test_breeding_records.py::test_missing_stage_remains_distinct_from_observed_zero",
+        "tests/test_breeding_records.py::test_partial_stage_coverage_is_reported_as_incomplete",
+        "tests/test_breeding_records.py::test_preserves_unfertilized_and_hatch_failure_records",
+        "tests/test_breeding_records.py::test_requires_parent_sex_provenance",
+        "tests/test_breeding_records.py::test_complete_stage_counts_must_match_offspring_records",
+        "tests/test_breeding_records.py::test_requires_every_stage_key_explicitly",
+        "tests/test_breeding_records.py::test_sorts_phenotype_timeline_by_sequence_index",
+        "tests/test_breeding_records.py::test_reciprocal_crosses_keep_parent_direction",
+        "tests/test_breeding_records.py::test_rejects_duplicate_record_ids",
+        "tests/test_breeding_records.py::test_rejects_increasing_observed_stage_counts",
+        "tests/test_breeding_records.py::test_requires_method_and_confidence_for_known_sex",
+        "tests/test_breeding_records.py::test_rejects_empty_pairings_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_unknown_fields_like_the_versioned_schema",
+        "tests/test_breeding_records.py::test_rejects_outcome_that_contradicts_stage_path",
+        "tests/test_breeding_records.py::test_rejects_absent_schema_required_offspring_fields"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T13_source_and_boundary"
+      ],
+      "exit_gate": "Không có gate chặn ai. Báo cáo tạm ở mốc 3, 6 và 12 tháng; kết luận đầy đủ chỉ sau một chu kỳ thay lông trọn vẹn.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T14",
+      "title": "Nhóm giảm hoặc mất sắc tố thực sự gồm những phenotype nào?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 18,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "INSUFFICIENT_DATA",
+      "tracker_evidence_grade": "Pending Review / INSUFFICIENT_DATA",
+      "tracker_allowed_conclusion": "Chỉ mô tả phenotype quan sát được. Chưa được gắn nhãn albinism, leucism, dilution, progressive greying hoặc gene cụ thể.",
+      "tracker_evidence_gap": "Thiếu toàn văn file, danh mục tài liệu, nghiên cứu trực tiếp trên chào mào/loài gần, dữ liệu lặp theo thời gian, mắt-mỏ-chân, phả hệ và đời con.",
+      "tracker_source_review_file": "topic-08-melanin-loss-deep-dive.md",
+      "tracker_file_availability": "NOT FOUND - đã xác minh 28/07/2026: không tồn tại trong workspace lẫn Google Drive",
+      "candidate_models": [
+        "albinism",
+        "leucism",
+        "progressive greying"
+      ],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/pigment.py"
+      ],
+      "behavior_tests": [
+        "tests/test_pigment_and_evidence.py::test_progressive_white_pattern_prefers_pgr",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_exclude_zero_score_labels",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_keep_three_when_all_positive",
+        "tests/test_pigment_and_evidence.py::test_q0_and_q1_force_recapture_despite_strong_visible_features",
+        "tests/test_pigment_and_evidence.py::test_standalone_q0_and_q1_also_force_recapture",
+        "tests/test_pigment_and_evidence.py::test_gene_claim_requires_g5",
+        "tests/test_pigment_and_evidence.py::test_domain_object_rejects_invalid_boolean_and_quality_types"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T14_source_and_boundary"
+      ],
+      "exit_gate": "Tách được các cụm phenotype đo lặp lại; nếu chưa tách được thì giữ một nhãn trung tính.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T15",
+      "title": "Nhóm nâu, xám và pha loãng có cùng cơ chế không?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 19,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [
+        "autosomal",
+        "liên kết Z",
+        "đa gene",
+        "không di truyền"
+      ],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/pigment.py"
+      ],
+      "behavior_tests": [
+        "tests/test_pigment_and_evidence.py::test_progressive_white_pattern_prefers_pgr",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_exclude_zero_score_labels",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_keep_three_when_all_positive",
+        "tests/test_pigment_and_evidence.py::test_q0_and_q1_force_recapture_despite_strong_visible_features",
+        "tests/test_pigment_and_evidence.py::test_standalone_q0_and_q1_also_force_recapture",
+        "tests/test_pigment_and_evidence.py::test_gene_claim_requires_g5",
+        "tests/test_pigment_and_evidence.py::test_domain_object_rejects_invalid_boolean_and_quality_types"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T15_source_and_boundary"
+      ],
+      "exit_gate": "Xác định các phenotype ứng viên; kiểm tra cạnh tranh autosomal, liên kết Z, đa gene và không di truyền.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T16",
+      "title": "Biến đổi vùng đỏ/vàng có phải do carotenoid?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 20,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/pigment.py"
+      ],
+      "behavior_tests": [
+        "tests/test_pigment_and_evidence.py::test_progressive_white_pattern_prefers_pgr",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_exclude_zero_score_labels",
+        "tests/test_pigment_and_evidence.py::test_alternative_hypotheses_keep_three_when_all_positive",
+        "tests/test_pigment_and_evidence.py::test_q0_and_q1_force_recapture_despite_strong_visible_features",
+        "tests/test_pigment_and_evidence.py::test_standalone_q0_and_q1_also_force_recapture",
+        "tests/test_pigment_and_evidence.py::test_gene_claim_requires_g5",
+        "tests/test_pigment_and_evidence.py::test_domain_object_rejects_invalid_boolean_and_quality_types"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T16_source_and_boundary"
+      ],
+      "exit_gate": "Phân loại được cơ chế ở mức đủ để chọn giả thuyết; nếu không, ghi INSUFFICIENT_DATA.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T25",
+      "title": "Atlas tuổi và thay lông",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 21,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T25_source_and_boundary"
+      ],
+      "exit_gate": "Atlas v1 phủ được các mốc tuổi chính, mỗi mốc có ít nhất 3 cá thể khác nhau; mốc nào thiếu dữ liệu phải ghi rõ là thiếu.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T17",
+      "title": "Tuyển nguồn nuôi và người đóng góp",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 22,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T17_source_and_boundary"
+      ],
+      "exit_gate": "MỐC NGÀY 30: có ít nhất 1 nguồn nuôi độc lập đã ký. MỐC NGÀY 60: có 3. Không đạt mốc ngày 30 thì dừng và xem lại T07.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T18",
+      "title": "Mục lục nội dung cộng đồng nên dẫn người đọc đi thế nào?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 23,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T18_source_and_boundary"
+      ],
+      "exit_gate": "Chốt bốn tuyến nội dung: • 1. Tôi đang nhìn thấy màu gì? • 2. Có thể do gene hay yếu tố khác? • 3. Trống-mái và phả hệ được xác minh thế nào? • 4. Dữ liệu đời con nói được điều gì?",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T19",
+      "title": "WordPress MVP cần những trang và luồng nào?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 24,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T19_source_and_boundary"
+      ],
+      "exit_gate": "Người dùng hoàn thành được hồ sơ một cá thể và một lứa; dữ liệu cốt lõi đạt 90%.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T20",
+      "title": "Pilot 90 ngày có đủ tín hiệu để tiếp tục không?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 25,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/simulation.py"
+      ],
+      "behavior_tests": [
+        "tests/test_simulation_recovery.py::test_same_seed_is_object_deterministic_and_does_not_mutate_input",
+        "tests/test_simulation_recovery.py::test_known_ar_and_zr_models_recover_at_large_brood_size",
+        "tests/test_simulation_recovery.py::test_small_sample_uncertainty_is_explicit",
+        "tests/test_simulation_recovery.py::test_misspecified_candidate_set_uses_absolute_fit_warning",
+        "tests/test_simulation_recovery.py::test_bootstrap_reselects_parent_configuration_each_time",
+        "tests/test_simulation_recovery.py::test_calibration_uses_realized_true_model_across_design",
+        "tests/test_simulation_recovery.py::test_brier_score_matches_multiclass_definition",
+        "tests/test_simulation_recovery.py::test_wilson_interval_matches_fixed_numerical_oracle",
+        "tests/test_simulation_recovery.py::test_m0_non_genetic_candidate_is_mandatory",
+        "tests/test_simulation_recovery.py::test_candidate_set_requires_multiple_models",
+        "tests/test_simulation_recovery.py::test_bootstrap_resolution_must_support_selected_alpha",
+        "tests/test_simulation_recovery.py::test_generating_model_requires_schema_model_id",
+        "tests/test_simulation_recovery.py::test_matching_model_id_requires_matching_candidate_snapshot",
+        "tests/test_simulation_recovery.py::test_known_generating_id_keeps_canonical_semantics_when_omitted",
+        "tests/test_simulation_recovery.py::test_semantic_text_fields_reject_surrounding_whitespace",
+        "tests/test_simulation_recovery.py::test_non_genetic_generating_model_requires_na_genotypes",
+        "tests/test_simulation_recovery.py::test_parent_phenotype_must_match_generating_genotype",
+        "tests/test_simulation_recovery.py::test_bootstrap_draw_budget_fails_before_sampling",
+        "tests/test_simulation_recovery.py::test_all_parent_genotypes_validate_before_any_sampling",
+        "tests/test_simulation_recovery.py::test_recovery_is_order_independent_when_models_tie"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T20_source_and_boundary"
+      ],
+      "exit_gate": "MỐC NGÀY 30 (kill-check): chưa có nguồn nuôi độc lập nào ký thì DỪNG, không chạy nốt 60 ngày. NGÀY 90: quyết định một trong ba hướng - tiếp tục registry, chuyển sang điều phối DNA/nội dung, hoặc dừng vì không đủ dữ liệu.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T21",
+      "title": "Quy luật truyền nào phù hợp với từng phenotype?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 26,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [
+        "mô hình cạnh tranh"
+      ],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/inference.py"
+      ],
+      "behavior_tests": [
+        "tests/test_inference.py::test_candidate_set_requires_m0_and_multiple_models",
+        "tests/test_inference.py::test_duplicate_candidate_model_ids_fail_closed",
+        "tests/test_inference.py::test_equal_posterior_order_is_deterministic_by_model_id",
+        "tests/test_inference.py::test_sex_skewed_data_prefers_z_linked_recessive",
+        "tests/test_inference.py::test_collapsed_sex_observations_are_supported",
+        "tests/test_inference.py::test_z_linked_candidate_set_rejects_non_default_female_probability",
+        "tests/test_inference.py::test_autosomal_only_candidate_set_accepts_custom_female_probability",
+        "tests/test_inference.py::test_default_female_probability_candidate_set_accepted",
+        "tests/test_inference.py::test_model_priors_reject_non_finite_and_negative_values",
+        "tests/test_inference.py::test_configuration_prior_ambiguity_emits_warning",
+        "tests/test_inference.py::test_decisive_evidence_does_not_emit_configuration_prior_warning",
+        "tests/test_inference.py::test_configuration_prior_warning_visible_in_cli_stdout_envelope",
+        "tests/test_inference.py::test_incompatible_parent_models_use_json_null_not_infinity"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T21_source_and_boundary"
+      ],
+      "exit_gate": "Chỉ gọi “mẫu hình di truyền ứng viên” khi lặp lại; không dự đoán chắc chắn đời con.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T22",
+      "title": "Gene ứng viên nào đáng kiểm tra?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 27,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "not_implemented",
+      "implemented_in": [],
+      "behavior_tests": [],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T22_source_and_boundary"
+      ],
+      "exit_gate": "Mỗi gene có nguồn, loài, loại bằng chứng và trạng thái; không nâng thành causal khi chưa tái lập.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    },
+    {
+      "topic_id": "T23",
+      "title": "Cận huyết và phúc lợi dài hạn diễn biến thế nào?",
+      "source": {
+        "path": "knowledge/sources/tracker-v3-20260905.json",
+        "row": 28,
+        "version": "v3",
+        "referenced_document": "docs/research/2026-07-27-chao-mao-color-genetics-topic-roadmap.md"
+      },
+      "tracker_status": "Pending",
+      "tracker_evidence_status": "Not Started",
+      "tracker_evidence_grade": "",
+      "tracker_allowed_conclusion": "",
+      "tracker_evidence_gap": "",
+      "tracker_source_review_file": "",
+      "tracker_file_availability": "",
+      "candidate_models": [],
+      "candidate_status": "tracker_questions_only_not_supported_models",
+      "evidence": "missing",
+      "evidence_grade": "not_assessed",
+      "scientific_confidence": "not_assessed",
+      "research_findings": [],
+      "status": "partial_software_support",
+      "implemented_in": [
+        "src/biobirddna_genetics/pedigree.py"
+      ],
+      "behavior_tests": [
+        "tests/test_pedigree.py::test_full_sibling_relationship",
+        "tests/test_pedigree.py::test_unrelated_founder"
+      ],
+      "test_ids": [
+        "tests/test_research_coverage.py::test_T23_source_and_boundary"
+      ],
+      "exit_gate": "Không mở đề xuất ghép cặp tự động. Vượt ngưỡng đã khoá ở T04 thì dừng dòng nghiên cứu.",
+      "limits": [
+        "Tracker là lộ trình và câu hỏi nghiên cứu, không chứng minh cơ chế di truyền.",
+        "Test mapping kiểm nguồn và ranh giới; test core kiểm phần mềm, không xác minh kết quả nghiên cứu.",
+        "Không tự nâng trạng thái tracker hoặc xác nhận gene; thiếu tài liệu nghiên cứu thì evidence: missing.",
+        "Mô hình đa gene, survival và cấu trúc quần thể chưa được triển khai; không suy rộng từ primitive một locus."
+      ]
+    }
+  ]
+}

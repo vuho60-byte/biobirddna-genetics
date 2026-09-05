@@ -142,3 +142,13 @@ Genetics report phải giữ cấu trúc tương tự và thêm:
 - offspring distribution;
 - pedigree risk;
 - genetics grade G0–G6.
+# Tracker v3: source and coverage (2026-09-05)
+
+`knowledge/research-coverage-v3.json` maps the exact 27 IDs from the recovered
+Google Sheet snapshot in `knowledge/sources/tracker-v3-20260905.json`.
+The snapshot SHA-256, tab, range and source row are preserved. T02's local
+ontology is available but remains pending specialist review. All other topics
+currently have `evidence: missing` for research findings in this mapping.
+Tracker questions and cited papers are not imported scientific conclusions.
+`implemented_in` and `behavior_tests` describe partial software support only;
+the 27 mapping tests establish traceability, not fulfillment of research gates.

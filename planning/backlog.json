@@ -46,7 +46,9 @@
       "id": "GEN-002",
       "title": "Replace internal genotype strings with immutable domain objects",
       "priority": "P1",
-      "depends_on": ["GEN-001"],
+      "depends_on": [
+        "GEN-001"
+      ],
       "scope": [
         "Genotype value object",
         "Allele value object",
@@ -62,7 +64,9 @@
       "id": "GEN-003",
       "title": "Add genotype- and sex-specific penetrance",
       "priority": "P1",
-      "depends_on": ["GEN-002"],
+      "depends_on": [
+        "GEN-002"
+      ],
       "scope": [
         "penetrance map by genotype and sex",
         "schema update",
@@ -78,7 +82,9 @@
       "id": "GEN-010",
       "title": "Create normalized breeding-record schema",
       "priority": "P0",
-      "depends_on": ["GEN-001"],
+      "depends_on": [
+        "GEN-001"
+      ],
       "scope": [
         "pairing",
         "clutch",
@@ -96,7 +102,9 @@
       "id": "GEN-011",
       "title": "Build synthetic simulation-recovery harness",
       "priority": "P0",
-      "depends_on": ["GEN-010"],
+      "depends_on": [
+        "GEN-010"
+      ],
       "scope": [
         "simulate broods from known models",
         "run inference",
@@ -112,7 +120,10 @@
       "id": "GEN-012",
       "title": "Model genotype-specific survival and observation stages",
       "priority": "P1",
-      "depends_on": ["GEN-010", "GEN-011"],
+      "depends_on": [
+        "GEN-010",
+        "GEN-011"
+      ],
       "scope": [
         "conception to fertile egg",
         "hatch",
@@ -129,7 +140,10 @@
       "id": "GEN-013",
       "title": "Package the public operations as dependency-free Node ESM",
       "priority": "P0",
-      "depends_on": ["GEN-010", "GEN-011"],
+      "depends_on": [
+        "GEN-010",
+        "GEN-011"
+      ],
       "scope": [
         "pure Node implementation for all six public operations",
         "ESM API and CLI",
@@ -145,7 +159,9 @@
       "id": "GEN-014",
       "title": "Create immutable review-only AutoResearch feedback artifacts",
       "priority": "P0",
-      "depends_on": ["GEN-013"],
+      "depends_on": [
+        "GEN-013"
+      ],
       "scope": [
         "normalized production-review envelope",
         "provenance and package-integrity checks",
@@ -186,7 +202,9 @@
       "id": "GEN-016",
       "title": "Establish a registry-safe public npm release candidate",
       "priority": "P0",
-      "depends_on": ["GEN-015"],
+      "depends_on": [
+        "GEN-015"
+      ],
       "scope": [
         "public scoped npm package metadata and packed-install verification",
         "sanitized public source repository candidate",
@@ -206,7 +224,9 @@
       "id": "GEN-020",
       "title": "Define inheritance plugin protocol and registry",
       "priority": "P1",
-      "depends_on": ["GEN-002"],
+      "depends_on": [
+        "GEN-002"
+      ],
       "scope": [
         "plugin interface",
         "model registry",
@@ -223,7 +243,9 @@
       "id": "GEN-021",
       "title": "Add two-locus independent-assortment and epistasis plugin",
       "priority": "P1",
-      "depends_on": ["GEN-020"],
+      "depends_on": [
+        "GEN-020"
+      ],
       "scope": [
         "two loci",
         "phenotype rule table",
@@ -239,7 +261,9 @@
       "id": "GEN-022",
       "title": "Add linked loci and recombination fraction",
       "priority": "P2",
-      "depends_on": ["GEN-021"],
+      "depends_on": [
+        "GEN-021"
+      ],
       "scope": [
         "haplotypes",
         "phase",
@@ -255,7 +279,9 @@
       "id": "GEN-030",
       "title": "Extend pedigree governance and founder uncertainty",
       "priority": "P1",
-      "depends_on": ["GEN-001"],
+      "depends_on": [
+        "GEN-001"
+      ],
       "scope": [
         "half siblings",
         "cousins",
@@ -273,7 +299,9 @@
       "id": "GEN-031",
       "title": "Add genomic relationship matrix adapter",
       "priority": "P2",
-      "depends_on": ["GEN-030"],
+      "depends_on": [
+        "GEN-030"
+      ],
       "scope": [
         "SNP matrix import contract",
         "QC",
@@ -289,7 +317,10 @@
       "id": "GEN-040",
       "title": "Separate research-pairing and production-pairing objectives",
       "priority": "P0",
-      "depends_on": ["GEN-011", "GEN-030"],
+      "depends_on": [
+        "GEN-011",
+        "GEN-030"
+      ],
       "scope": [
         "research EIG objective",
         "target phenotype objective",
@@ -305,7 +336,9 @@
       "id": "GEN-041",
       "title": "Add Pareto frontier and weight sensitivity",
       "priority": "P1",
-      "depends_on": ["GEN-040"],
+      "depends_on": [
+        "GEN-040"
+      ],
       "scope": [
         "Pareto non-dominated set",
         "sensitivity to weights",
@@ -321,7 +354,11 @@
       "id": "GEN-050",
       "title": "Add PostgreSQL/Supabase persistence adapter",
       "priority": "P2",
-      "depends_on": ["GEN-010", "GEN-020", "GEN-030"],
+      "depends_on": [
+        "GEN-010",
+        "GEN-020",
+        "GEN-030"
+      ],
       "scope": [
         "migrations",
         "immutable model runs",
@@ -338,7 +375,9 @@
       "id": "GEN-051",
       "title": "Add API adapter and role/consent gates",
       "priority": "P2",
-      "depends_on": ["GEN-050"],
+      "depends_on": [
+        "GEN-050"
+      ],
       "scope": [
         "REST API",
         "RBAC",
@@ -355,7 +394,9 @@
       "id": "GEN-060",
       "title": "Build calibrated image feature adapter",
       "priority": "P2",
-      "depends_on": ["GEN-001"],
+      "depends_on": [
+        "GEN-001"
+      ],
       "scope": [
         "image QA",
         "calibration",
@@ -373,7 +414,10 @@
       "id": "GEN-070",
       "title": "Add molecular cosegregation evidence module",
       "priority": "P3",
-      "depends_on": ["GEN-050", "GEN-031"],
+      "depends_on": [
+        "GEN-050",
+        "GEN-031"
+      ],
       "scope": [
         "sample chain of custody",
         "variant genotype",
@@ -386,5 +430,12 @@
         "independent replication required for G6"
       ]
     }
-  ]
+  ],
+  "research_coverage": {
+    "path": "knowledge/research-coverage-v3.json",
+    "tracker": "v3",
+    "topic_count": 27,
+    "mapping_status": "source_restored",
+    "research_exit_gates": "not_completed_by_software_mapping"
+  }
 }
