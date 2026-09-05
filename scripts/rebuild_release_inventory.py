@@ -28,6 +28,10 @@ def _sha256(data: bytes) -> str:
 def _release_files(root: Path) -> list[tuple[str, Path]]:
     files: list[tuple[str, Path]] = []
     for path in root.rglob("*"):
+        # VCS state and the single local receipt are not release content.
+        relative = path.relative_to(root).as_posix()
+        if ".git" in path.relative_to(root).parts or relative == "SYNC-NOTE.md":
+            continue
         if path.is_symlink():
             raise ValueError(f"release_symlink_forbidden:{path}")
         if not path.is_file():

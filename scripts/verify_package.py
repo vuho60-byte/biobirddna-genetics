@@ -18,6 +18,7 @@ SUMS_FILE = "SHA256SUMS.txt"
 # purpose (see tests/test_package_integrity.py::
 # test_integrity_checker_rejects_unexpected_bytecode).
 IGNORED_DIRS = {".git", ".pytest_cache", "__pycache__"}
+LOCAL_NOTE = "SYNC-NOTE.md"
 
 
 def _sha256(path: Path) -> str:
@@ -112,9 +113,34 @@ def _version_errors(
     return errors
 
 
+def _metadata_errors(root: Path) -> list[str]:
+    try:
+        distribution = json.loads((root / "MANIFEST.json").read_text(encoding="utf-8"))["npm_distribution"]
+        package = json.loads((root / "npm/package.json").read_text(encoding="utf-8"))
+        errors = []
+        for key in ("name", "private", "license"):
+            if distribution.get(key) != package.get(key):
+                errors.append(f"npm_distribution.{key}: metadata mismatch")
+        if distribution.get("publish_config", {}) != package.get("publishConfig", {}):
+            errors.append("npm_distribution.publish_config: metadata mismatch")
+        if package.get("private") is not True:
+            errors.append("npm/package.json: private must remain true")
+        if distribution.get("registry_publish") != "private_not_published":
+            errors.append("npm_distribution.registry_publish: expected private_not_published")
+        return errors
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+        return [f"npm_distribution: invalid metadata ({type(exc).__name__})"]
+
+
 def verify(root: Path) -> dict[str, Any]:
     root = root.resolve()
     actual_files = _relative_files(root)
+    local_notes = []
+    note = actual_files.pop(LOCAL_NOTE, None)
+    if note is not None:
+        local_notes.append({"path": LOCAL_NOTE, "bytes": note.stat().st_size,
+                            "sha256": _sha256(note),
+                            "trust": "local_untrusted_not_release_content"})
     checksum_errors: list[str] = []
     version_errors: list[str] = []
 
@@ -205,7 +231,11 @@ def verify(root: Path) -> dict[str, Any]:
     if manifest_path.is_file():
         version_errors = _version_errors(root, manifest)
 
-    ok = not (missing_files or unexpected_files or checksum_errors or version_errors)
+    metadata_errors = _metadata_errors(root)
+    if note is not None and note.is_symlink():
+        checksum_errors.append("SYNC-NOTE.md: symlink forbidden")
+
+    ok = not (missing_files or unexpected_files or checksum_errors or version_errors or metadata_errors)
     return {
         "ok": ok,
         "root": str(root),
@@ -214,6 +244,8 @@ def verify(root: Path) -> dict[str, Any]:
         "unexpected_files": unexpected_files,
         "checksum_errors": checksum_errors,
         "version_errors": version_errors,
+        "metadata_errors": metadata_errors,
+        "local_notes": local_notes,
         "evidence": {
             "checksum_manifest": SELF_EXCLUDED,
             "checksum_list": SUMS_FILE,

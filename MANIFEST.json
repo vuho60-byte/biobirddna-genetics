@@ -41,13 +41,11 @@
   },
   "npm_distribution": {
     "name": "@biobirddna/genetics",
-    "private": false,
+    "private": true,
     "license": "UNLICENSED",
-    "publish_config": {
-      "access": "public"
-    },
+    "publish_config": {},
     "repository": "https://github.com/vuho60-byte/biobirddna-genetics",
-    "registry_publish": "release_candidate_not_published"
+    "registry_publish": "private_not_published"
   },
   "bundled_knowledge": [
     "knowledge/T02_knowledge_base_v1.0.json"

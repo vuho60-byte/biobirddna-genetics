@@ -2,10 +2,8 @@
 
 Dependency-free Node 20+ research primitives for evidence-bounded avian inheritance simulations. Outputs are decision support only: phenotype observations do not infer genes, posterior values are relative to candidate models, and no operation creates a breeding order.
 
-This v0.3.0 package is an `UNLICENSED` public-release candidate. Its packed
-tarball is designed for the public `@biobirddna` scope, but this document does
-not claim a registry publication: verify the registry version and integrity
-only after an authorized `npm publish --access public` succeeds.
+This v0.3.0 package is private and `UNLICENSED`. It is distributed locally;
+`private: true` prevents registry publication. No public publishConfig is set.
 
 ```sh
 npm install --global ./biobirddna-genetics-0.3.0.tgz

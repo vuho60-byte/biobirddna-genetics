@@ -112,7 +112,7 @@ biobirddna-genetics cross --input examples/input/cross_autosomal_recessive.json 
 
 `--no-build-isolation` hữu ích trong môi trường offline đã có sẵn setuptools.
 
-## Package npm/Node public release candidate
+## Package npm/Node private
 
 Yêu cầu Node.js 20 trở lên:
 
@@ -123,7 +123,7 @@ npm pack --dry-run
 ```
 
 Package là `@biobirddna/genetics`, `UNLICENSED`, không có runtime dependency và
-có metadata cho public registry scope. Đây chỉ là release candidate đã được kiểm
+được giữ private và không cấu hình public registry scope. Đây là gói local đã được kiểm
 tarball: không có npm login/publish, GitHub push hoặc xác nhận registry trong cây
 skill này. Chỉ sau hành động external được owner ủy quyền mới xác minh bằng
 `npm view` package/version/integrity. Hai CLI:
@@ -324,3 +324,7 @@ Tái lập/chức năng → cơ chế xác nhận mạnh
 ```
 
 Skill không cho phép nhảy thẳng từ ảnh sang gene.
+
+## Local distribution policy (2026-09-05)
+
+The npm package is private (`private: true`), UNLICENSED and not published. MANIFEST mirrors npm metadata; there is no public publishConfig. Only root `SYNC-NOTE.md` is a local untrusted receipt, excluded from release inventories. `verify_package.py` reports its bytes and SHA-256 separately; this digest is not authentication. Other unexpected files remain errors. Git metadata is excluded by the inventory builder.

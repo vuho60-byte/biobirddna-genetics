@@ -32,7 +32,7 @@ PACKAGE_CHECKSUMS.json: 122 entries
 ```
 
 `npm pack --dry-run --json` xác nhận đúng 8 file phát hành. Package là
-`UNLICENSED`, không có runtime dependency và có metadata scoped public. Đây là
+`UNLICENSED`, không có runtime dependency và có metadata private. Đây là
 release candidate local, không phải bằng chứng npm registry đã publish.
 
 ### Bằng chứng hạ tầng ngoài gói (KHÔNG tái lập được từ gói này)
@@ -139,3 +139,7 @@ coverage bên dưới thuộc cùng nhóm "ngoài gói" này.
   public authenticated ChatGPT review và secure updater renewal.
 - Synthetic recovery và model-relative posterior không xác nhận gene, variant
   hay genotype sinh học của cá thể thật.
+
+## Local distribution policy (2026-09-05)
+
+The npm package is private (`private: true`), UNLICENSED and not published. MANIFEST mirrors npm metadata; there is no public publishConfig. Only root `SYNC-NOTE.md` is a local untrusted receipt, excluded from release inventories. `verify_package.py` reports its bytes and SHA-256 separately; this digest is not authentication. Other unexpected files remain errors. Git metadata is excluded by the inventory builder.

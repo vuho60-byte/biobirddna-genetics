@@ -3,8 +3,8 @@
   "version": "0.3.0",
   "algorithm": "SHA-256",
   "self_excluded": "PACKAGE_CHECKSUMS.json",
-  "file_count": 129,
-  "total_bytes": 1296489,
+  "file_count": 130,
+  "total_bytes": 1304463,
   "files": [
     {
       "path": ".github/workflows/native-installers.yml",
@@ -13,8 +13,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 40,
-      "sha256": "36e51240be0007b54e2165551ab9752adb9770f9737ae6d1295242bec241a4b3"
+      "bytes": 62,
+      "sha256": "92d5d77a56f53ab2f86a99e0922e90ab325f1b53fec32a45da6d656268c07783"
     },
     {
       "path": "BioBirdDNA_Genetics_Skill_Blueprint_v0.1.0.md",
@@ -28,23 +28,23 @@
     },
     {
       "path": "FILE_INDEX.md",
-      "bytes": 3161,
-      "sha256": "ba41f486f114503c643603de808e23f49acb4d04473501d4c1dca3ff337e84de"
+      "bytes": 3618,
+      "sha256": "7495d3addc0bc4874654ecaa626e0a1e29cae51d19daa2560b968943578b06b8"
     },
     {
       "path": "MANIFEST.json",
-      "bytes": 1867,
-      "sha256": "143bd501ccfda2d1c68bcf3e91b3cc816e30c84945d6f39bb965b2839bd742a4"
+      "bytes": 1883,
+      "sha256": "521f45a04592b4adabcde590e0d2772ca0f3477449d95312559267bca2ce33ba"
     },
     {
       "path": "README.md",
-      "bytes": 11113,
-      "sha256": "a16d197a9582404c39571baaa568b423a936a242cae723628eaf7e7218549d9c"
+      "bytes": 11577,
+      "sha256": "784aa39fc1f29263e494415d1d61dc87fec939237e9212758934362960ebbe01"
     },
     {
       "path": "SHA256SUMS.txt",
-      "bytes": 12913,
-      "sha256": "89da10200bb6da7cc6a0e43a40567995aac1f8e6f0d5d859a1efd510bdff81d2"
+      "bytes": 12995,
+      "sha256": "e2e896b6ff6ab9d941510ceb7eb91d728b1faabb4781834ceacd2b4e229ad144"
     },
     {
       "path": "SKILL.md",
@@ -53,8 +53,8 @@
     },
     {
       "path": "TEST_REPORT.md",
-      "bytes": 8951,
-      "sha256": "bc60676f17fd043373be364085b7822fd64f2916886c695289782d032b2db606"
+      "bytes": 9410,
+      "sha256": "435a376628d6e880f7ec7eafa9230517904c432aa024af28b10459df18f03264"
     },
     {
       "path": "VERSION",
@@ -233,8 +233,8 @@
     },
     {
       "path": "npm/README.md",
-      "bytes": 2730,
-      "sha256": "88f2c14b499b6288e260538d3745f8965e9cc4564a1797a96c6556a9b528514a"
+      "bytes": 2589,
+      "sha256": "01053acc8a4e7dc7079292441c179299bb5596627fac6befaabcdcd2a1367ce8"
     },
     {
       "path": "npm/bin/biobirddna-feedback.mjs",
@@ -448,8 +448,8 @@
     },
     {
       "path": "scripts/rebuild_release_inventory.py",
-      "bytes": 3891,
-      "sha256": "842219851266a0ba8247ed65b4ea9cf77506b29185a709fb84231f8ad7fa9f11"
+      "bytes": 4120,
+      "sha256": "f03bd9d317381e8acd8be0ec8d0b6fecd1d22dacb5b0c2445583f5d7e3a73cdb"
     },
     {
       "path": "scripts/run_demo.py",
@@ -468,8 +468,8 @@
     },
     {
       "path": "scripts/verify_package.py",
-      "bytes": 9276,
-      "sha256": "c1ca264e4b5222e46712650ea43d09e55147262c18fa926d53d5d4e1ba752dbd"
+      "bytes": 10954,
+      "sha256": "bde9f6148900b6dd7dd3091d3b8f50ec0b2225615280931317f869e75944a9b5"
     },
     {
       "path": "src/biobirddna_genetics/__init__.py",
@@ -567,6 +567,11 @@
       "sha256": "ca68d6dc397df78da2d38dea0d8e90a45a9206ab8dc8bb5cadf5a047a24af518"
     },
     {
+      "path": "tasks/todo.md",
+      "bytes": 2397,
+      "sha256": "9f59b8fef5c898696fb17c9d08da9073b660a8683a87341ae2f6fa3970589842"
+    },
+    {
       "path": "tests/test_atomic_rename.py",
       "bytes": 2485,
       "sha256": "15d94876f54333c63591a7819b7d8cb4b0e3631f5097bccbf371ae8a2b816c85"
@@ -623,8 +628,8 @@
     },
     {
       "path": "tests/test_package_integrity.py",
-      "bytes": 11326,
-      "sha256": "9f6f21fa459be67f61d79906b0f7944e857620be35395e801522bfb98b05d98d"
+      "bytes": 13637,
+      "sha256": "e91753f9e8c23727c65f63444961d8ed92963ee909dfe369bb9d5ee88b794044"
     },
     {
       "path": "tests/test_pedigree.py",

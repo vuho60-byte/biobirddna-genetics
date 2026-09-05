@@ -84,6 +84,47 @@ def pollute_with_dev_caches(root: Path) -> None:
 
 
 class PackageIntegrityTests(unittest.TestCase):
+    def test_private_metadata_drift_fails_even_after_rehash(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = make_consistent_copy(temp_dir)
+            path = root / "MANIFEST.json"
+            manifest = json.loads(path.read_text(encoding="utf-8"))
+            manifest["npm_distribution"]["private"] = False
+            path.write_text(json.dumps(manifest), encoding="utf-8")
+            subprocess.run([sys.executable, "-B", str(REBUILD), "--root", str(root)],
+                           check=True, capture_output=True)
+            completed = run_verifier(root)
+            self.assertEqual(completed.returncode, 1)
+            self.assertIn("npm_distribution.private: metadata mismatch",
+                          json.loads(completed.stdout)["metadata_errors"])
+
+    def test_nested_sync_note_is_not_allowlisted(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = make_consistent_copy(temp_dir)
+            (root / "tests/SYNC-NOTE.md").write_text("rogue", encoding="utf-8")
+            result = json.loads(run_verifier(root).stdout)
+            self.assertFalse(result["ok"])
+            self.assertIn("tests/SYNC-NOTE.md", result["unexpected_files"])
+
+    def test_local_sync_note_is_reported_separately_and_not_bundled(self) -> None:
+        import hashlib
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = make_consistent_copy(temp_dir)
+            note = b"Local receipt only\n"
+            (root / "SYNC-NOTE.md").write_bytes(note)
+            completed = run_verifier(root)
+            self.assertEqual(completed.returncode, 0, completed.stdout)
+            self.assertEqual(json.loads(completed.stdout)["local_notes"], [
+                {"path": "SYNC-NOTE.md", "bytes": len(note),
+                 "sha256": hashlib.sha256(note).hexdigest(),
+                 "trust": "local_untrusted_not_release_content"}
+            ])
+            subprocess.run([sys.executable, "-B", str(REBUILD), "--root", str(root)],
+                           check=True, capture_output=True)
+            self.assertNotIn("SYNC-NOTE.md", (root / "SHA256SUMS.txt").read_text())
+            (root / "OTHER-NOTE.md").write_text("rogue", encoding="utf-8")
+            self.assertEqual(run_verifier(root).returncode, 1)
+
     def test_release_tree_matches_checksum_manifests(self) -> None:
         completed = run_verifier()
 

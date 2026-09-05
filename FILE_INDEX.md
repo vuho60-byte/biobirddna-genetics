@@ -11,7 +11,7 @@
 - `scripts/verify_examples.py` — golden-output and probability verifier.
 - `scripts/verify_package.py` — exact inventory, checksum, and version verifier.
 - `scripts/rebuild_release_inventory.py` — deterministic checksum inventory builder.
-- `npm/package.json` — public scoped release-candidate metadata for the dependency-free ESM package.
+- `npm/package.json` — private local-distribution metadata for the dependency-free ESM package.
 - `npm/bin/biobirddna-genetics.mjs` — Node CLI for all six public operations.
 - `npm/bin/biobirddna-feedback.mjs` — immutable, proposal-only feedback artifact CLI.
 
@@ -66,7 +66,7 @@
 - `CHANGELOG.md`, `VERSION` — release history and version.
 
 The npm package includes `npm/LICENSE` with `UNLICENSED`; no public distribution
-license is implied. This tree is a public release candidate, not evidence that a
+license is implied. This tree is a private local package, not evidence that a
 registry publication has occurred.
 The generated `.tgz` is a sibling release artifact and is intentionally not
 embedded in the exact skill tree.
@@ -76,3 +76,7 @@ embedded in the exact skill tree.
 - `run_tests.sh`, `run_tests.bat` — run Python and npm test suites.
 - `run_demo.sh`, `run_demo.bat` — generate all example outputs.
 - `scripts/install_skill.sh`, `scripts/install_skill.ps1` — verified staged installation.
+
+## Local distribution policy (2026-09-05)
+
+The npm package is private (`private: true`), UNLICENSED and not published. MANIFEST mirrors npm metadata; there is no public publishConfig. Only root `SYNC-NOTE.md` is a local untrusted receipt, excluded from release inventories. `verify_package.py` reports its bytes and SHA-256 separately; this digest is not authentication. Other unexpected files remain errors. Git metadata is excluded by the inventory builder.
