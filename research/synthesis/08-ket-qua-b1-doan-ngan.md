@@ -63,6 +63,30 @@ Phép thử phân định: chạy lại đúng quy trình này với một loài
 
 B1 cũng không nói các đoạn này làm nhiệm vụ gì, không phân định ba giả thuyết nguồn gốc H1/H2/H3, và không sửa lỗi bảng xếp hạng gene bị thổi phồng do mô hình gene cụt.
 
+## 5b. Bổ sung cùng ngày: hàm lượng GC phân định được phần lớn câu hỏi ở mục 5
+
+Sau khi viết mục 5, brief R12 đưa về một manh mối kiểm được ngay. Bornelöv và cộng sự 2017 (*Genome Biology*, [DOI 10.1186/s13059-017-1231-1](https://doi.org/10.1186/s13059-017-1231-1), tôi đã tự xác minh qua PubMed) cho thấy 137 gene gà từng bị tuyên bố "mất trong tiến hóa" thực ra chỉ vắng mặt khỏi **bản lắp ráp**, vì chúng nằm trong vùng giàu GC có độ phủ giải trình tự kém. Bài đó là một Correspondence chính thức phản biện đúng công trình Lovell 2014 mà dự án đã trích nhiều lần.
+
+Nếu cơ chế đó cũng tác động ở đây thì phần tử càng giàu GC phải càng khó căn. Đo trực tiếp (`pipeline/p02b_last/gc_vs_mapping.py`, kết quả `data/a2_last/gc_vs_mapping.tsv`):
+
+| GC của phần tử | Tỉ lệ căn được, nhóm 20-49 bp | Tỉ lệ căn được, nhóm 50-99 bp |
+|---|---|---|
+| dưới 0,30 | 3,63% | 23,79% |
+| 0,35 đến 0,40 | 3,08% | 20,43% |
+| 0,45 đến 0,50 | 1,93% | 13,00% |
+| 0,55 đến 0,60 | 1,08% | 7,40% |
+| trên 0,60 | 0,85% | 7,15% |
+
+[CONFIRMED — phép đo trên 2.311.288 phần tử, mỗi ô ít nhất 6.172 phần tử]
+
+Quan hệ đơn điệu và mạnh: tỉ lệ căn được giảm 4,3 lần ở nhóm ngắn nhất và 3,3 lần ở nhóm 50-99 bp khi đi từ vùng nghèo GC sang vùng giàu GC. Chiều dài đã được kiểm soát vì hai nhóm tính riêng.
+
+**Ảnh hưởng tới ba cách giải thích ở mục 5.** Giả thuyết vắng mặt sinh học thật không dự đoán quan hệ này: không có lý do gì để đoạn bảo tồn giàu GC bị mất ở chào mào nhiều hơn đoạn nghèo GC. Ngược lại, giả thuyết lỗ hổng bản lắp ráp dự đoán đúng chiều này, và đã có tiền lệ công bố ở chính lớp chim. Nên trọng số dịch mạnh sang nguyên nhân kỹ thuật. [STRONG_INFERENCE]
+
+**Chưa đủ để đóng câu hỏi**, vì hai lý do. Thứ nhất, GC ở đây đo trên trình tự gà chứ không phải trên vùng đích ở chào mào; hai đại lượng tương quan nhưng không đồng nhất. Thứ hai, còn một cách giải thích kỹ thuật cạnh tranh: vùng giàu GC ở chim hay chứa lặp và đảo CpG, dễ khớp nhiều chỗ rồi bị bộ lọc loại, nên tỉ lệ thấp có thể do lọc chứ không do thiếu trình tự. Hai cách này đều là kỹ thuật, nên kết luận "phần lớn số phần tử chưa căn được KHÔNG phải bằng chứng mất mát sinh học" vẫn đứng, nhưng chưa nói được cái nào trong hai.
+
+Phép thử tách hai cách: đo tỉ lệ base N và phổ GC của chính bản lắp ráp chào mào rồi so với một bản lắp ráp chim sẻ mức nhiễm sắc thể. Nếu bản chào mào thiếu hẳn phần đuôi giàu GC thì nguyên nhân là độ phủ. Chưa làm.
+
 ## 6. Đầu ra
 
 | Tệp | Nội dung |
