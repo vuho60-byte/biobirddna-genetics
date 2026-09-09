@@ -1,5 +1,11 @@
 # BIRDBIODNA — Dự án "DNA gốc của chim" (Primordial Avian Genome)
 
+> **Kho này có hai nhánh, đừng nhầm:**
+> - nhánh `main` — bộ công cụ di truyền màu lông (skill BioBirdDNA Genetics v0.4.0), đã dùng được cho người nuôi chim;
+> - nhánh `core-genome` — **bạn đang ở đây**, dự án nghiên cứu tìm "DNA gốc" của chào mào, đang tiến hành, nhiều kết luận còn ở mức chưa xác minh.
+>
+> Hai nhánh cố ý tách rời: một bên là công cụ đã chốt, một bên là nghiên cứu đang chạy. Không trộn kết luận của nhánh này sang nhánh kia.
+
 > **Trạng thái: nghiên cứu đang tiến hành, chưa bình duyệt.** Repo công khai để minh bạch quy trình.
 > Mọi khẳng định mang nhãn `CONFIRMED` / `STRONG_INFERENCE` / `UNVERIFIED`; nhiều mục còn ở mức chưa xác minh.
 > Một bài do model ngoài viết đã **bị chặn** vì trích dẫn sai nguồn (xem `research/synthesis/06-review-A1.md`).
