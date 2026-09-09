@@ -1,0 +1,28 @@
+metric	value
+total_queries	4054556
+mapped	1133
+mapped_pct	0.03
+unmapped	4053423
+second_hit_queries	238
+
+qlen_bin	count
+20_49	681
+50_99	1114
+100_199	448
+200_499	88
+500_plus	2
+
+identity_bin	count
+lt_0.70	1
+0.70_0.80	10
+0.80_0.90	193
+0.90_0.95	657
+0.95_1.00	858
+eq_1.00	614
+
+qlen_bin	mapped	total	mapped_pct
+20_49	549	3200155	0.02
+50_99	488	678869	0.07
+100_199	86	151180	0.06
+200_499	9	23948	0.04
+500_plus	1	404	0.25

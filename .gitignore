@@ -12,3 +12,8 @@ __pycache__/
 !data/a2/*.log
 !data/anomaly/*.tsv
 !data/anomaly/*.md
+!data/release/*.gz
+!data/a2_accel/*.tsv
+!data/a2/gene_enrichment.tsv
+!data/a2/enrich_stats.tsv
+!data/a2/overlap_stats.tsv
