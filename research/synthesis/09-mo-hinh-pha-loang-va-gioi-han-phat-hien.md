@@ -43,6 +43,34 @@ Phần gốc **không hề biến mất**. Sau 200 đời nó vẫn chiếm gầ
 
 **Đây là điều chỉnh quan trọng cho hình ảnh nước đường.** Đường chỉ loãng đi nếu ta liên tục thêm nước. Nếu pha một lần rồi đậy nắp thì đường vẫn còn nguyên trong cốc, chỉ tan đều ra. Sinh học cũng vậy: một quần thể lai trở thành loài riêng thì phần gốc ở lại vĩnh viễn, chỉ bị xé nhỏ.
 
+## 2b. Bổ sung: bộ gene KHÔNG hòa tan, và trong quần thể nhỏ nó còn đóng băng
+
+Chủ dự án đặt tiếp: gene cổ giống đường hòa vào nước, không biến mất mà bám vào phân tử nước, cho vị ngọt nhẹ hay nặng tùy lượng.
+
+Nửa đầu đúng, nửa sau không. Phần "không biến mất" đã được mục 2 xác nhận. Nhưng **đường hòa tan tới mức phân tử, còn bộ gene thì không bao giờ**. Nước đường là chất đồng nhất: mọi giọt như nhau, không thể chỉ ra chỗ nào là đường. Bộ gene sau lai thì ngược lại, nó vẫn **thành từng khối**. Tại mỗi vị trí trên nhiễm sắc thể, DNA đến từ đúng MỘT tổ tiên, không bao giờ là trung bình của hai. Tái tổ hợp cắt nhỏ, nhưng không bao giờ trộn hai phân tử DNA thành một phân tử lai.
+
+Đây chính là khác biệt giữa **di truyền hòa trộn** và **di truyền hạt**. Mô hình nước đường đúng là di truyền hòa trộn, tức quan niệm thịnh hành thế kỷ 19 trước Mendel. [STRONG_INFERENCE — kiến thức nền, chưa gắn nguồn cụ thể trong dự án; cần R-file xác minh nếu dùng để công bố]
+
+Đo mức độ "không hòa tan" bằng chính mô phỏng, chế độ quần thể tự giao phối, 5 nhiễm sắc thể 100 cM:
+
+| Đời | Trung vị đoạn, quần thể 50 | Trung vị đoạn, quần thể 200 |
+|---|---|---|
+| 0 | 100 cM | 100 cM |
+| 25 | 9,56 cM | 9,91 cM |
+| 100 | 3,31 cM | 2,97 cM |
+| 250 | 1,56 cM | 1,25 cM |
+| 500 | 0,93 cM | 0,68 cM |
+
+[CONFIRMED — `pipeline/p05_admixture/example/isolated_pop{50,200}_stats.tsv`]
+
+Sau 500 đời mảnh vẫn còn cỡ 0,7 đến 0,9 cM, tức vẫn là những khối DNA đủ lớn để chứa trọn gene. Suy giảm chậm dần theo kiểu nghịch đảo số đời: muốn ngắn đi một nửa nữa phải chờ gấp đôi thời gian. Nó tiến tới không nhưng không bao giờ tới nơi.
+
+**Phát hiện phụ đáng chú ý: quần thể càng nhỏ, cấu trúc khối càng đóng băng sớm.** Chạy với quần thể 10 cá thể, hệ dừng hẳn ở khoảng đời 250: số đoạn đứng yên ở 380, trung vị đứng yên ở 8,28 cM, và tỉ lệ tổ tiên trôi dạt lên 0,61 rồi cố định. [CONFIRMED — `isolated_pop10_stats.tsv`]
+
+Nguyên nhân đúng về mặt sinh học chứ không phải lỗi mô hình: khi một khối tổ tiên đã cố định trong quần thể, cả hai nhiễm sắc thể tương đồng đều mang cùng nguồn gốc, nên tái tổ hợp giữa chúng không tạo ra ranh giới mới nào nữa. Trôi dạt trong quần thể nhỏ cố định các khối, và khi đã cố định thì chúng ngừng vỡ.
+
+Hệ quả cho giả thuyết "lồng kính" của chủ dự án: **một quần thể sáng lập nhỏ, bị cách ly, sẽ giữ các khối tổ tiên lớn gần như vĩnh viễn.** Đó là kịch bản dễ phát hiện nhất trong tất cả, chứ không phải khó nhất.
+
 ## 3. Hệ quả cho cách đi tìm
 
 Nếu giả thuyết là "chim hiện đại mang một bộ gene gốc từ nguồn khác, và quần thể đó về sau tự sinh sản", thì **cách tìm sai là đi tìm một tỉ lệ nhỏ lạ lẫm**. Phần gốc có thể chiếm tỉ lệ lớn và vẫn hoàn toàn vô hình với cách tìm đó, vì nó không nằm ở một chỗ mà nằm rải khắp nơi.
