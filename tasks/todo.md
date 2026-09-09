@@ -8,10 +8,14 @@
 - [x] `annotate` thêm mật độ bp/kb + bảng xếp theo mật độ (+4 test) theo cảnh báo A1
 - [ ] Tải lại dữ liệu lõi (~1,3 GB) — đang chạy, còn bộ gene chào mào
 - [ ] V2 (Sonnet): review chéo nhãn bài A1 → `research/synthesis/06-review-A1.md`
-- [ ] code-x4 (Sonnet): bộ căn LAST cho phần tử <100 bp → `pipeline/p02b_last/`
+- [x] code-x4 (Sonnet): bộ căn LAST cho phần tử <100 bp → `pipeline/p02b_last/`
 - [ ] Chạy A2 toàn genome (`bash pipeline/p02_core_map/launch_full.sh`) → SUMMARY + sha256
 - [ ] Báo cáo LÕI chào mào v0 theo brief S3 → `research/synthesis/03-loi-chao-mao-v0.md`
-- [ ] Chạy LAST cho nhóm ngắn, gộp BED, cập nhật báo cáo
+- [x] B1 2026-09-09: chạy LAST thật (23 mảnh, 13 phút), gộp BED → `data/a2_last/bulbul_core_all.bed`
+      (343.781 vùng, 66,63 Mb, 6,50% bộ gene). Kết quả + giới hạn: `research/synthesis/08-ket-qua-b1-doan-ngan.md`
+- [ ] Sửa bảng gene: lọc gene có CDS/locus > 0,9 (mô hình gene cụt — xem docs/05 mục D1)
+- [ ] B2: kiểm định bằng hoán vị vị trí giữ nguyên tỉ lệ GC (thay cho mô hình nhị thức đã bị loại)
+- [ ] Cập nhật README + docs/04 + docs/05 theo số mới của bản đồ đầy đủ
 - [ ] Chạy lại sản phẩm C (20 locus, `data/c_loci` đã mất trong sự cố)
 
 ## Pha 1 — Môi trường & kiểm kê dữ liệu (chi tiết 7 việc P1.1–P1.7: research/synthesis/00-tong-hop-vong-1.md mục 9; P1.4 và P1.5 chạy song song, là GATE của Pha 2)

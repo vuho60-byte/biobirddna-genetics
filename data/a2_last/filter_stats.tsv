@@ -1,0 +1,14 @@
+metric	value
+total_in_bed	2947588
+total_in_fasta	2947588
+kept	2311288
+excluded_too_long	636300
+excluded_too_short	0
+bp_kept	90251564
+
+length_bin	count
+20_49	1770154
+50_99	541134
+100_199	358412
+200_499	239442
+500_plus	38446

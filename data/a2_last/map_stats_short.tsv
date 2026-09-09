@@ -1,0 +1,32 @@
+metric	value
+blocks_total	267510
+blocks_bad	0
+total_queries	2947588
+mapped	125147
+mapped_pct	4.25
+unmapped	2822441
+second_hit_queries	8915
+
+bad_block_reason	count
+
+qlen_bin	count
+20_49	58695
+50_99	173977
+100_199	0
+200_499	0
+500_plus	0
+
+identity_bin	count
+lt_0.70	0
+0.70_0.80	26
+0.80_0.90	77143
+0.90_0.95	93311
+0.95_1.00	37826
+eq_1.00	24366
+
+qlen_bin	mapped	total	mapped_pct
+20_49	40081	1770154	2.26
+50_99	85066	541134	15.72
+100_199	0	358412	0.00
+200_499	0	239442	0.00
+500_plus	0	38446	0.00

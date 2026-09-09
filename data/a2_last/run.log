@@ -1,0 +1,59 @@
+[2026-09-09 14:49:02] === run_last.sh bat dau (force=0 threads=6 chunk-bases=45000000 max-len=99 lastdb-extra="" lastal-extra="") ===
+[2026-09-09 14:49:03] STEP filter START
+[2026-09-09 14:49:08] STEP filter END
+[2026-09-09 14:49:08] STEP split_genome_last START (chunk-bases=45000000, thu muc /d/BIRDBIODNA project/data/a2_last/genome_chunks_last_45000000)
+chunks=23 sequences=60582 bases=1024591993
+[2026-09-09 14:49:20] STEP split_genome_last END
+[2026-09-09 14:49:20] STEP last_chunks START (threads=6 lastdb-extra="" lastal-extra="")
+[2026-09-09 14:49:20] CHUNK chunk_01 START
+[2026-09-09 14:49:52] CHUNK chunk_01 END elapsed=32s lines=48064
+[2026-09-09 14:49:52] CHUNK chunk_02 START
+[2026-09-09 14:50:25] CHUNK chunk_02 END elapsed=33s lines=94344
+[2026-09-09 14:50:25] CHUNK chunk_03 START
+[2026-09-09 14:50:57] CHUNK chunk_03 END elapsed=32s lines=144840
+[2026-09-09 14:50:57] CHUNK chunk_04 START
+[2026-09-09 14:51:28] CHUNK chunk_04 END elapsed=31s lines=191160
+[2026-09-09 14:51:28] CHUNK chunk_05 START
+[2026-09-09 14:52:00] CHUNK chunk_05 END elapsed=32s lines=237828
+[2026-09-09 14:52:00] CHUNK chunk_06 START
+[2026-09-09 14:52:35] CHUNK chunk_06 END elapsed=35s lines=285812
+[2026-09-09 14:52:35] CHUNK chunk_07 START
+[2026-09-09 14:53:08] CHUNK chunk_07 END elapsed=33s lines=333552
+[2026-09-09 14:53:08] CHUNK chunk_08 START
+[2026-09-09 14:53:42] CHUNK chunk_08 END elapsed=34s lines=379116
+[2026-09-09 14:53:42] CHUNK chunk_09 START
+[2026-09-09 14:54:15] CHUNK chunk_09 END elapsed=33s lines=427792
+[2026-09-09 14:54:15] CHUNK chunk_10 START
+[2026-09-09 14:54:49] CHUNK chunk_10 END elapsed=34s lines=474228
+[2026-09-09 14:54:49] CHUNK chunk_11 START
+[2026-09-09 14:55:22] CHUNK chunk_11 END elapsed=33s lines=521156
+[2026-09-09 14:55:22] CHUNK chunk_12 START
+[2026-09-09 14:55:56] CHUNK chunk_12 END elapsed=34s lines=567392
+[2026-09-09 14:55:56] CHUNK chunk_13 START
+[2026-09-09 14:56:29] CHUNK chunk_13 END elapsed=33s lines=617664
+[2026-09-09 14:56:29] CHUNK chunk_14 START
+[2026-09-09 14:57:04] CHUNK chunk_14 END elapsed=34s lines=664156
+[2026-09-09 14:57:04] CHUNK chunk_15 START
+[2026-09-09 14:57:42] CHUNK chunk_15 END elapsed=38s lines=711680
+[2026-09-09 14:57:42] CHUNK chunk_16 START
+[2026-09-09 14:58:20] CHUNK chunk_16 END elapsed=38s lines=759640
+[2026-09-09 14:58:21] CHUNK chunk_17 START
+[2026-09-09 14:58:55] CHUNK chunk_17 END elapsed=34s lines=806308
+[2026-09-09 14:58:55] CHUNK chunk_18 START
+[2026-09-09 14:59:29] CHUNK chunk_18 END elapsed=34s lines=855196
+[2026-09-09 14:59:29] CHUNK chunk_19 START
+[2026-09-09 15:00:03] CHUNK chunk_19 END elapsed=33s lines=902672
+[2026-09-09 15:00:03] CHUNK chunk_20 START
+[2026-09-09 15:00:35] CHUNK chunk_20 END elapsed=32s lines=948600
+[2026-09-09 15:00:35] CHUNK chunk_21 START
+[2026-09-09 15:01:08] CHUNK chunk_21 END elapsed=33s lines=995644
+[2026-09-09 15:01:08] CHUNK chunk_22 START
+[2026-09-09 15:01:41] CHUNK chunk_22 END elapsed=33s lines=1042088
+[2026-09-09 15:01:41] CHUNK chunk_23 START
+[2026-09-09 15:02:09] CHUNK chunk_23 END elapsed=28s lines=1070776
+[2026-09-09 15:02:09] STEP last_chunks END lines=1070776
+[2026-09-09 15:02:09] STEP maf2bed START
+[2026-09-09 15:02:16] STEP maf2bed END
+[2026-09-09 15:02:17] STEP merge_beds START
+[2026-09-09 15:02:18] STEP merge_beds END
+[2026-09-09 15:02:18] === run_last.sh xong. Dau ra chinh: /d/BIRDBIODNA project/data/a2_last/bulbul_short.bed , /d/BIRDBIODNA project/data/a2_last/bulbul_core_all.bed ===

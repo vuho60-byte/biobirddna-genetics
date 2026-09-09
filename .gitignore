@@ -17,3 +17,7 @@ __pycache__/
 !data/a2/gene_enrichment.tsv
 !data/a2/enrich_stats.tsv
 !data/a2/overlap_stats.tsv
+
+# LƯU Ý: mẫu `data/**` ở dòng 2 loại trừ cả THƯ MỤC con, nên các dòng `!data/...`
+# bên trên KHÔNG có tác dụng (git không thể tái nạp tệp khi thư mục cha bị loại).
+# Các tệp kết quả trong data/ hiện được đưa vào kho bằng `git add -f` thủ công.

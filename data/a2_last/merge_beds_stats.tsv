@@ -1,0 +1,9 @@
+metric	value
+inputs	2
+total_rows_in	373608
+unique_ids_out	343781
+duplicate_ids	29827
+
+source	rows
+D:/BIRDBIODNA project/data/a2/bulbul_core.bed	248461
+D:/BIRDBIODNA project/data/a2_last/bulbul_short.bed	125147

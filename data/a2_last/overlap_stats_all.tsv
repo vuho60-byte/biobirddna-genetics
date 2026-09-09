@@ -1,0 +1,23 @@
+metric	value	note
+genome_size	1024591993	
+core_bp_merged	66627572	6.50% bo gene
+CDS_bp_merged	19763303	1.93% bo gene
+CDS_core_overlap_bp	12118985	
+CDS_pct_of_feature_in_core	61.32	%
+CDS_pct_of_core_in_feature	18.19	%
+CDS_fold_enrichment	9.43	quan sat/ky vong
+exon_bp_merged	19763303	1.93% bo gene
+exon_core_overlap_bp	12118985	
+exon_pct_of_feature_in_core	61.32	%
+exon_pct_of_core_in_feature	18.19	%
+exon_fold_enrichment	9.43	quan sat/ky vong
+gene_bp_merged	201854515	19.70% bo gene
+gene_core_overlap_bp	19833945	
+gene_pct_of_feature_in_core	9.83	%
+gene_pct_of_core_in_feature	29.77	%
+gene_fold_enrichment	1.51	quan sat/ky vong
+pseudogene_bp_merged	20332630	1.98% bo gene
+pseudogene_core_overlap_bp	1870111	
+pseudogene_pct_of_feature_in_core	9.2	%
+pseudogene_pct_of_core_in_feature	2.81	%
+pseudogene_fold_enrichment	1.41	quan sat/ky vong
