@@ -1,0 +1,22 @@
+element	state
+A	dot_bien
+B	goc
+C	goc
+
+metric	value	unit
+mu	4.6e-09	per_site_per_generation
+kappa	2	transition_transversion_ratio
+path_used	transition	category
+p_specific	0.5	probability
+p_rev	2.3e-09	probability_per_generation_per_copy
+k_mutated	1	count
+n_diploid	1e+06	individuals
+generation_years	2	years_per_generation
+sequential_wait_generations	4.34783e+08	generations
+sequential_wait_years	8.69565e+08	years
+concurrent_prob_per_gamete	2.3e-09	probability_per_gamete_per_generation
+concurrent_expected_events_per_generation	0.0046	events_per_generation_population
+concurrent_wait_generations	217.391	generations
+concurrent_wait_years	434.783	years
+
+GHI CHU: sequential_wait_* la CON SO CHINH tra loi cau hoi 1 cua chu du an -- duong TUAN TU ngan hon duong DONG THOI khi k>=2 (xem README muc 'Hai con duong quay nguoc'). concurrent_* PHU THUOC n_diploid; sequential_* KHONG phu thuoc (GIA DINH, xem README muc 'Gia dinh').

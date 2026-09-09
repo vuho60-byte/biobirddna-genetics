@@ -1,0 +1,10 @@
+metric	value	unit
+locus_length	1000	bases
+mu	4.6e-09	per_site_per_generation
+kappa	2	transition_transversion_ratio
+path_used	transition	category
+p_specific	0.5	probability
+mutated_count	1	count
+p_rev	2.3e-09	probability_per_gamete_per_generation
+p_new	4.59999e-06	probability_per_gamete_per_generation
+ratio_p_new_over_p_rev	2000	ratio
