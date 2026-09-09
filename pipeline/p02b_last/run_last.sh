@@ -103,7 +103,7 @@ while [ $# -gt 0 ]; do
 done
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 DATA_DIR="${DATA_DIR_OVERRIDE:-$PROJECT_DIR/data}"
 CORE_MAP_DIR="$SCRIPT_DIR/../p02_core_map"
 A2_DIR="$DATA_DIR/a2"
