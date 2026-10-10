@@ -17,6 +17,7 @@
 - [ ] B2: kiểm định bằng hoán vị vị trí giữ nguyên tỉ lệ GC (thay cho mô hình nhị thức đã bị loại)
 - [ ] Cập nhật README + docs/04 + docs/05 theo số mới của bản đồ đầy đủ
 - [ ] Chạy lại sản phẩm C (20 locus, `data/c_loci` đã mất trong sự cố)
+- [x] 2026-10-10: Tổng hợp R15 (khung cơ thể chung) → `research/synthesis/11-khung-co-the-chung-cung-to-tien-hay-cung-thiet-ke.md`; điền ô H3 và điều kiện vào ô trong `docs/00` Q4. Còn mở: `validate_raw.py` báo NEEDS_FIX cho R15 (4 dòng ghi chú #20/#22/#35/#36 không nhãn — cần quyết định sửa validator hay giao subagent sửa R15); R15 chưa có V-file review
 
 ## Pha 1 — Môi trường & kiểm kê dữ liệu (chi tiết 7 việc P1.1–P1.7: research/synthesis/00-tong-hop-vong-1.md mục 9; P1.4 và P1.5 chạy song song, là GATE của Pha 2)
 - [ ] WSL2 + conda env từ env/environment.yml; kiểm `python -c "import Bio"`

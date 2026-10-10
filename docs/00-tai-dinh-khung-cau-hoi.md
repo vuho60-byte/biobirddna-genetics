@@ -4,7 +4,7 @@ Vai trò: nhà khoa học + khảo cổ học (paleogenomics). Cách làm: (1) g
 
 Nguyên tắc: không bác bỏ trực giác; đặt tên khoa học cho nó rồi kiểm.
 
-Trích dẫn đã được gắn nhãn C/S/U theo research/raw/R1–R7 (vòng 1, 2026-09-07); chỗ không có nhãn vẫn là cần xác minh. *(sửa vòng 1)*
+Trích dẫn đã được gắn nhãn C/S/U theo research/raw/R1–R7 (vòng 1, 2026-09-07) và R15 cho Q4 (2026-09-09, tổng hợp `research/synthesis/11-khung-co-the-chung-cung-to-tien-hay-cung-thiet-ke.md`); chỗ không có nhãn vẫn là cần xác minh. *(sửa vòng 1)*
 
 ---
 
@@ -75,13 +75,13 @@ Cách nhà khoa học xử lý: **đăng ký giả thuyết cạnh tranh**, rồ
 |---|---|---|
 | H1 | Tiến hóa chuẩn: tổ tiên chung, đột biến, chọn lọc, trôi dạt | Cây loài lồng nhau nhất quán giữa gene khác nhau; gene hỏng (pseudogene) chung ở cùng vị trí; retrovirus nội sinh (ERV) chèn cùng vị trí theo cây; đồng hồ phân tử khớp hóa thạch |
 | H2 | H1 + ràng buộc mạnh (canalization, kiến trúc bộ gene) → stasis | Như H1, thêm: vùng bảo tồn cực cao rộng hơn kỳ vọng; dN/dS rất thấp ở toolkit; ít tái sắp xếp NST |
-| H3 | Bộ gene gốc được thiết kế/gieo (directed panspermia: Crick & Orgel 1973; "tín hiệu" trong mã di truyền: shCherbak & Makukov 2013 — gây tranh cãi; chưa tìm được phản biện bình duyệt trực tiếp trong vòng 1 (U); trạng thái tiếp nhận của cộng đồng chưa xác minh *(sửa vòng 1)*) | Phải giải thích tại sao "bản thiết kế" mang gene răng hỏng (ENAM/AMEL/AMBN mất cùng kiểu ở gần như mọi **bộ** chim đã khảo sát, ~116 Ma — Meredith et al. 2014 *Science* (C, nguồn thứ hai Meredith 2013) *(sửa vòng 1)*), ERV chung, hóa thạch chuyển tiếp; cần đưa ra dự đoán RIÊNG mà H1/H2 không có |
+| H3 | Bộ gene gốc được thiết kế/gieo (directed panspermia: Crick & Orgel 1973; "tín hiệu" trong mã di truyền: shCherbak & Makukov 2013 — gây tranh cãi; chưa tìm được phản biện bình duyệt trực tiếp trong vòng 1 (U); trạng thái tiếp nhận của cộng đồng chưa xác minh *(sửa vòng 1)*) | Phải giải thích tại sao "bản thiết kế" mang gene răng hỏng (ENAM/AMEL/AMBN mất cùng kiểu ở gần như mọi **bộ** chim đã khảo sát, ~116 Ma — Meredith et al. 2014 *Science* (C, nguồn thứ hai Meredith 2013) *(sửa vòng 1)*), ERV chung, hóa thạch chuyển tiếp; cần đưa ra dự đoán RIÊNG mà H1/H2 không có. **Cập nhật R15:** bốn dự đoán phân biệt đã đối chiếu — cây từ dữ liệu độc lập hội tụ (C); gene hỏng chung kiểu lỗi ở họ hàng gần, khác kiểu ở dòng xa (GULO linh trưởng 61 Ma vs chuột lang 14 Ma — C; gene răng chim — C); phép kiểm chọn mô hình Theobald 2010 *Nature* nghiêng áp đảo về một tổ tiên chung (C; số odds — U); Pax6 dùng chung nhưng mắt chân đầu hội tụ độc lập (C) — cả bốn nghiêng về H1/H2. Phía thiết kế có lập luận thật (hội tụ chức năng; baraminology thống kê, kênh không bình duyệt chuẩn) nhưng chưa nêu dự đoán riêng nào thắng trên dữ liệu thật *(sửa theo R15)* |
 
 **Điểm khảo cổ học quan trọng:** "DNA nguyên thủy" không đào lên được. DNA cổ (aDNA) có kỷ lục hơn 1 triệu năm (voi ma mút, van der Valk 2021 — C; con số 1,2–1,6 triệu năm chưa xác minh — U) *(sửa vòng 1)*, không có DNA chim thời khủng long. Vì vậy "DNA gốc" chỉ có thể **TÁI DỰNG BẰNG TÍNH TOÁN** = ancestral sequence reconstruction (ASR) từ hàng trăm bộ gene chim hiện đại + ngoài nhóm. Đây chính là chỗ "thuật toán coding" vào cuộc — và là việc cộng đồng B10K đang làm.
 
 **Hóa thạch làm mốc:** Archaeopteryx ~150 Ma; Jehol (Confuciusornis, Enantiornithes); Ichthyornis; *Asteriornis* 66,8–66,7 Ma — hóa thạch chim vương miện được bảo tồn tốt nhất từ Phấn trắng, không phải cổ nhất (Field et al. 2020 *Nature* — C); *Vegavis* 69,2–68,4 Ma già hơn (C) *(sửa vòng 1)*. (R4 xác minh.)
 
-**Kết luận cho plan:** dự án không "chứng minh" H1 hay H3 bằng ý kiến. Nó xây bộ dữ liệu + code sao cho **bất kỳ ai cũng kiểm được từng dự đoán trong bảng trên.** Nếu H3 muốn đứng vững, nó phải nêu dự đoán riêng; bảng này để trống chỗ cho nó.
+**Kết luận cho plan:** dự án không "chứng minh" H1 hay H3 bằng ý kiến. Nó xây bộ dữ liệu + code sao cho **bất kỳ ai cũng kiểm được từng dự đoán trong bảng trên.** Nếu H3 muốn đứng vững, nó phải nêu dự đoán riêng; bảng này để trống chỗ cho nó. Sau R15 ô đó vẫn trống; điều kiện để điền: dự đoán H1/H2 không có, tính được từ dữ liệu dự án, và thắng một phép kiểm chọn mô hình trên dữ liệu thật *(sửa theo R15)*.
 
 ---
 
