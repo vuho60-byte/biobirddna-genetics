@@ -4,8 +4,9 @@ Ngày: 2026-10-10. Người viết: Main. Dữ liệu: `data/b11/` (B11), `data/
 chạy trên PC chủ dự án (Docker `quay.io/biocontainers/blast:2.16.0--h66d330f_5`, Python 3.14, worktree
 `.wt-claude` của nhánh `claude/exciting-ptolemy-0v60q5`). Mã: `pipeline/p08_silent_sites/`, `pipeline/p07_tooth_genes/`
 (brief X10, X9). Mốc so sánh văn liệu lấy từ `research/raw/R17` (không mở lại nguồn nào trong bản này).
-**Nhãn tối đa cho mọi con số ở đây: STRONG_INFERENCE** — một cặp loài, một bộ gene mức scaffold, CDS chào mào là
-mô hình gene dự đoán. Không nâng nhãn. Không viết "đã chứng minh".
+**Nhãn:** B5 và đếm Hox — STRONG_INFERENCE (một bộ gene mức scaffold, CDS dự đoán). B11 — sau khi lặp trên gà (GRCg7b)
+và sẻ vằn (bTaeGut1.4.pri) cùng kết quả: **CONFIRMED trên dữ liệu dự án** (ba bộ gene độc lập, một phương pháp). Không
+viết "đã chứng minh".
 
 ## 0. Câu hỏi và dự đoán viết trước khi nhìn số
 
@@ -42,11 +43,30 @@ vị trí 4-fold trong vùng lõi (cửa sổ 21 aa ≥ 50 % giống).
 - Phát hiện phụ: 19/39 HOX người **không có CDS chào mào cùng tên** (HOXA2, A10, A13, B1, B5, B9, C4–C6, C9–C11, C13,
   D1, D3…) và 7 gene có CDS chào mào **cụt** (156–333 nt: HOXA4, B4, B7, B13, C8, C12, D13). Đây là lỗ hổng chú giải
   của bộ gene mức scaffold, khớp cảnh báo D1 (mô hình gene cụt) ở `docs/05` — không phải mất gene thật. Đếm số Hox thật
-  cần tblastn protein HOX người lên bộ gene (công cụ p07 làm được, chưa chạy).
+  bằng tblastn 39 protein HOX người lên bộ gene (vòng 7, lệnh con `census`: mỗi vùng genome gán cho truy vấn tổng
+  bitscore cao nhất; `data/b5/r7_hox_census_summary.tsv`): **31/39 HOX người có vùng mạnh không mơ hồ** trên bộ gene
+  chào mào; HOXA6 nằm chung vùng với HOXA5 (hai gene cách < 3 kb, vùng 339–345 kb của VWYP01010181.1 gán cho HOXA5 với
+  HOXA6 đứng nhì); HOXB7, HOXC8 có vùng mạnh nhưng cụt ở mép scaffold; chỉ HOXB1, HOXC4, HOXC5, HOXD1 còn yếu (bitscore
+  60–81). Bốn cụm nằm đúng chỗ: HOXA trên VWYP01010181.1 (284–392 kb, 10 gene thứ tự A13→A1), HOXD trên VWYP01016378.1
+  (7–64 kb, 9 gene D4→D13), HOXB và HOXC rải trên nhiều scaffold ngắn. Kết luận: chào mào có ít nhất 34/39 gene Hox của
+  người, thứ tự trong cụm giữ nguyên; 19 ô "không có CDS" của B11 là lỗ hổng chú giải, không phải mất gene.
+  STRONG_INFERENCE (một bộ gene; ô trống của người như HOXC5 không kiểm được bằng truy vấn người).
 
-Verdict B11: dữ liệu **loại kịch bản chép/ghép gần đây** cho toàn bộ 39 gene đo được và cho thấy Hox không khác phần
-còn lại của bộ gene ở vị trí câm. STRONG_INFERENCE; nâng lên CONFIRMED cần lặp với một bộ gene chim chất lượng cao
-(gà hoặc sẻ vằn) và cùng kết quả.
+**Lặp trên gà và sẻ vằn (cùng CDS người, cùng tham số; `data/b11/chicken/`, `data/b11/zebrafinch/`):**
+
+| Bộ gene | Gene đo được | Hox: giống 4-fold / ngẫu nhiên | Công cụ: giống 4-fold / ngẫu nhiên | Đối chứng: giống 4-fold / ngẫu nhiên | Gene ≥ 0,9 |
+|---|---|---|---|---|---|
+| Chào mào GCA_013400435.1 (scaffold) | 39 | 48,9 % / 30,7 % (22 gene) | 53,4 % / 32,5 % (11) | 49,2 % / 27,5 % (6) | 0 |
+| Gà GRCg7b (nhiễm sắc thể) | 54 | 49,3 % / 32,6 % (34) | 52,4 % / 31,8 % (11) | 52,6 % / 28,9 % (9) | 0 |
+| Sẻ vằn bTaeGut1.4.pri (nhiễm sắc thể) | 55 | 49,8 % / 33,5 % (36) | 52,8 % / 32,6 % (11) | 51,0 % / 28,3 % (8) | 0 |
+
+Ba bộ gene, ba phòng thí nghiệm lắp ráp khác nhau, cùng bức tranh: Hox ở vị trí câm giống người 49–50 %, bằng gene
+đối chứng, cách xa 1,0, trên mức ngẫu nhiên ~30 %. Bộ gene gà và sẻ vằn chú giải đầy đủ hơn nên đo được 34–36 Hox
+thay vì 22.
+
+Verdict B11: dữ liệu **loại kịch bản chép/ghép gần đây** cho toàn bộ gene đo được ở cả ba loài chim và cho thấy Hox
+không khác phần còn lại của bộ gene ở vị trí câm. **CONFIRMED trên dữ liệu dự án** (ba bộ gene độc lập; vẫn là một
+phương pháp — phép kiểm độc lập thứ hai là cây gene so cây loài, chưa làm).
 
 ## 2. B5 — gene răng: đối chứng MEPE không đạt, năm gene men/ngà răng không hit, MMP20 chỉ hit chéo họ MMP
 
@@ -61,6 +81,7 @@ dùng Gulo chuột cống.
 | ENAM, AMBN, AMELX, AMTN, DSPP | không hit | **không kết luận** — khi đối chứng cùng họ không thấy, âm tính không nói gì về giả gene |
 | MMP20 | 11 locus, 38–70 % id; GFF: **mọi locus chồng gene Mmp họ hàng đã chú giải** (Mmp2, 7, 8, 9, 10, 11, 15, 16, 17, 24, 27, 28, 3) trừ một **giả gene chưa tên** VWYP01031341.1:548624–554768 trong cụm MMP | hit chéo paralog; 2 "codon dừng có chỗ dựa" của báo cáo nằm trong vùng *Mmp27* và trong giả gene đó — **không phải tổn thương MMP20** |
 | Giả gene chưa tên (vòng 3, bộ MMP người) | MMP13 8 HSP, tổng 740 bit, 89 % id, phủ aa 41–471; MMP20 1 HSP, 55 bit, 51 % | giả gene là **tàn dư MMP13**, không phải MMP20 (`data/b5/r3_mmp_family_summary.txt`) |
+| Tìm theo vị trí láng giềng (vòng 6, e-value 1e-2, mốc SPARCL1/SPP1/IBSP/DMP1) | mốc tìm thấy đúng cụm: DMP1 4,2 kb, IBSP 15,3 kb và một hit MEPE yếu (25 % id) 23,7 kb trên cùng scaffold VWYP01026701.1 dài 38,7 kb; SPARCL1 ở mép scaffold khác 36 kb; ENAM/AMBN/AMELX/AMTN/DSPP 0 HSP | vùng DSPP rơi vào khoảng trống giữa hai scaffold ngắn; cụm men răng không có hit → **không kết luận**, do lắp ráp (`data/b5/r6_scpp_synteny_summary.txt`) |
 | GULO (vòng 5, Gulo chuột cống NP_071556.2 vì cá sấu/gà không có bản ghi tên GULO) | 6 mảnh trên 6 scaffold khác nhau, mỗi mảnh 1 HSP phủ 7–14 % protein, 56–79 % id, tổng phủ ~0,62; nhiều mảnh sát đầu scaffold; 0 codon dừng có chỗ dựa | vùng GULO **vỡ trong lắp ráp**; còn chức năng hay giả gene: **không kết luận** được từ bộ gene này (`data/b5/r5_gulo_summary.txt`); khoảng trống #19 của R15 vẫn mở |
 
 Đọc theo thứ tự khả năng của `report.md`: (1) không có tổn thương nào của gene mục tiêu để xét; (2) hai `*` "có chỗ
@@ -93,7 +114,7 @@ Năm dấu vết mà một bộ gene "ghép xuyên loài" phải để lại, tr
 | Dấu vết | Phép đo | Kết quả | Nhãn |
 |---|---|---|---|
 | Đoạn ghép mang chữ ký thành phần lạ | A3 quét GC/codon/4-mer trên 14.003 CDS | 0 đoạn lệch chuẩn | CONFIRMED trên dữ liệu dự án |
-| Vị trí câm giống hệt nguồn | B11, 39 gene người–chào mào | không gene nào ≥ 0,9; Hox = đối chứng | STRONG_INFERENCE |
+| Vị trí câm giống hệt nguồn | B11, người so chào mào, gà, sẻ vằn (39–55 gene mỗi loài) | không gene nào ≥ 0,9 ở cả ba loài; Hox = đối chứng | CONFIRMED trên dữ liệu dự án |
 | Không sao chép gene hỏng cùng kiểu lỗi | R15 (chim), R17 (người) văn liệu; B5 chào mào | văn liệu: lỗi chung lồng theo cây; B5: chưa đo được (độ nhạy) | CONFIRMED (văn liệu) / chưa kết luận (B5) |
 | Vùng khác nhau cho cây khác nhau | so cây từng gene với cây loài | chưa làm | — |
 | Cụm ghép không giữ trật tự gene/intron | so GFF chào mào với người quanh bốn cụm Hox | chưa làm (rẻ) | — |
@@ -105,10 +126,10 @@ giữa hai loài xa (B11 lặp trên gà/sẻ vằn vẫn không thấy), hoặc
 
 ## 5. Việc tiếp theo
 
-1. **B11 lặp** trên gà và sẻ vằn (cùng công cụ, chỉ đổi CDS) → nếu cùng bức tranh, nâng B11 lên CONFIRMED.
+1. ~~B11 lặp trên gà và sẻ vằn~~ — đã làm, cùng bức tranh. Phép kiểm độc lập thứ hai: cây từng gene so cây loài.
 2. **B5 vòng 2**: truy vấn bằng tàn dư gene răng của chim (phụ lục Meredith 2014) hoặc tblastx; thêm bước GFF-overlap +
    kiểm paralog vào p07; thử e-value nới (1e-2) có kiểm đối chứng MEPE; GULO cần bộ gene sẻ lắp ráp tốt hơn (6 exon tìm được nằm trên 6 scaffold rời).
-3. **Đếm Hox thật** của chào mào bằng tblastn protein HOX người (p07) — lấp 19/39 ô trống chú giải.
+3. ~~Đếm Hox thật~~ — đã làm (34/39, xem mục 1). Còn mở: ô trống của lưới Hox người (A8, A12, B10–12, C1–3, C7, D2, D5–7) có trống ở chim không — cần truy vấn từ loài có gene đó (cá).
 4. **R17 vòng 2** theo 12 câu ở mục 5 file thô; V-file review độc lập cho R15 và R17.
 5. Ghi vào `docs/00` Q4: thêm dòng B11 vào bảng dự đoán phân biệt (sửa vòng sau, hậu tố `*(sửa theo B11)*`).
 
