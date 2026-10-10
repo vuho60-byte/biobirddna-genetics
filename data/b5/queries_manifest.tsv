@@ -1,0 +1,10 @@
+qseqid	gene	role	accession	organism	length_aa	n_candidates	status	title	search_term
+ENAM|target|XP_006257995.1	ENAM	target	XP_006257995.1	Alligator mississippiensis	1092	4	ok	enamelin isoform X1 [Alligator mississippiensis]	ENAM[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+AMBN|target|XP_019346383.1	AMBN	target	XP_019346383.1	Alligator mississippiensis	408	4	ok	ameloblastin isoform X1 [Alligator mississippiensis]	AMBN[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+AMELX|target|XP_014463267.1	AMELX	target	XP_014463267.1	Alligator mississippiensis	199	1	ok	amelogenin, X isoform [Alligator mississippiensis]	AMELX[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+AMTN|target|XP_014451634.1	AMTN	target	XP_014451634.1	Alligator mississippiensis	328	1	ok	amelotin [Alligator mississippiensis]	AMTN[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+DSPP|target|XP_059578265.1	DSPP	target	XP_059578265.1	Alligator mississippiensis	797	5	ok	dentin sialophosphoprotein isoform X1 [Alligator mississippiensis]	DSPP[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+MMP20|target|XP_006272555.1	MMP20	target	XP_006272555.1	Alligator mississippiensis	485	1	ok	matrix metalloproteinase-20 [Alligator mississippiensis]	MMP20[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+	GULO	target		Alligator mississippiensis	0	0	not_found		GULO[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+MEPE|control|XP_059578272.1	MEPE	control	XP_059578272.1	Alligator mississippiensis	847	2	ok	matrix extracellular phosphoglycoprotein isoform X1 [Alligator mississippiensis]	MEPE[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]
+SPARC|control|XP_006270448.1	SPARC	control	XP_006270448.1	Alligator mississippiensis	298	1	ok	SPARC [Alligator mississippiensis]	SPARC[Gene Name] AND "Alligator mississippiensis"[Organism] AND refseq[Filter]

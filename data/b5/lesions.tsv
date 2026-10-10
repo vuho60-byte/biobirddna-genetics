@@ -1,0 +1,52 @@
+gene	role	qseqid	sseqid	strand	type	qpos	s_nt	frame_from	frame_to	gap_nt	owned	supported	hsp_bitscore	note
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01016337.1	-	intron_like	213	121355	-1	-1	20701	1	0	76.3	q213->q216, subject gap 20701 nt, khung -1->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01018552.1	+	intron_like	184	10950	1	1	766	1	0	58.9	q184->q184, subject gap 766 nt, khung 1->1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01020588.1	+	intron_like	124	135987	1	1	691	1	0	61.2	q124->q174, subject gap 691 nt, khung 1->1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01020588.1	+	intron_like	215	136803	1	3	948	1	0	61.2	q215->q216, subject gap 948 nt, khung 1->3
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01024696.1	+	intron_like	216	335158	2	1	2880	1	0	53.1	q216->q214, subject gap 2880 nt, khung 2->1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01027628.1	-	intron_like	126	244707	-3	-1	104	1	0	30.8	q126->q125, subject gap 104 nt, khung -3->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01027628.1	-	intron_like	212	244316	-1	-3	243	1	0	76.3	q212->q216, subject gap 243 nt, khung -1->-3
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01028285.1	+	intron_like	215	241367	3	1	2660	1	0	53.5	q215->q216, subject gap 2660 nt, khung 3->1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01029156.1	-	intron_like	215	155652	-2	-1	15717	1	0	76.6	q215->q215, subject gap 15717 nt, khung -2->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	124	493965	-1	-1	61480	1	0	79.3	q124->q42, subject gap 61480 nt, khung -1->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	unclassified	124	432258	-1	-2	-90817	1	0	79.3	q124->q42, subject gap -90817 nt, khung -1->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	124	522827	-2	-1	11874	1	0	84.3	q124->q43, subject gap 11874 nt, khung -2->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	unclassified	124	482946	-1	-2	-71482	1	0	72	q124->q58, subject gap -71482 nt, khung -1->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	124	554228	-2	-3	71891	1	0	80.1	q124->q119, subject gap 71891 nt, khung -2->-3
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	125	510708	-1	-1	0	0	0	84.3	query aa 125 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	135	510678	-1	-1	27496	1	0	72	q135->q44, subject gap 27496 nt, khung -1->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	170	493494	-1	-1	0	0	0	89.4	query aa 170 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	170	493482	-1	-1	0	0	0	89.4	query aa 170 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	unclassified	170	432014	-2	-1	-61656	1	0	46.2	q170->q124, subject gap -61656 nt, khung -2->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	173	493455	-1	-1	0	0	0	89.4	query aa 173 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	173	552950	-2	-2	0	1	1	96.3	query aa 173
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	unclassified	173	522223	-3	-2	-30921	1	0	52.4	q173->q120, subject gap -30921 nt, khung -3->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	180	482134	-3	-3	0	0	0	84.7	query aa 180 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	180	482131	-3	-3	0	0	0	84.7	query aa 180 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	180	482119	-3	-3	0	0	0	84.7	query aa 180 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	180	482113	-3	-3	0	0	0	84.7	query aa 180 (nam trong HSP yeu chong lan, bo qua)
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	211	493317	-1	-2	62585	1	0	63.9	q211->q174, subject gap 62585 nt, khung -1->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	211	522015	-1	-2	11867	1	0	59.3	q211->q175, subject gap 11867 nt, khung -1->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	in_frame_break	216	481945	-3	-3	-40439	1	0	52.4	q216->q120, subject gap -40439 nt, khung -3->-3
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	unclassified	216	430604	-2	-1	-91521	1	0	60.1	q216->q175, subject gap -91521 nt, khung -2->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	216	510023	-2	-2	502	1	0	59.3	q216->q210, subject gap 502 nt, khung -2->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	220	552743	-2	-2	120589	1	0	46.2	q220->q124, subject gap 120589 nt, khung -2->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	in_frame_break	270	509339	-2	-2	-42500	1	0	74.7	q270->q216, subject gap -42500 nt, khung -2->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	270	551675	-2	-2	59125	1	0	79.7	q270->q216, subject gap 59125 nt, khung -2->-2
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	271	479973	-1	-1	0	1	1	90.1	query aa 271
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	unclassified	272	492380	-2	-1	-28731	1	0	70.9	q272->q216, subject gap -28731 nt, khung -2->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	278	520923	-1	-1	40780	1	0	70.9	q278->q216, subject gap 40780 nt, khung -1->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	281	479907	-1	-1	0	1	0	90.1	query aa 281
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	281	479901	-1	-1	0	1	0	90.1	query aa 281
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	stop_codon	281	479877	-1	-1	0	1	0	90.1	query aa 281
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01031341.1	-	intron_like	320	479685	-1	-1	49618	1	0	80.5	q320->q218, subject gap 49618 nt, khung -1->-1
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01033145.1	+	intron_like	124	176514	1	3	3636	1	0	68.6	q124->q163, subject gap 3636 nt, khung 1->3
+MMP20	target	MMP20|target|XP_006272555.1	VWYP01033145.1	+	intron_like	224	180338	3	2	8907	1	0	68.6	q224->q215, subject gap 8907 nt, khung 3->2
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01024446.1	+	intron_like	145	20354	3	3	763	1	0	59.7	q145->q147, subject gap 763 nt, khung 3->3
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01024446.1	+	intron_like	191	21254	3	1	446	1	0	59.7	q191->q189, subject gap 446 nt, khung 3->1
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01024446.1	+	intron_like	239	21852	1	2	911	1	0	79.3	q239->q242, subject gap 911 nt, khung 1->2
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01029506.1	+	intron_like	65	237409	2	2	412	1	0	57	q65->q65, subject gap 412 nt, khung 2->2
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01029506.1	+	intron_like	133	238024	2	1	84	1	0	87	q133->q105, subject gap 84 nt, khung 2->1
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01029506.1	+	intron_like	145	238230	1	2	188	1	0	87	q145->q147, subject gap 188 nt, khung 1->2
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01029506.1	+	intron_like	203	238597	2	3	62	1	0	95.5	q203->q181, subject gap 62 nt, khung 2->3
+SPARC	control	SPARC|control|XP_006270448.1	VWYP01029506.1	+	intron_like	240	238838	3	3	475	1	0	103	q240->q237, subject gap 475 nt, khung 3->3
