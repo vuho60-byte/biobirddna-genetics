@@ -18,6 +18,7 @@
 - [ ] Cập nhật README + docs/04 + docs/05 theo số mới của bản đồ đầy đủ
 - [ ] Chạy lại sản phẩm C (20 locus, `data/c_loci` đã mất trong sự cố)
 - [x] 2026-10-10: Tổng hợp R15 (khung cơ thể chung) → `research/synthesis/11-khung-co-the-chung-cung-to-tien-hay-cung-thiet-ke.md`; điền ô H3 và điều kiện vào ô trong `docs/00` Q4. Còn mở: `validate_raw.py` báo NEEDS_FIX cho R15 (4 dòng ghi chú #20/#22/#35/#36 không nhãn — cần quyết định sửa validator hay giao subagent sửa R15); R15 chưa có V-file review
+- [x] 2026-10-10: B5 mã xong (brief X9) → `pipeline/p07_tooth_genes/` (tooth_scan.py 5 lệnh con + run_tooth_scan.sh, 32 unittest PASS kể cả tích hợp tblastn thật trên dữ liệu tổng hợp). CHƯA chạy dữ liệu thật: cần (1) duyệt image BLAST `quay.io/biocontainers/blast:2.16.0--h66d330f_5` (tag suy từ bioconda, chưa pull) hoặc `--mode local` trong WSL2; (2) `--email` cho NCBI; (3) đọc `data/b5/report.md` mục cuối trước khi dùng; (4) lấy bảng phụ lục Meredith 2014 để đối chiếu vị trí tổn thương
 
 ## Pha 1 — Môi trường & kiểm kê dữ liệu (chi tiết 7 việc P1.1–P1.7: research/synthesis/00-tong-hop-vong-1.md mục 9; P1.4 và P1.5 chạy song song, là GATE của Pha 2)
 - [ ] WSL2 + conda env từ env/environment.yml; kiểm `python -c "import Bio"`
