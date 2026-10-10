@@ -1,0 +1,26 @@
+# B5 vong 3 (2026-10-10, PC, data/r3/b5 - khong commit): truy van bo protein MMP cum 11q22 cua NGUOI
+# (MMP1,3,7,8,10,12,13,20,27; RefSeq NP_002412.1, NP_002413.1, NP_002414.1, XP_011541136.1, NP_002416.1,
+# NP_002417.2, NP_002418.1, NP_071913.1, NP_071405.2) + SPARC NP_001296373.1, tblastn len bo gene chao mao.
+# Cau hoi: gia gene chua ten VWYP01031341.1:548624-554768 (cum MMP, GFF D01) la tan du cua MMP nao?
+# Tong bitscore cac HSP nam trong vung gia gene, theo truy van (loc tu data/r3/b5/hits.tsv):
+MMP13	8 HSP	sum_bits=740.2	max_pident=89.091
+MMP3	5 HSP	sum_bits=391.9	max_pident=60.345
+MMP8	5 HSP	sum_bits=383.2	max_pident=64.912
+MMP10	4 HSP	sum_bits=333.8	max_pident=62.5
+MMP1	4 HSP	sum_bits=315.8	max_pident=62.5
+MMP27	4 HSP	sum_bits=314.6	max_pident=60
+MMP12	3 HSP	sum_bits=245.8	max_pident=61.818
+MMP7	3 HSP	sum_bits=244.6	max_pident=57.143
+MMP20	1 HSP	sum_bits=55.5	max_pident=50.847
+# HSP MMP13 trong vung (pident len qstart qend sstart send evalue bits frame): phu tu aa 41 den 471 cua MMP13 nguoi
+MMP13	58.824	136	116	218	553147	552740	9.41e-38	152	-2
+MMP13	64.634	82	41	121	554470	554228	1.5e-24	112	-2
+MMP13	89.091	55	213	267	551839	551675	1.69e-22	106	-2
+MMP13	63.333	60	347	406	549928	549749	3.86e-17	89.4	-2
+MMP13	69.231	52	300	351	550393	550238	4.08e-15	83.2	-2
+MMP13	73.81	42	265	306	551096	550971	1.41e-11	72	-1
+MMP13	50.82	61	387	439	549450	549268	9.54e-09	62.8	-3
+MMP13	75.758	33	439	471	548722	548624	1.04e-08	62.8	-2
+# Ket luan ky thuat: vung gia gene giong MMP13 nhat (89 % id, 8 HSP phu gan het gene); MMP20 chi 1 HSP 51 %.
+# -> KHONG co manh MMP20 phat hien duoc tren bo gene chao mao o nguong 1e-5 voi truy van ca sau/nguoi.
+# Vong 4 (data/r4): GULO[Gene Name] Gallus gallus RefSeq -> 0 ban ghi (ten gene khac); SPARC ga: phu 0,85, 97,6 % id, 0 stop.
