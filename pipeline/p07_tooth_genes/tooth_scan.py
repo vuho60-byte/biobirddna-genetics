@@ -960,6 +960,90 @@ def cmd_report(args):
 
 
 # ---------------------------------------------------------------------------
+# census: dem locus genome theo ho gene paralog (vd 39 HOX nguoi) -- moi vung
+# genome duoc gan cho truy van co tong bitscore cao nhat (best hit), de tranh
+# dem trung do homeobox cua moi Hox hit ca 39 truy van.
+# ---------------------------------------------------------------------------
+
+CENSUS_HEADER = [
+    "locus_id", "sseqid", "strand", "s_start", "s_end", "best_gene", "best_bits", "best_pident",
+    "best_qcov", "second_gene", "second_bits", "margin", "n_queries_hit", "ambiguous",
+]
+
+
+def census_loci(hsps, max_gap=3000, manifest=None):
+    """Nhom HSP cua MOI truy van theo (sseqid, strand), noi khi cach <= max_gap
+    -> moi vung genome 1 dong: gene thang (tong bitscore cao nhat), gene nhi,
+    bien (margin = best - second). ambiguous=1 khi margin < 10% best."""
+    groups = {}
+    for h in hsps:
+        groups.setdefault((h["sseqid"], h["strand"]), []).append(h)
+    rows = []
+    for key in sorted(groups):
+        items = sorted(groups[key], key=lambda h: (h["s_lo"], h["s_hi"]))
+        clusters = []
+        cur = [items[0]]
+        for h in items[1:]:
+            if h["s_lo"] - max(x["s_hi"] for x in cur) <= max_gap:
+                cur.append(h)
+            else:
+                clusters.append(cur)
+                cur = [h]
+        clusters.append(cur)
+        for cl in clusters:
+            per_gene = {}
+            for h in cl:
+                gene, _role, _acc = split_qseqid(h["qseqid"], manifest)
+                g = per_gene.setdefault(gene, {"bits": 0.0, "pident": 0.0, "q": [], "qlen": h["qlen"]})
+                g["bits"] += h["bitscore"]
+                g["pident"] = max(g["pident"], h["pident"])
+                g["q"].append((h["qstart"], h["qend"]))
+            ranked = sorted(per_gene.items(), key=lambda kv: (-kv[1]["bits"], kv[0]))
+            best_gene, best = ranked[0]
+            second_gene, second_bits = (ranked[1][0], ranked[1][1]["bits"]) if len(ranked) > 1 else ("", 0.0)
+            margin = best["bits"] - second_bits
+            rows.append({
+                "locus_id": "{s}:{a}-{b}({st})".format(s=key[0], a=min(h["s_lo"] for h in cl), b=max(h["s_hi"] for h in cl), st=key[1]),
+                "sseqid": key[0], "strand": key[1],
+                "s_start": min(h["s_lo"] for h in cl), "s_end": max(h["s_hi"] for h in cl),
+                "best_gene": best_gene, "best_bits": best["bits"], "best_pident": best["pident"],
+                "best_qcov": _union_len(best["q"]) / best["qlen"] if best["qlen"] else 0.0,
+                "second_gene": second_gene, "second_bits": second_bits, "margin": margin,
+                "n_queries_hit": len(per_gene), "ambiguous": int(margin < 0.1 * best["bits"]),
+            })
+    rows.sort(key=lambda r: (-r["best_bits"]))
+    return rows
+
+
+def cmd_census(args):
+    manifest = load_manifest(args.manifest)
+    hsps = read_hsps(args.tblastn, max_evalue=args.max_evalue)
+    rows = census_loci(hsps, max_gap=args.max_gap, manifest=manifest)
+    strong = [r for r in rows if r["best_bits"] >= args.min_bits and r["best_qcov"] >= args.min_qcov]
+    with smart_open_write(args.out) as f:
+        _write_tsv(f, CENSUS_HEADER, rows)
+    # tom tat theo gene: gene -> so locus thang (manh) / tong
+    by_gene = {}
+    for r in rows:
+        d = by_gene.setdefault(r["best_gene"], {"gene": r["best_gene"], "n_loci": 0, "n_strong": 0, "n_unambiguous_strong": 0, "best_bits": 0.0})
+        d["n_loci"] += 1
+        d["best_bits"] = max(d["best_bits"], r["best_bits"])
+        if r in strong:
+            d["n_strong"] += 1
+            if not r["ambiguous"]:
+                d["n_unambiguous_strong"] += 1
+    all_genes = sorted(set(by_gene) | set(m["gene"] for m in manifest.values() if m.get("status", "ok") == "ok"))
+    with smart_open_write(args.summary) as f:
+        _write_tsv(f, ["gene", "n_loci", "n_strong", "n_unambiguous_strong", "best_bits"], [
+            by_gene.get(g, {"gene": g, "n_loci": 0, "n_strong": 0, "n_unambiguous_strong": 0, "best_bits": 0.0}) for g in all_genes
+        ])
+    found = sum(1 for g in all_genes if by_gene.get(g, {}).get("n_unambiguous_strong", 0) > 0)
+    sys.stderr.write("census: {h} HSP -> {l} vung; {s} vung manh (bits>={b}, qcov>={c}); {f}/{n} gene co >=1 vung manh khong mo ho\n".format(
+        h=len(hsps), l=len(rows), s=len(strong), b=args.min_bits, c=args.min_qcov, f=found, n=len(all_genes)))
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
 
@@ -1013,6 +1097,17 @@ def build_parser():
     t.add_argument("--fasta", required=True)
     t.add_argument("--out", default="-")
     t.set_defaults(func=cmd_translate)
+
+    c = sub.add_parser("census", help="đếm vùng genome theo họ gene paralog (vd 39 HOX): mỗi vùng gán cho truy vấn tổng bitscore cao nhất")
+    c.add_argument("--tblastn", required=True)
+    c.add_argument("--manifest", default=None)
+    c.add_argument("--max-evalue", type=float, default=1e-5)
+    c.add_argument("--max-gap", type=int, default=3000, help="nt tối đa giữa HSP cùng vùng (Hox: 2 exon, intron ~1 kb)")
+    c.add_argument("--min-bits", type=float, default=80.0, help="tổng bitscore tối thiểu để vùng được coi là 'mạnh'")
+    c.add_argument("--min-qcov", type=float, default=0.3, help="độ phủ truy vấn tối thiểu cho vùng 'mạnh'")
+    c.add_argument("--out", required=True, help="census.tsv: mỗi vùng một dòng")
+    c.add_argument("--summary", required=True, help="census_summary.tsv: mỗi gene một dòng")
+    c.set_defaults(func=cmd_census)
 
     r = sub.add_parser("report", help="loci.tsv + lesions.tsv -> report.md (có cảnh báo bắt buộc)")
     r.add_argument("--loci", required=True)

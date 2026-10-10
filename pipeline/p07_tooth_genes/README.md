@@ -119,6 +119,16 @@ mã** — mọi accession đến từ NCBI tại thời điểm chạy và đư�
   `intron_like`, `in_frame_break`, `unclassified`.
 - `hits.tsv` (tùy chọn): mọi HSP qua lọc, bỏ hai cột `qseq`/`sseq`.
 
+### 2b. `census` — đếm vùng genome theo họ gene paralog (thêm 2026-10-10)
+
+`census --tblastn tblastn.tsv [--manifest ...] --out census.tsv --summary census_summary.tsv [--max-gap 3000]
+[--min-bits 80] [--min-qcov 0.3]`. Dùng khi truy vấn là **cả một họ paralog** (ví dụ 39 protein HOX người): mỗi
+Hox có homeobox gần giống nhau nên một vùng genome hit cả 39 truy vấn; `census` nhóm HSP của **mọi** truy vấn theo
+(scaffold, mạch) cách ≤ `--max-gap` nt rồi gán vùng cho truy vấn có **tổng bitscore cao nhất**, ghi gene nhì và biên
+(`margin`); `ambiguous=1` khi biên < 10 % điểm thắng. `census_summary.tsv`: mỗi gene số vùng thắng, số vùng "mạnh"
+(bits ≥ `--min-bits` và phủ ≥ `--min-qcov`) và số vùng mạnh không mơ hồ. Dùng để đếm số gene Hox thật của chào mào
+độc lập với chú giải D01 (B11 thấy 19/39 HOX người không có CDS chào mào cùng tên).
+
 ### 3–4. `extract`, `translate`
 
 `extract` đọc bộ gene `.fna(.gz)` theo luồng (một scaffold trong bộ nhớ), cắt `[s_start - pad, s_end + pad]`
@@ -181,7 +191,7 @@ codon dừng tại aa 91 + xóa 1 nt tại codon 141 (mạch +) / cùng locus đ
 python -B -m unittest discover -s pipeline/p07_tooth_genes/tests -v
 ```
 
-32 test (đo 2026-10-10): dịch mã 3 khung + đảo mạch; đọc bảng, lọc e-value, sai số cột → dừng; nối locus (gap
+35 test (đo 2026-10-10; 3 test `census`: gán gene thắng, cờ mơ hồ, tóm tắt theo gene, gap lớn nhập vùng): dịch mã 3 khung + đảo mạch; đọc bảng, lọc e-value, sai số cột → dừng; nối locus (gap
 100 kb → 4 locus; gap 100 nt → tách hai exon); codon dừng đúng aa 91, nt 571 (+) / 567 (−); `*` giả của HSP yếu
 **không** tính (`owned=0`); lệch khung 1→3 / −1→−3; ranh exon → `intron_like`, không `frameshift`, `*` giả
 trong intron không tính; `_flank_supported`, `_union_len`; CLI `parse` có/không manifest; `extract` kẹp pad ở

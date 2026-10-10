@@ -575,13 +575,85 @@ class TestFetchQueries(TempDirMixin, unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
+# census: dem vung genome theo ho gene paralog
+# ---------------------------------------------------------------------------
+
+def _hsp(q, s, qstart, qend, sstart, send, bits, pident=60.0, qlen=300, frame=1):
+    cols = [q, s, pident, qend - qstart + 1, 0, 0, qstart, qend, sstart, send, 1e-20, bits, qlen, 100000, frame, "A" * (qend - qstart + 1), "A" * (qend - qstart + 1)]
+    return "\t".join(str(c) for c in cols)
+
+
+class TestCensus(TempDirMixin, unittest.TestCase):
+    def setUp(self):
+        super().setUp()
+        rows = [
+            # vung 1 (scaf1 +, 1000-4500): HOXA1 thang ro (2 HSP, 2 exon cach 2 kb), HOXB1 chi homeobox
+            _hsp("HOXA1|target|NP_1", "scaf1", 1, 120, 1000, 1360, 150.0, 70.0),
+            _hsp("HOXA1|target|NP_1", "scaf1", 121, 300, 3400, 3940, 200.0, 80.0),
+            _hsp("HOXB1|target|NP_2", "scaf1", 150, 210, 3500, 3683, 95.0, 65.0),
+            # vung 2 (scaf1 +, 9000-9200): HOXA1 va HOXB1 gan bang nhau -> mo ho; cach vung 1 > 3 kb
+            _hsp("HOXA1|target|NP_1", "scaf1", 150, 210, 9000, 9183, 90.0),
+            _hsp("HOXB1|target|NP_2", "scaf1", 150, 210, 9001, 9184, 88.0),
+            # vung 3 (scaf2 -): chi HOXB1, yeu (bits 50) -> khong "manh"
+            _hsp("HOXB1|target|NP_2", "scaf2", 150, 210, 5000, 4817, 50.0, 55.0, 300, -1),
+        ]
+        self.tbl = self.path("t.tsv")
+        write_text(self.tbl, "\n".join(rows) + "\n")
+
+    def test_census_assigns_best_gene_and_flags_ambiguous(self):
+        hsps = ts.read_hsps(self.tbl)
+        rows = ts.census_loci(hsps, max_gap=3000)
+        self.assertEqual(len(rows), 3)
+        by = {r["locus_id"]: r for r in rows}
+        v1 = by["scaf1:1000-3940(+)"]
+        self.assertEqual(v1["best_gene"], "HOXA1")
+        self.assertEqual(v1["best_bits"], 350.0)
+        self.assertEqual(v1["second_gene"], "HOXB1")
+        self.assertEqual(v1["n_queries_hit"], 2)
+        self.assertEqual(v1["ambiguous"], 0)
+        self.assertAlmostEqual(v1["best_qcov"], 1.0)
+        v2 = by["scaf1:9000-9184(+)"]
+        self.assertEqual(v2["best_gene"], "HOXA1")
+        self.assertEqual(v2["ambiguous"], 1)  # 90 vs 88: bien < 10%
+        v3 = by["scaf2:4817-5000(-)"]
+        self.assertEqual(v3["best_gene"], "HOXB1")
+        self.assertEqual(v3["second_gene"], "")
+        self.assertEqual(v3["n_queries_hit"], 1)
+        # sap theo best_bits giam dan
+        self.assertEqual([r["best_gene"] for r in rows][0], "HOXA1")
+
+    def test_census_cli_summary(self):
+        out = self.path("census.tsv")
+        summ = self.path("summary.tsv")
+        rc = ts.main(["census", "--tblastn", self.tbl, "--out", out, "--summary", summ, "--min-bits", "80", "--min-qcov", "0.3"])
+        self.assertEqual(rc, 0)
+        h, rows = tsv_rows(read_text(out))
+        self.assertEqual(h, ts.CENSUS_HEADER)
+        self.assertEqual(len(rows), 3)
+        _, srows = tsv_rows(read_text(summ))
+        by = {r["gene"]: r for r in srows}
+        # HOXA1: 2 vung thang (vung 1 manh + vung 2 mo ho, qcov 61/300 = 0.2 < 0.3 -> khong manh)
+        self.assertEqual(by["HOXA1"]["n_loci"], "2")
+        self.assertEqual(by["HOXA1"]["n_strong"], "1")
+        self.assertEqual(by["HOXA1"]["n_unambiguous_strong"], "1")
+        # HOXB1: chi vung 3 (bits 50 < 80) -> 1 locus, 0 manh
+        self.assertEqual(by["HOXB1"]["n_loci"], "1")
+        self.assertEqual(by["HOXB1"]["n_strong"], "0")
+
+    def test_census_gap_splits_neighbouring_genes(self):
+        hsps = ts.read_hsps(self.tbl)
+        rows = ts.census_loci(hsps, max_gap=10000)  # gap lon -> vung 1 va 2 nhap lam mot
+        self.assertEqual(len([r for r in rows if r["sseqid"] == "scaf1"]), 1)
+
+
+# ---------------------------------------------------------------------------
 # --help
 # ---------------------------------------------------------------------------
 
 
 class TestHelp(unittest.TestCase):
     def test_help_exit_zero(self):
-        for argv in (["--help"], ["fetch-queries", "--help"], ["parse", "--help"], ["extract", "--help"], ["translate", "--help"], ["report", "--help"]):
+        for argv in (["--help"], ["fetch-queries", "--help"], ["parse", "--help"], ["extract", "--help"], ["translate", "--help"], ["report", "--help"], ["census", "--help"]):
             with self.assertRaises(SystemExit) as cm:
                 ts.main(argv)
             self.assertEqual(cm.exception.code, 0, argv)
