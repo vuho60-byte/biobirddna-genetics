@@ -1,0 +1,17 @@
+locus	feature	gff_start	gff_end	strand	gene	biotype
+MMP20|target|VWYP01016337.1:100490-121657(-)	gene	56354	138620	-	Mmp16	protein_coding
+MMP20|target|VWYP01018552.1:10735-12018(+)	gene	7397	14661	+	Mmp28	protein_coding
+MMP20|target|VWYP01020588.1:135745-137909(+)	gene	135409	139380	+	Mmp9	protein_coding
+MMP20|target|VWYP01024696.1:334862-338238(+)	gene	327221	347528	+	Mmp17	protein_coding
+MMP20|target|VWYP01027628.1:243909-244832(-)	gene	242347	245236	-	Mmp15	protein_coding
+MMP20|target|VWYP01028285.1:241245-244236(+)	gene	238735	247273	+	Mmp11	protein_coding
+MMP20|target|VWYP01029156.1:139768-155954(-)	gene	124702	164266	-	Mmp24	protein_coding
+MMP20|target|VWYP01031341.1:429909-554428(-)	gene	429906	433115	-	Mmp7	protein_coding
+MMP20|target|VWYP01031341.1:429909-554428(-)	gene	476357	483688	-	Mmp27	protein_coding
+MMP20|target|VWYP01031341.1:429909-554428(-)	gene	490139	492547	-	Mmp8	protein_coding
+MMP20|target|VWYP01031341.1:429909-554428(-)	gene	504979	511815	-	Mmp3	protein_coding
+MMP20|target|VWYP01031341.1:429909-554428(-)	gene	517550	523323	-	Mmp10	protein_coding
+MMP20|target|VWYP01031341.1:429909-554428(-)	pseudogene	548624	554768	-		pseudogene
+MMP20|target|VWYP01033145.1:176284-189406(+)	gene	172695	200505	+	Mmp2	protein_coding
+SPARC|control|VWYP01024446.1:20226-22906(+)	gene	19546	22906	+	Sparcl1	protein_coding
+SPARC|control|VWYP01029506.1:237260-239474(+)	gene	236867	239740	+	Sparc	protein_coding

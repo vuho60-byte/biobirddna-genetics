@@ -14,6 +14,7 @@ dependencies:
   - phast
   - busco
   - minimap2
+  - blast
   - samtools
   - ncbi-datasets-cli
   - phyluce

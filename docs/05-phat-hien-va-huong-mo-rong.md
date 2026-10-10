@@ -76,6 +76,7 @@ Quét 14.003 vùng mã hóa bằng ba thước đo thành phần độc lập (G
 
 **B5. Phép thử gene răng hỏng.** Vòng nghiên cứu trước đã xác nhận năm gene men răng không còn bản ghi nào ở gà. Quét chúng trong bộ gene chào mào bằng cách so protein cá sấu và rùa lên bộ gene. Nếu tìm thấy mảnh vỡ mang **cùng kiểu hỏng** như ở các bộ chim khác, đó là bằng chứng trực tiếp cho tổ tiên chung, kiểm được trên chính loài của bạn.
 *Chi phí: cần công cụ tìm kiếm trình tự và bộ gene ngoài nhóm (đã có accession); hai ngày. Giá trị: cao — đây là phép thử phân biệt giả thuyết, không chỉ mô tả.*
+*Trạng thái 2026-10-10: mã + test xong (`pipeline/p07_tooth_genes/`, brief X9); chưa chạy dữ liệu thật — cần duyệt image BLAST. Ghi chú: Meredith 2014 khảo sát 6 gene (năm gene trên + MMP20) theo R12 dòng #23; công cụ quét cả 6 + GULO, đối chứng dương MEPE/SPARC.*
 
 **B6. So sánh lõi giữa các loài chim hót.** Chạy đúng quy trình này cho sẻ vằn và sẻ ngô lớn (bộ gene chất lượng cao hơn nhiều), rồi so ba bản đồ. Phần chung là lõi của chim hót; phần chỉ có ở chào mào là ứng viên cho đặc trưng riêng.
 *Chi phí: mỗi loài một lần chạy, khoảng nửa ngày. Giá trị: trung bình cao; cũng là phép kiểm chéo cho chất lượng bộ gene chào mào vốn còn vụn.*
