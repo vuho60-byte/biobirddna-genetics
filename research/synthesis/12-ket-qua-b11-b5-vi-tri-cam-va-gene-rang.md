@@ -51,7 +51,8 @@ còn lại của bộ gene ở vị trí câm. STRONG_INFERENCE; nâng lên CONF
 ## 2. B5 — gene răng: đối chứng MEPE không đạt, năm gene men/ngà răng không hit, MMP20 chỉ hit chéo họ MMP
 
 Truy vấn: protein cá sấu Mỹ RefSeq ENAM (1092 aa), AMBN (408), AMELX (199), AMTN (328), DSPP (797), MMP20 (485);
-đối chứng MEPE (847), SPARC (298); GULO **không có bản ghi tên GULO** ở cá sấu lẫn gà trong RefSeq (vòng 4) — chưa thử được.
+đối chứng MEPE (847), SPARC (298); GULO **không có bản ghi tên GULO** ở cá sấu lẫn gà trong RefSeq (vòng 4) nên vòng 5
+dùng Gulo chuột cống.
 
 | Mục | Kết quả | Đọc |
 |---|---|---|
@@ -60,6 +61,7 @@ Truy vấn: protein cá sấu Mỹ RefSeq ENAM (1092 aa), AMBN (408), AMELX (199
 | ENAM, AMBN, AMELX, AMTN, DSPP | không hit | **không kết luận** — khi đối chứng cùng họ không thấy, âm tính không nói gì về giả gene |
 | MMP20 | 11 locus, 38–70 % id; GFF: **mọi locus chồng gene Mmp họ hàng đã chú giải** (Mmp2, 7, 8, 9, 10, 11, 15, 16, 17, 24, 27, 28, 3) trừ một **giả gene chưa tên** VWYP01031341.1:548624–554768 trong cụm MMP | hit chéo paralog; 2 "codon dừng có chỗ dựa" của báo cáo nằm trong vùng *Mmp27* và trong giả gene đó — **không phải tổn thương MMP20** |
 | Giả gene chưa tên (vòng 3, bộ MMP người) | MMP13 8 HSP, tổng 740 bit, 89 % id, phủ aa 41–471; MMP20 1 HSP, 55 bit, 51 % | giả gene là **tàn dư MMP13**, không phải MMP20 (`data/b5/r3_mmp_family_summary.txt`) |
+| GULO (vòng 5, Gulo chuột cống NP_071556.2 vì cá sấu/gà không có bản ghi tên GULO) | 6 mảnh trên 6 scaffold khác nhau, mỗi mảnh 1 HSP phủ 7–14 % protein, 56–79 % id, tổng phủ ~0,62; nhiều mảnh sát đầu scaffold; 0 codon dừng có chỗ dựa | vùng GULO **vỡ trong lắp ráp**; còn chức năng hay giả gene: **không kết luận** được từ bộ gene này (`data/b5/r5_gulo_summary.txt`); khoảng trống #19 của R15 vẫn mở |
 
 Đọc theo thứ tự khả năng của `report.md`: (1) không có tổn thương nào của gene mục tiêu để xét; (2) hai `*` "có chỗ
 dựa" là giả tạo do HSP paralog mở rộng — lọc cánh 10 aa không đủ khi paralog giống 40–60 %; (3) ranh exon: 11 cặp
@@ -105,7 +107,7 @@ giữa hai loài xa (B11 lặp trên gà/sẻ vằn vẫn không thấy), hoặc
 
 1. **B11 lặp** trên gà và sẻ vằn (cùng công cụ, chỉ đổi CDS) → nếu cùng bức tranh, nâng B11 lên CONFIRMED.
 2. **B5 vòng 2**: truy vấn bằng tàn dư gene răng của chim (phụ lục Meredith 2014) hoặc tblastx; thêm bước GFF-overlap +
-   kiểm paralog vào p07; thử e-value nới (1e-2) có kiểm đối chứng MEPE; GULO dùng Gulo chuột cống (vòng 5 đang chạy).
+   kiểm paralog vào p07; thử e-value nới (1e-2) có kiểm đối chứng MEPE; GULO cần bộ gene sẻ lắp ráp tốt hơn (6 exon tìm được nằm trên 6 scaffold rời).
 3. **Đếm Hox thật** của chào mào bằng tblastn protein HOX người (p07) — lấp 19/39 ô trống chú giải.
 4. **R17 vòng 2** theo 12 câu ở mục 5 file thô; V-file review độc lập cho R15 và R17.
 5. Ghi vào `docs/00` Q4: thêm dòng B11 vào bảng dự đoán phân biệt (sửa vòng sau, hậu tố `*(sửa theo B11)*`).
@@ -118,4 +120,4 @@ giữa hai loài xa (B11 lặp trên gà/sẻ vằn vẫn không thấy), hoặc
 - `report.md` trong `data/b11` và `data/b5` được tạo lại trong kho từ TSV đã kiểm sha256 khớp PC (chuỗi đường dẫn khác
   nên sha báo cáo khác bản PC); `human_cds.fna`, `alignments.txt`, `queries.faa`, `tblastn.tsv` giữ trên PC, sha256 ghi
   trong `data/registry.csv` (D10-b11, D09-b5) và ghi chú registry.
-- Chưa ai review độc lập mã p07/p08 ngoài unittest; vòng 3–5 của B5 chỉ có tóm tắt lọc, dữ liệu đầy đủ ở `data/r3–r5` trên PC.
+- Chưa ai review độc lập mã p07/p08 ngoài unittest; vòng 3–5 của B5 chỉ có tóm tắt lọc (`data/b5/r3_*.txt`, `r5_*.txt`), dữ liệu đầy đủ ở `data/r3–r5` trên PC.

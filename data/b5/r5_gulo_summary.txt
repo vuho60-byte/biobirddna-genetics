@@ -1,0 +1,16 @@
+# B5 vong 5 (2026-10-10, PC, data/r5/b5 - khong commit): truy van Gulo CHUOT CONG (Rattus norvegicus, NP_071556.2,
+# 440 aa, gene con chuc nang) + SPARC chuot NP_036788.1; tblastn len bo gene chao mao, e-value 1e-5.
+# Ly do dung chuot: RefSeq ca sau (vong 1) va ga (vong 4) khong co ban ghi ten GULO.
+# loci.tsv (cot chon): gene sseqid strand s_start s_end n_hsp qcov max_pident sum_bitscore n_stop_raw n_stop_supported n_frameshift n_intron_like
+Gulo	VWYP01049040.1	+	105	293	1	0.143182	65.079	93.6	0	0	0	0
+Gulo	VWYP01027160.1	-	27	155	1	0.0977273	79.07	77.4	0	0	0	0
+Gulo	VWYP01003658.1	+	1198	1347	1	0.115909	58.824	59.7	0	0	0	0
+Gulo	VWYP01018364.1	-	1280	1408	1	0.0977273	62.791	59.7	0	0	0	0
+Gulo	VWYP01022508.1	-	215	307	1	0.0704545	67.742	52.8	0	0	0	0
+Gulo	VWYP01005325.1	-	1	129	1	0.0954545	55.814	49.7	1	0	0	0
+SPARC	VWYP01029506.1	+	237821	239474	5	0.747508	88.889	467.8	0	0	0	3
+SPARC	VWYP01024446.1	+	20226	22906	4	0.611296	74.51	295.1	0	0	0	3
+# Doc: 6 manh Gulo tren 6 scaffold khac nhau, moi manh 1 HSP phu 7-14 % protein (31-63 aa), 56-79 % id, tong phu ~0,62;
+# nhieu manh nam sat dau scaffold (vi tri 1-155, 27-155, 105-293) -> vung GULO bi vo trong lap rap muc scaffold.
+# Khong co codon dung co cho dua; lech khung giua exon khong danh gia duoc vi exon nam tren scaffold khac nhau.
+# -> Trang thai GULO (con chuc nang hay gia gene) o chao mao KHONG KET LUAN duoc tu bo gene nay. SPARC doi chung DAT.
