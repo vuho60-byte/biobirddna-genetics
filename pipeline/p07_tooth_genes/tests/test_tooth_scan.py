@@ -521,6 +521,9 @@ class TestFetchQueries(TempDirMixin, unittest.TestCase):
     def setUp(self):
         super().setUp()
         self.calls = []
+        self._iv = ts.REQUEST_INTERVAL
+        ts.REQUEST_INTERVAL = 0.0
+        self.addCleanup(setattr, ts, "REQUEST_INTERVAL", self._iv)
         self._orig = ts._URLOPEN
         ts._URLOPEN = _fake_urlopen_factory(self.calls)
         self.addCleanup(setattr, ts, "_URLOPEN", self._orig)

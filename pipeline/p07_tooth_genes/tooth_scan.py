@@ -47,6 +47,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -226,10 +227,21 @@ _URLOPEN = urllib.request.urlopen  # test monkeypatch diem nay
 USER_AGENT = "birdbiodna-tooth_scan/0.1 (python-urllib)"
 
 
+REQUEST_INTERVAL = 0.34  # giay; NCBI gioi han 3 yeu cau/giay khi khong co API key (test dat 0)
+_LAST_REQUEST = [0.0]
+
+
 def _http_get_text(url, timeout=60):
+    # Gian cach toi thieu giua 2 yeu cau de khong vuot gioi han NCBI (loi 429).
+    wait = REQUEST_INTERVAL - (time.monotonic() - _LAST_REQUEST[0])
+    if wait > 0:
+        time.sleep(wait)
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with _URLOPEN(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8")
+    try:
+        with _URLOPEN(req, timeout=timeout) as resp:
+            return resp.read().decode("utf-8")
+    finally:
+        _LAST_REQUEST[0] = time.monotonic()
 
 
 def _eutils_url(tool, params, email, api_key):

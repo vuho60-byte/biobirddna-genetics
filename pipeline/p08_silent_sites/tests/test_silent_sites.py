@@ -333,6 +333,9 @@ class TestFetchHuman(TempDirMixin, unittest.TestCase):
     def setUp(self):
         super().setUp()
         self.calls = []
+        self._iv = ss.REQUEST_INTERVAL
+        ss.REQUEST_INTERVAL = 0.0
+        self.addCleanup(setattr, ss, "REQUEST_INTERVAL", self._iv)
         prot = make_protein(60, seed=9)
         self.cds = backtranslate(prot)
 
